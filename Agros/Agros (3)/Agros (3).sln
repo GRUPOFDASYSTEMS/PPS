@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Agros", "..\..\..\..\..\..\mis_datos\Utn\Practica_profesional_sup\Agros\", "{066CA7E1-9DF3-4ACD-AD03-5A53040BDC5A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/Agros"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\mis_datos\Utn\Practica_profesional_sup\Agros\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Agros\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Agros"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\mis_datos\Utn\Practica_profesional_sup\Agros\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Agros\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49942"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{066CA7E1-9DF3-4ACD-AD03-5A53040BDC5A}.Debug|.NET.ActiveCfg = Debug|.NET
+		{066CA7E1-9DF3-4ACD-AD03-5A53040BDC5A}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
