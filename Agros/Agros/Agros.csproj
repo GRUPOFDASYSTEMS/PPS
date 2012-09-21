@@ -56,6 +56,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="configurar_cliente.aspx.cs">
+      <DependentUpon>configurar_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="configurar_cliente.aspx.designer.cs">
+      <DependentUpon>configurar_cliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -73,6 +80,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="configurar_cliente.aspx" />
     <Content Include="images\img01.jpg" />
     <Content Include="images\img02.jpg" />
     <Content Include="images\img03.jpg" />
@@ -108,7 +116,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49377</DevelopmentServerPort>
+          <DevelopmentServerPort>49379</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
