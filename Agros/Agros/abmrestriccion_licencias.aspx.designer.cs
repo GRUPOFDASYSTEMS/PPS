@@ -11,15 +11,15 @@
 namespace Agros {
     
     
-    public partial class Site1 {
+    public partial class abmrestriccion_licencias {
         
         /// <summary>
-        /// Control Editable.
+        /// Control formlicencias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Editable;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formlicencias;
     }
 }

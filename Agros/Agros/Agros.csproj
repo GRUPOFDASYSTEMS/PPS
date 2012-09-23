@@ -56,6 +56,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abmcondicion_fiscal.aspx.cs">
+      <DependentUpon>Abmcondicion_fiscal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Abmcondicion_fiscal.aspx.designer.cs">
+      <DependentUpon>Abmcondicion_fiscal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abmproductos.aspx.cs">
+      <DependentUpon>abmproductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmproductos.aspx.designer.cs">
+      <DependentUpon>abmproductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abmrestriccion_licencias.aspx.cs">
+      <DependentUpon>abmrestriccion_licencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmrestriccion_licencias.aspx.designer.cs">
+      <DependentUpon>abmrestriccion_licencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abmservicios.aspx.cs">
+      <DependentUpon>abmservicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmservicios.aspx.designer.cs">
+      <DependentUpon>abmservicios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="configurar_cliente.aspx.cs">
       <DependentUpon>configurar_cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -78,8 +106,19 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Stock.aspx.cs">
+      <DependentUpon>Stock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock.aspx.designer.cs">
+      <DependentUpon>Stock.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Abmcondicion_fiscal.aspx" />
+    <Content Include="abmproductos.aspx" />
+    <Content Include="abmrestriccion_licencias.aspx" />
+    <Content Include="abmservicios.aspx" />
     <Content Include="configurar_cliente.aspx" />
     <Content Include="images\img01.jpg" />
     <Content Include="images\img02.jpg" />
@@ -95,6 +134,7 @@
     <Content Include="images\img12.jpg" />
     <Content Include="images\img15.jpg" />
     <Content Include="Site1.Master" />
+    <Content Include="Stock.aspx" />
     <Content Include="style.css" />
     <Content Include="Inicio.aspx" />
   </ItemGroup>

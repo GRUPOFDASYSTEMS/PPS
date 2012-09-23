@@ -1,4 +1,38 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="configurar_cliente.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.configurar_cliente" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
+    
+    <form id="form1" runat="server">
+    
+    <h2 class="title"><a href="#">Configurar Cliente</a></h2>
+
+
+        <table>
+         <tr>
+          <td>
+	        <p class="meta">Operario Favorito</p> 
+	      </td>
+	      <td>  
+            <asp:DropDownList ID="DropDownList1" runat="server">
+            </asp:DropDownList>
+          </td>
+        </tr>  
+            
+         <tr>
+          <td>
+            <p class="meta">Valor De Confianza</p>
+          </td>
+          <td> 
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+          </td>
+         </tr>
+         <tr> 
+          <td>
+          <asp:Button ID="Button1" runat="server" Text="Button" />
+          </td>
+         </tr>
+         </table>   
+    </form>
+    
+</asp:Content>

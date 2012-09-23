@@ -3,12 +3,11 @@
 <asp:Content runat="server" ContentPlaceHolderID="Editable">
 
 
-    <form id="form1" runat="server">
-    </form>
     
     
     
-    	<div id="page">
+    
+    	
 		<div id="content">
 			<div id="banner"><img src="images/img07.jpg" alt="" /></div>
 			<div class="post">
@@ -51,31 +50,8 @@
 		</div>
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
-	</div>
+	
 	<!-- end #page -->
-</div>
-<div id="footer-content">
-	<div class="column1">
-		<h2>Beneficios </h2>
-		<p>La agricultura de los ultimos años nos ha demostrado que no hay dos campañas 
-            iguales en referencia a la presencia de plagas. A las que ya conocemos, se han 
-            sumado la aparición de nuevos insectos, enfermedades de otras regiones que se 
-            diseminan a nuestra área y presencia de malezas que ya no son controladas por 
-            algunos herbicidas. . <a href="#">Leer mas…</a></p>
-	</div>
-	<div class="column2">
-		<ul class="list">
-			<li><a href="#">Trigo mapa con puntos georeferenciados</a> </li>
-			<li><a href="#">Soja estado fenológico del cultivo</a></li>
-			<li><a href="#">Maiz Las enfermedades provocan una disminución en la producción</a></li>
-			<li><a href="#">La identificación y cuantificación de las enfermedades  es fundamental</a></li>
-		</ul>
-	</div>
-</div>
-<div id="footer">
-	<p> (c) 2012 <a href="#">diseñado por Andrada Leoni</a>.</p>
-</div>
-<!-- end #footer -->
 
 
 </asp:Content>
