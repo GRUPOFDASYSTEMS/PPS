@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="Agros.WebForm1" Title="Untitled Page" %>
 
+
+
+
 <asp:Content runat="server" ContentPlaceHolderID="Editable">
 
 
@@ -19,7 +22,8 @@
 					<p>Situacion acentuada por el crecimiento de los consumidores de alimentos de alto 
                         valor&nbsp; y una mayor demanda de cereales y oleaginosas para la elaboracion de 
                         biocombustibles.</p>
-					<p class="links"><a href="#" class="more">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="comments">Comments (33)</a></p>
+					<!-- <p class="links"><a href="#" class="more">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="comments">Comments (33)</a></p>
+				    -->
 				</div>
 			</div>
 			<div style="clear: both;">&nbsp;</div>

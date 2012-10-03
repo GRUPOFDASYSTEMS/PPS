@@ -32,7 +32,18 @@
          </tr>
          <tr> 
           <td>
-
+              <p class="meta">
+              <asp:ImageButton ID="ImageButton3" runat="server" 
+                  ImageUrl="images/img11.gif" AlternateText="Listados" />
+              &nbsp;&nbsp;&nbsp; Alta Detalle De Servicios</p>
+          </td>
+          
+          <td>
+              <p class="meta">
+              <asp:ImageButton ID="ImageButton4" runat="server" 
+                  ImageUrl="images/img10.gif" AlternateText="Listados" />
+              &nbsp;&nbsp;&nbsp; Modificacion Detalle De Servicios</p>          
+          
           </td>
          </tr>
          </table>   
