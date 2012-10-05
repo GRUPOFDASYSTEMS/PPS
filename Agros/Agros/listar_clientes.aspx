@@ -1,18 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicios_operarios_general.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.servicios_operarios_general" %>
-
-
-
-
-
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="listar_clientes.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.listar_clientes" %>
 
 
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     <form id="form1" runat="server">
-    <h2 class="title"><a href="#">Listado De Servicios Que Me Afectan</a></h2>
+    <h2 class="title"><a href="#">Listar Clientes:</a></h2>
 
 
         <table>
@@ -32,16 +25,16 @@
 
 (ejemplo)
         <table>
-        <tr>
+         <tr>
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Fecha</p>
+              &nbsp;&nbsp;&nbsp; Raz&oacute;n Social</p>
           </td>
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Servicio a realizar</p>
+              &nbsp;&nbsp;&nbsp; Cuit</p>
           </td>
           <td>
             
@@ -51,31 +44,30 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Raz&oacute;n Social</p>
+              &nbsp;&nbsp;&nbsp; Confianza</p>
           </td>
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Comentario Del Cliente</p>
+              &nbsp;&nbsp;&nbsp; Favorito</p>
+          </td>
+          <td>
+              Set
           </td>
          </tr>
 
-        <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; 01/10/2012</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Desratizacion</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Pendiente</p>
-          </td>
+
+
+
+
+
+
+
+
+
+
+
+         <tr>
           <td>
             
               <p class="meta">
@@ -84,16 +76,30 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; No olvidar quitar trampas anteriores.</p>
+              &nbsp;&nbsp;&nbsp; 307891234568</p>
+          </td>
+          <td>
+            
+              <p class="meta">
+              &nbsp;&nbsp;&nbsp; Activo</p>
+          </td>
+          <td>
+            
+              <p class="meta">
+              &nbsp;&nbsp;&nbsp; 150000</p>
+          </td>
+          <td>
+            
+              <p class="meta">
+              &nbsp;&nbsp;&nbsp; Gabriel Bielsa</p>
+          </td>
+          <td>
+              <asp:Button ID="Button1" runat="server" Text="Configurar" />       
           </td>
          </tr>
-         
-         
          </table>   
-
-
-    
-
-
+         
+<asp:Button ID="Button2" runat="server" Text="Volver" />    
     </form>
 </asp:Content>
+

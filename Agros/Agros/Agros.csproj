@@ -168,6 +168,13 @@
     <Compile Include="indice_administrativo.aspx.designer.cs">
       <DependentUpon>indice_administrativo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="listar_clientes.aspx.cs">
+      <DependentUpon>listar_clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listar_clientes.aspx.designer.cs">
+      <DependentUpon>listar_clientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,6 +225,20 @@
     <Compile Include="registro_usuarios.aspx.designer.cs">
       <DependentUpon>registro_usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="servicios_operarios_general.aspx.cs">
+      <DependentUpon>servicios_operarios_general.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servicios_operarios_general.aspx.designer.cs">
+      <DependentUpon>servicios_operarios_general.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="servicios_operario_detalle.aspx.cs">
+      <DependentUpon>servicios_operario_detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servicios_operario_detalle.aspx.designer.cs">
+      <DependentUpon>servicios_operario_detalle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +259,13 @@
     </Compile>
     <Compile Include="Stock.aspx.designer.cs">
       <DependentUpon>Stock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock_listados.aspx.cs">
+      <DependentUpon>Stock_listados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock_listados.aspx.designer.cs">
+      <DependentUpon>Stock_listados.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +299,7 @@
     <Content Include="images\img15.jpg" />
     <Content Include="indice_administrativo.aspx" />
     <Content Include="JScript1.js" />
+    <Content Include="listar_clientes.aspx" />
     <Content Include="login.aspx" />
     <Content Include="login_clientes.aspx" />
     <Content Include="modulo_servicios_cliente.aspx" />
@@ -278,8 +307,11 @@
     <Content Include="modulo_servicios_cliente_listados.aspx" />
     <Content Include="registro_clientes.aspx" />
     <Content Include="registro_usuarios.aspx" />
+    <Content Include="servicios_operarios_general.aspx" />
+    <Content Include="servicios_operario_detalle.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Stock.aspx" />
+    <Content Include="Stock_listados.aspx" />
     <Content Include="style.css" />
     <Content Include="Inicio.aspx" />
   </ItemGroup>

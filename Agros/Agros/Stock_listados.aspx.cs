@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace Agros
 {
-    public partial class servicios_operarios_general : System.Web.UI.Page
+    public partial class Stock_listados : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,9 +41,9 @@ namespace Agros
             this.ddZona.DataBind();
              */
 
-            this.DropDownList1.Items.Insert(0, new ListItem("Pendientes", "1"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Informados", "2"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Finalizados", "3"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Sin Reserva", "1"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Reservado", "2"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Total", "3"));
 
 
         }
