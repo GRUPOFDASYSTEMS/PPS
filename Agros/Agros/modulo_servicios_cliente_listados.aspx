@@ -80,7 +80,7 @@
 	       <td>
               <p class="meta">
               <asp:ImageButton ID="ImageButton5" runat="server" 
-                  ImageUrl="images/img10.gif" AlternateText="Listados" />
+                  ImageUrl="images/img10.gif" AlternateText="Listados" PostBackUrl="~/modulo_servicios_listado_detalle_orden.aspx" />
                Editar &nbsp;&nbsp;&nbsp;</p>
 	      </td>	      
 	      

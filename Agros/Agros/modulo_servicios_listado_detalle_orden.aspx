@@ -95,7 +95,7 @@
          
          <tr> 
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Salvar" />       
+              <asp:Button ID="Button1" runat="server" Text="Aprobar" />       
           </td>
          </tr>
          </table>   
@@ -294,7 +294,7 @@
          
          
          
-<asp:Button ID="Button2" runat="server" Text="Volver" />    
+<asp:Button ID="Button2" runat="server" Text="Volver" PostBackUrl="~/modulo_servicios_cliente_listados.aspx" />    
     </form>
 </asp:Content>
 

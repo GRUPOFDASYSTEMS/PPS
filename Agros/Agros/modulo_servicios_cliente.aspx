@@ -48,6 +48,6 @@
           </td>
          </tr>
          </table>   
-<asp:Button ID="Button2" runat="server" Text="Cancelar" />    
+<asp:Button ID="Button2" runat="server" Text="Cancelar" PostBackUrl="~/modulo_servicios_cliente_home.aspx"/>    
     </form>
 </asp:Content>

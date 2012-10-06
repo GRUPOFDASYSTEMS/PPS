@@ -94,7 +94,7 @@
               &nbsp;&nbsp;&nbsp; Gabriel Bielsa</p>
           </td>
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Configurar" />       
+              <asp:Button ID="Button1" runat="server" Text="Configurar" PostBackUrl="~/configurar_cliente.aspx" />       
           </td>
          </tr>
          </table>   

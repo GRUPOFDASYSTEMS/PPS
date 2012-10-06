@@ -80,7 +80,7 @@
 	       <td>
               <p class="meta">
               <asp:ImageButton ID="ImageButton5" runat="server" 
-                  ImageUrl="images/img10.gif" AlternateText="Listados" />
+                  ImageUrl="images/img10.gif" AlternateText="Listados" PostBackUrl="~/facturacion_detalle_facturas.aspx" />
                Ver Detalles &nbsp;&nbsp;&nbsp;</p>
 	      </td>	      
 	      
@@ -94,7 +94,7 @@
 
          </table>
 
-
+    
 
     </form>
 </asp:Content>
