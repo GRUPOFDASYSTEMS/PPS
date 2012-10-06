@@ -55,10 +55,22 @@
          
          
          </td>
+         
+         
+         
+         
          <td>
          
              <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
          </td>
+
+
+        <td>
+               <p class="meta">
+            Productos Necesarios
+            </p>
+            <asp:Button ID="Button4" runat="server" Text="*" PostBackUrl="~/abmproductos_listados.aspx" />  
+        </td>
 
 
          </tr>

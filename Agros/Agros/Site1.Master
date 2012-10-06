@@ -26,8 +26,8 @@
 			<li class="current_page_item"  id="inicio"><a href="#">Inicio</a></li>
 			<li id="servicios"><a href="#">Servicios</a></li>
 			<li id="experiencia"><a href="#">Experiencia</a></li>
-			<li id="clientes"><a href="#">Clientes</a></li>
-			<li id="intranet" ><a href="#">Intranet</a></li>
+			<li id="clientes"><a href="login_clientes.aspx">Clientes</a></li>
+			<li id="intranet" ><a href="login.aspx">Intranet</a></li>
 		</ul>
 	</div>
 </div>

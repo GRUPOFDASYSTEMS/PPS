@@ -10,7 +10,7 @@
           <td>
               <p class="meta">
               <asp:ImageButton ID="ImageButton2" runat="server" 
-                  ImageUrl="images/img11.gif" AlternateText="Listados" />
+                  ImageUrl="images/img11.gif" AlternateText="Nuevo" PostBackUrl="~/abmproductos_in.aspx"/>
               &nbsp;&nbsp;&nbsp; Alta De Productos</p>
 	      </td>
 	      <td>  
@@ -23,7 +23,7 @@
             
               <p class="meta">
               <asp:ImageButton ID="ImageButton1" runat="server" 
-                  ImageUrl="images/img10.gif" AlternateText="Listados" />
+                  ImageUrl="images/img10.gif" AlternateText="Listados" PostBackUrl="~/abmproductos_listados.aspx"/>
               &nbsp;&nbsp;&nbsp; Edicion Productos (Modificacion/Baja)</p>
           </td>
           <td> 

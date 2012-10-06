@@ -65,11 +65,11 @@
          
          <tr>
          <td>
-            <asp:Button ID="Button1" runat="server" Text="Limpiar" />     
+            <asp:Button ID="Button1" runat="server" Text="Ver Productos Necesarios"  />     
          </td>
          
          <td>
-         <asp:Button ID="Button2" runat="server" Text="Agregar" />
+         <asp:Button ID="Button3" runat="server" Text="Agregar Productos Necesarios" PostBackUrl="~/abmproductos_listados.aspx" />     
          </td>
          
          </tr>
@@ -78,7 +78,7 @@
          </table>   
 
 
-    
+    <asp:Button ID="Button2" runat="server" Text="Salvar" />
 
 
     </form>

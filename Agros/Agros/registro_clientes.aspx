@@ -67,7 +67,7 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Condici&oacute;n Social:</p>
+              &nbsp;&nbsp;&nbsp; Condici&oacute;n Fiscal:</p>
           </td>
           <td> 
               <asp:DropDownList ID="DropDownList1" runat="server">

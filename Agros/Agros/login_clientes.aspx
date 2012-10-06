@@ -36,10 +36,10 @@
          </tr>
          <tr> 
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Ingresar" />       
+              <asp:Button ID="Button1" runat="server" Text="Ingresar" PostBackUrl="~/indice_cliente.aspx" />       
           </td>
          </tr>
          </table>   
-<asp:HyperLink ID="HyperLink1" runat="server">Registro</asp:HyperLink>
+<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/registro_clientes.aspx" >Registro</asp:HyperLink>
     </form>
 </asp:Content>

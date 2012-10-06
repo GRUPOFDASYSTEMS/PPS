@@ -12,7 +12,7 @@
           <td>
               <p class="meta">
               <asp:ImageButton  runat="server" 
-                  ImageUrl="images/img11.gif" AlternateText="Listados" />
+                  ImageUrl="images/img11.gif" AlternateText="Nueva" PostBackUrl="~/abmrestriccion_licencias_in.aspx"/>
               &nbsp;&nbsp;&nbsp; Alta De Nueva Restricci&oacute;n</p>
 	      </td>
 	      <td>  
@@ -25,7 +25,7 @@
             
               <p class="meta">
               <asp:ImageButton  runat="server" 
-                  ImageUrl="images/img10.gif" AlternateText="Listados" />
+                  ImageUrl="images/img10.gif" AlternateText="Listados" PostBackUrl="~/abmrestriccionlicencias_listado.aspx"/>
               &nbsp;&nbsp;&nbsp; Edicion De Restricciones (Modificacion/Baja)</p>
           </td>
           <td> 

@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     <form id="form1" runat="server">
-    <h2 class="title"><a href="#">Generar Orden De Servicio:</a></h2>
+    <h2 class="title"><a href="#">Generar Nueva Tarea Para Orden De Servicio:</a></h2>
 
 
         <table>

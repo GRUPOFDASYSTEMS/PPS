@@ -28,7 +28,8 @@
               &nbsp;&nbsp;&nbsp; Perfil:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>   
+              <asp:DropDownList ID="DropDownList1" runat="server">
+              </asp:DropDownList> 
           </td>
          </tr>
          

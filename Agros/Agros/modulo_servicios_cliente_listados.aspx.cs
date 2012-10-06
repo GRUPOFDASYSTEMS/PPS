@@ -49,10 +49,12 @@ namespace Agros
              */
 
             this.DropDownList1.Items.Insert(0, new ListItem("Pendientes", "1"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Aprobadas", "2"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Desaprobadas", "3"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Informadas", "4"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Desinformadas", "5"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Pre-Aprobadas", "2"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Aprobadas", "3"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Desaprobadas", "4"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Abortadas", "5"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Informadas", "6"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Desinformadas", "7"));
 
         }
 

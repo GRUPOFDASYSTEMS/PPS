@@ -81,7 +81,7 @@
               <p class="meta">
               <asp:ImageButton ID="ImageButton5" runat="server" 
                   ImageUrl="images/img10.gif" AlternateText="Listados" />
-               Editar/Ver Detalles &nbsp;&nbsp;&nbsp;</p>
+               Ver Detalles &nbsp;&nbsp;&nbsp;</p>
 	      </td>	      
 	      
 	      

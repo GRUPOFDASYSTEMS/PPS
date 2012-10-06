@@ -77,12 +77,26 @@
     <Compile Include="abmproductos_in.aspx.designer.cs">
       <DependentUpon>abmproductos_in.aspx</DependentUpon>
     </Compile>
+    <Compile Include="abmproductos_listados.aspx.cs">
+      <DependentUpon>abmproductos_listados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmproductos_listados.aspx.designer.cs">
+      <DependentUpon>abmproductos_listados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="abmproductos_mod.aspx.cs">
       <DependentUpon>abmproductos_mod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="abmproductos_mod.aspx.designer.cs">
       <DependentUpon>abmproductos_mod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abmrestriccionlicencias_listado.aspx.cs">
+      <DependentUpon>abmrestriccionlicencias_listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmrestriccionlicencias_listado.aspx.designer.cs">
+      <DependentUpon>abmrestriccionlicencias_listado.aspx</DependentUpon>
     </Compile>
     <Compile Include="abmrestriccion_licencias.aspx.cs">
       <DependentUpon>abmrestriccion_licencias.aspx</DependentUpon>
@@ -133,12 +147,33 @@
     <Compile Include="abmservicios_in.aspx.designer.cs">
       <DependentUpon>abmservicios_in.aspx</DependentUpon>
     </Compile>
+    <Compile Include="abmservicios_listado.aspx.cs">
+      <DependentUpon>abmservicios_listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmservicios_listado.aspx.designer.cs">
+      <DependentUpon>abmservicios_listado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abmservicios_listado_detalle.aspx.cs">
+      <DependentUpon>abmservicios_listado_detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmservicios_listado_detalle.aspx.designer.cs">
+      <DependentUpon>abmservicios_listado_detalle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="abmservicios_mod.aspx.cs">
       <DependentUpon>abmservicios_mod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="abmservicios_mod.aspx.designer.cs">
       <DependentUpon>abmservicios_mod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abmusuarios.aspx.cs">
+      <DependentUpon>abmusuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abmusuarios.aspx.designer.cs">
+      <DependentUpon>abmusuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="configurar_cliente.aspx.cs">
       <DependentUpon>configurar_cliente.aspx</DependentUpon>
@@ -154,12 +189,26 @@
     <Compile Include="facturacion.aspx.designer.cs">
       <DependentUpon>facturacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="facturacion_detalle_facturas.aspx.cs">
+      <DependentUpon>facturacion_detalle_facturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="facturacion_detalle_facturas.aspx.designer.cs">
+      <DependentUpon>facturacion_detalle_facturas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="facturacion_listados.aspx.cs">
       <DependentUpon>facturacion_listados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="facturacion_listados.aspx.designer.cs">
       <DependentUpon>facturacion_listados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indice_admin.aspx.cs">
+      <DependentUpon>indice_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indice_admin.aspx.designer.cs">
+      <DependentUpon>indice_admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="indice_administrativo.aspx.cs">
       <DependentUpon>indice_administrativo.aspx</DependentUpon>
@@ -168,12 +217,33 @@
     <Compile Include="indice_administrativo.aspx.designer.cs">
       <DependentUpon>indice_administrativo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="indice_cliente.aspx.cs">
+      <DependentUpon>indice_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indice_cliente.aspx.designer.cs">
+      <DependentUpon>indice_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indice_operario.aspx.cs">
+      <DependentUpon>indice_operario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indice_operario.aspx.designer.cs">
+      <DependentUpon>indice_operario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="listar_clientes.aspx.cs">
       <DependentUpon>listar_clientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="listar_clientes.aspx.designer.cs">
       <DependentUpon>listar_clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listar_usuarios.aspx.cs">
+      <DependentUpon>listar_usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listar_usuarios.aspx.designer.cs">
+      <DependentUpon>listar_usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -203,12 +273,26 @@
     <Compile Include="modulo_servicios_cliente_detalle.aspx.designer.cs">
       <DependentUpon>modulo_servicios_cliente_detalle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="modulo_servicios_cliente_home.aspx.cs">
+      <DependentUpon>modulo_servicios_cliente_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modulo_servicios_cliente_home.aspx.designer.cs">
+      <DependentUpon>modulo_servicios_cliente_home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="modulo_servicios_cliente_listados.aspx.cs">
       <DependentUpon>modulo_servicios_cliente_listados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="modulo_servicios_cliente_listados.aspx.designer.cs">
       <DependentUpon>modulo_servicios_cliente_listados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modulo_servicios_listado_detalle_orden.aspx.cs">
+      <DependentUpon>modulo_servicios_listado_detalle_orden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modulo_servicios_listado_detalle_orden.aspx.designer.cs">
+      <DependentUpon>modulo_servicios_listado_detalle_orden.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registro_clientes.aspx.cs">
@@ -272,7 +356,9 @@
     <Content Include="Abmcondicion_fiscal.aspx" />
     <Content Include="abmproductos.aspx" />
     <Content Include="abmproductos_in.aspx" />
+    <Content Include="abmproductos_listados.aspx" />
     <Content Include="abmproductos_mod.aspx" />
+    <Content Include="abmrestriccionlicencias_listado.aspx" />
     <Content Include="abmrestriccion_licencias.aspx" />
     <Content Include="abmrestriccion_licencias_in.aspx" />
     <Content Include="abmrestriccion_licencias_mod.aspx" />
@@ -280,9 +366,13 @@
     <Content Include="abmservicios_detalle_in.aspx" />
     <Content Include="abmservicios_detalle_mod.aspx" />
     <Content Include="abmservicios_in.aspx" />
+    <Content Include="abmservicios_listado.aspx" />
+    <Content Include="abmservicios_listado_detalle.aspx" />
     <Content Include="abmservicios_mod.aspx" />
+    <Content Include="abmusuarios.aspx" />
     <Content Include="configurar_cliente.aspx" />
     <Content Include="facturacion.aspx" />
+    <Content Include="facturacion_detalle_facturas.aspx" />
     <Content Include="facturacion_listados.aspx" />
     <Content Include="images\img01.jpg" />
     <Content Include="images\img02.jpg" />
@@ -297,14 +387,20 @@
     <Content Include="images\img11.gif" />
     <Content Include="images\img12.jpg" />
     <Content Include="images\img15.jpg" />
+    <Content Include="indice_admin.aspx" />
     <Content Include="indice_administrativo.aspx" />
+    <Content Include="indice_cliente.aspx" />
+    <Content Include="indice_operario.aspx" />
     <Content Include="JScript1.js" />
     <Content Include="listar_clientes.aspx" />
+    <Content Include="listar_usuarios.aspx" />
     <Content Include="login.aspx" />
     <Content Include="login_clientes.aspx" />
     <Content Include="modulo_servicios_cliente.aspx" />
     <Content Include="modulo_servicios_cliente_detalle.aspx" />
+    <Content Include="modulo_servicios_cliente_home.aspx" />
     <Content Include="modulo_servicios_cliente_listados.aspx" />
+    <Content Include="modulo_servicios_listado_detalle_orden.aspx" />
     <Content Include="registro_clientes.aspx" />
     <Content Include="registro_usuarios.aspx" />
     <Content Include="servicios_operarios_general.aspx" />

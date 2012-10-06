@@ -29,12 +29,12 @@
               &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>   
+              <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>   
           </td>
          </tr>
          <tr> 
           <td>
-
+              <asp:Button ID="Button1" runat="server" Text="Ingresar" PostBackUrl="~/indice_admin.aspx" />
           </td>
          </tr>
          </table>   

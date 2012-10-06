@@ -58,6 +58,16 @@
               <p class="meta">
               &nbsp;&nbsp;&nbsp; Comentario Del Cliente</p>
           </td>
+          
+          <td>
+            
+              <p class="meta">
+              &nbsp;&nbsp;&nbsp; Composici&oacute;n</p>
+          </td>
+          
+          
+          
+          
          </tr>
 
         <tr>
@@ -69,7 +79,7 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Desratizacion</p>
+              &nbsp;&nbsp;&nbsp; Limpieza Integral</p>
           </td>
           <td>
             
@@ -86,6 +96,13 @@
               <p class="meta">
               &nbsp;&nbsp;&nbsp; No olvidar quitar trampas anteriores.</p>
           </td>
+          
+          <td>
+              <asp:Button ID="Button1" runat="server" Text=".." PostBackUrl="~/servicios_operario_detalle.aspx" />
+          </td>
+                    
+          
+          
          </tr>
          
          

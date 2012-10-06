@@ -17,7 +17,39 @@ namespace Agros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            cargardd();
+        }
+
+
+        public void cargardd()
+        {
+            /*
+             * 
+             * * 
+             * 
+             * 
+             * 
+             * 
+             * 
+            SqlCommand OrdenSqlSelect = new SqlCommand("SELECT * FROM Zonas", ConexionBd);
+            SqlDataAdapter da = new SqlDataAdapter(OrdenSqlSelect.CommandText, ConexionBd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            this.ddZona.DataSource = ds;
+            this.ddZona.DataSource = ds;
+            this.ddZona.DataValueField = "CodZona";
+            this.ddZona.DataTextField = "Zona";
+            this.ddZona.DataBind();
+             */
+
+            this.DropDownList1.Items.Insert(0, new ListItem("Administrador", "1"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Administrativo", "2"));
+            this.DropDownList1.Items.Insert(0, new ListItem("Operario", "3"));
+
 
         }
+
+
+
     }
 }

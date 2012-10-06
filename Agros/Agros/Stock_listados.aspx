@@ -107,10 +107,10 @@
               50 Litros
           </td>
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Agregar" />
+              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>  <asp:Button ID="Button1" runat="server" Text="Agregar" />
           </td>
           <td>
-              <asp:Button ID="Button2" runat="server" Text="Corregir" />
+              <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>  <asp:Button ID="Button2" runat="server" Text="Corregir" />
           </td>
           
           

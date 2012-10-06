@@ -36,7 +36,7 @@
               Racion Unidad Medida:
                 </p>
           </td>
-          <td
+          <td>
               <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
           
           </td>
@@ -57,7 +57,7 @@
              <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
          </td>
 
-
+        </tr>
          <tr>
          <td>
               <p class="meta">
@@ -71,6 +71,7 @@
              <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
          </td>
 
+        </tr>
          <tr>
          <td>
               <p class="meta">
