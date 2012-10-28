@@ -1,9 +1,9 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="menu_administrativo.master.cs" Inherits="Agros.menu_administrativo" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Estructura.Master" AutoEventWireup="true" CodeBehind="menu_administrativo.master.cs" Inherits="Agros.menu_administrativo" %>
 
 <asp:Content ID="ContentG" ContentPlaceHolderID="General" runat="server">
 
 
-
+<form id="form1" runat="server">
 
     <table style="width: 100%;">
         <tr>
@@ -21,15 +21,15 @@
             </td>
             <td>
                 &nbsp;	
-	                <div id="page">
+	                
 	                <asp:ContentPlaceHolder ID="Editable" runat="server">                	    
 	                </asp:ContentPlaceHolder>
-                    </div>
+                    
     
 
             </td>
         </tr>
     </table>
 	
-	
+	</form>
 </asp:Content>	

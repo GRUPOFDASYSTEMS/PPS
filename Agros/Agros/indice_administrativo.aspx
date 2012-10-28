@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="indice_administrativo.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.indice_administrativo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="indice_administrativo.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.indice_administrativo" %>
 
 
 
@@ -6,7 +6,9 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    <%--<form id="form1" runat="server">--%>
+    
+    
     <h2 class="title"><a href="#">Indice De Modulos Administrativos </a></h2>
 
 
@@ -81,5 +83,5 @@
     <asp:Button ID="Button3" runat="server" Text="Salir" />
 
 
-    </form>
+    <%--</form>--%>
 </asp:Content>

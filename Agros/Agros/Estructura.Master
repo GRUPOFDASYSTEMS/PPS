@@ -37,10 +37,10 @@
 	
 	
 	<!-- establezco la division para agregar 2 contentplace, uno para el menu de navegacion y otro para el contenido -->
-	
+	<div id="page">
 	<asp:ContentPlaceHolder ID="General" runat="server">                	    
 	</asp:ContentPlaceHolder>
-    
+    </div>
     
     
     <div id="footer-content">
