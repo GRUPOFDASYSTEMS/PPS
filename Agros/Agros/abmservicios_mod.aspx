@@ -41,7 +41,7 @@
          </tr>
          <tr>
          <td>
-            <asp:Button ID="Button1" runat="server" Text="Eliminar" />     
+            
          </td>
          
          <td>
@@ -54,7 +54,7 @@
          </table>   
 
 
-    <asp:Button ID="Button3" runat="server" Text="Cancelar" />
+    <asp:Button ID="Button3" runat="server" Text="Cancelar"  PostBackUrl="~/abmservicios.aspx" />
 
 
     </form>

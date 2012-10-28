@@ -118,7 +118,7 @@
          </tr>
          </table>   
          
-<asp:Button ID="Button3" runat="server" Text="Volver" />    
+<asp:Button ID="backtoindiceadministrativo" runat="server" Text="Volver" PostBackUrl="~/indice_administrativo.aspx" />    
     </form>
 </asp:Content>
 

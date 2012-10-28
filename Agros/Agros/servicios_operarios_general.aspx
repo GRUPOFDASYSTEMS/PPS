@@ -109,7 +109,7 @@
          </table>   
 
 
-    
+<asp:Button ID="backtoindexoperario" runat="server" Text="Volver"  PostBackUrl="~/indice_operario.aspx"/>    
 
 
     </form>

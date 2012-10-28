@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="menu_administrativo.master.cs" Inherits="Agros.menu_administrativo" %>
+
+<asp:Content ID="ContentG" ContentPlaceHolderID="General" runat="server">
+
+
+
+
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                &nbsp;
+                <asp:Menu ID="Menu1" runat="server">
+                    <Items>
+                        <asp:MenuItem Text="Productos" Value="Productos"></asp:MenuItem>
+                        <asp:MenuItem Text="Servicios" Value="Servicios"></asp:MenuItem>
+                        <asp:MenuItem Text="Facturacion" Value="Facturacion"></asp:MenuItem>
+                        <asp:MenuItem Text="Clientes" Value="Clientes"></asp:MenuItem>
+                        <asp:MenuItem Text="Personal Empresa" Value="Personal Empresa"></asp:MenuItem>
+                    </Items>
+                </asp:Menu> 
+            </td>
+            <td>
+                &nbsp;	
+	                <div id="page">
+	                <asp:ContentPlaceHolder ID="Editable" runat="server">                	    
+	                </asp:ContentPlaceHolder>
+                    </div>
+    
+
+            </td>
+        </tr>
+    </table>
+	
+	
+</asp:Content>	

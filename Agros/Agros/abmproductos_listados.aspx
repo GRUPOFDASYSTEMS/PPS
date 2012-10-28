@@ -8,7 +8,7 @@
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     <form id="form1" runat="server">
-    <h2 class="title"><a href="#">Listado de productos:</h2>
+    <h2 class="title"><a href="#" />Listado de productos:</h2> 
 
 
         
@@ -84,7 +84,7 @@
          </tr>
          </table>   
          
-<asp:Button ID="Button3" runat="server" Text="Volver" />    
+<asp:Button ID="backtoabmproductos" runat="server" Text="Volver"  PostBackUrl="~/abmproductos.aspx" />   
     </form>
 </asp:Content>
 

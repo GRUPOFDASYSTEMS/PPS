@@ -95,6 +95,8 @@
          </table>
 
     
-
+    <asp:Button ID="backtoindexcliente" runat="server" Text="Volver Al Indice Clientes"  PostBackUrl="~/indice_cliente.aspx" />
+    <asp:Button ID="backtoindexusuario" runat="server" Text="Volver Al Indice Usuarios"  PostBackUrl="~/indice_administrativo.aspx" />
+    
     </form>
 </asp:Content>

@@ -22,6 +22,24 @@ namespace Agros
 
 
 
+
+
+        //private void btnMostrar_Click(object sender, EventArgs e)
+        //{
+        //    linkeo ConexionMySQL = new linkeo();
+
+        //    ConexionMySQL.Conectar();
+        //    ConexionMySQL.Seleccionar("*", "estados", "id_estado");
+        //    dgvDatos.DataSource = ConexionMySQL.Bin;
+        //    ConexionMySQL.Desconectar();
+        //}
+
+
+
+
+
+
+
         public void cargardd()
         {
             /*
@@ -43,9 +61,35 @@ namespace Agros
             this.ddZona.DataBind();
              */
 
-            this.DropDownList1.Items.Insert(0, new ListItem("Activos", "1"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Inactivos", "2"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Bloqueados", "3"));
+
+            //this.DropDownList1.Items.Insert(0, new ListItem("Activos", "1"));
+            //this.DropDownList1.Items.Insert(0, new ListItem("Inactivos", "2"));
+            //this.DropDownList1.Items.Insert(0, new ListItem("Bloqueados", "3"));
+            
+            
+            
+            string estado, desc;
+
+
+
+            linkeo enlace = new linkeo();
+
+            linkeo.Conectar();
+//            enlace.Seleccionar("id_estado, descripcion", "estados", "id_estado");
+            enlace.Seleccion_simple("select id_estado, descripcion from estados");
+            //while (enlace.BindingSource.read())
+            //{
+
+            //    estado = enlace.BindingSource["id_estado"].ToString();
+            //    desc = enlace.BindingSource["descripcion"].ToString();
+
+
+
+
+             //   this.DropDownList1.Items.Insert(0, new ListItem(desc, estado));
+            //}
+            
+
 
 
         }

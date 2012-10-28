@@ -1,0 +1,8 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="menu_administrador.master.cs" Inherits="Agros.menu_administrador" %>
+
+
+<asp:Content ID="ContentG" runat="server" ContentPlaceHolderID="General">
+
+
+
+</asp:Content>   

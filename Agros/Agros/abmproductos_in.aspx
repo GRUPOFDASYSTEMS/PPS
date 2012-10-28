@@ -92,11 +92,11 @@
          
          <tr>
          <td>
-            <asp:Button ID="Button1" runat="server" Text="Limpiar" />     
+              
          </td>
-         
+             <input id="Reset1" type="reset" value="Limpiar" /> 
          <td>
-         <asp:Button ID="Button2" runat="server" Text="Agregar" />
+         <asp:Button ID="Button1" runat="server" Text="Agregar" />
          </td>
          
          </tr>
@@ -107,6 +107,6 @@
 
     
 
-
+<asp:Button ID="backtoabmproductos" runat="server" Text="Volver"  PostBackUrl="~/abmproductos.aspx" />   
     </form>
 </asp:Content>

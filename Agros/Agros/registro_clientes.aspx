@@ -19,7 +19,7 @@
          <tr>
           <td>
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; CUIT:</p>
+                  &nbsp;&nbsp;&nbsp; CUIT:</p>
 	      </td>
 	      <td>  
               <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -30,7 +30,7 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Clave:</p>
+                  &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
               <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>   
@@ -42,7 +42,7 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Raz&oacute;n social:</p>
+                  &nbsp;&nbsp;&nbsp; Razón social:</p>
           </td>
           <td> 
               <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>   
@@ -55,7 +55,7 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Direcci&oacute;n:</p>
+                  &nbsp;&nbsp;&nbsp; Dirección:</p>
           </td>
           <td> 
               <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>   
@@ -67,7 +67,7 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Condici&oacute;n Fiscal:</p>
+                  &nbsp;&nbsp;&nbsp; Condición Fiscal:</p>
           </td>
           <td> 
               <asp:DropDownList ID="DropDownList1" runat="server">
@@ -75,14 +75,30 @@
           </td>
          </tr>         
          
-         
+         <tr>
+          <td>
+            
+              <p class="meta">
+                  &nbsp;&nbsp;&nbsp; E-mail:</p>
+          </td>
+          <td> 
+              <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+              <asp:RegularExpressionValidator 
+              ControlToValidate="TextBox5" 
+              ID="validamail" runat="server"
+              
+              Display="Dynamic" SetFocusOnError="True" 
+                  ErrorMessage="Debe Especificar una dirección de correo válida." 
+                  ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+          </td>
+         </tr>              
          
          <tr> 
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Ingresar" />       
+              <asp:Button ID="Button1" runat="server" Text="Registrar" />       
           </td>
          </tr>
          </table>   
-<asp:Button ID="Button2" runat="server" Text="Cancelar" />    
+ <asp:Button ID="backtoindexcliente" runat="server" Text="Volver Al Indice Clientes"  PostBackUrl="~/indice_cliente.aspx" />  
     </form>
 </asp:Content>

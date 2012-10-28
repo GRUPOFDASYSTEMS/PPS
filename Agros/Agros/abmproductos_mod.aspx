@@ -107,7 +107,7 @@
          </table>   
 
 
-    <asp:Button ID="Button3" runat="server" Text="Cancelar" />
+    <asp:Button ID="Button3" runat="server" Text="Cancelar"  PostBackUrl="~/abmproductos_listados.aspx" />
 
 
     </form>

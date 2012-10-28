@@ -76,6 +76,9 @@
          </table>   
 
 
+         
+<asp:Button ID="backtoabmservicios" runat="server" Text="Volver A Servicios"  PostBackUrl="~/abmservicios.aspx" />
+<input id="back" type="button" value="Volver Atras" onclick="history.back();"/>
     
 
 

@@ -11,7 +11,7 @@
     <h2 class="title"><a href="#">Composicion Servicio - Detalle de servicios </a></h2>
 
           <p class="meta">
-              Asociado al servicio:
+              Asociado al(los) servicio(s):
                 </p>
                 
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
@@ -23,6 +23,7 @@
               Descripcion:
                  </p>
 	      </td>
+	      <td>
               <p class="meta">
               Tiempo (en horas hombre):
                 </p>
@@ -43,6 +44,7 @@
             </p>
         </td>
 
+        </tr>
          <tr>
           <td>
               <p class="meta">
@@ -65,16 +67,16 @@
          </td>
     
         <td>
-            <asp:Button ID="Button2" runat="server" Text="*" PostBackUrl="~/abmproductos_listados.aspx" />
+            <asp:Button ID="Button2" runat="server" Text="*" PostBackUrl="~/abmservicios_ver_productos_necesarios.aspx" />
         </td>
 
          
-         
+         </tr>
          </table>   
 
 
     
-            <asp:Button ID="Button1" runat="server" Text="Volver" />     
+            <input id="back" type="button" value="Volver Atras" onclick="history.back();"/>
 
     </form>
 </asp:Content>

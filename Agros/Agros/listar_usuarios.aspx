@@ -112,7 +112,7 @@
               &nbsp;&nbsp;&nbsp; 123456</p>
           </td>
           <td> 
-              <asp:Button ID="Button1" runat="server" Text=".." />              
+              <asp:Button ID="Button1" runat="server" Text=".." PostBackUrl="~/registro_usuarios.aspx"/>              
           </td>
           
           <td> 
@@ -127,6 +127,6 @@
          
          
          </table>   
-<asp:Button ID="Button2" runat="server" Text="Volver" />    
+<asp:Button ID="backtoabmusuarios" runat="server" Text="Volver" PostBackUrl="~/abmusuarios.aspx" />    
     </form>
 </asp:Content>

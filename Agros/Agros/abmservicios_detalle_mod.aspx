@@ -39,7 +39,7 @@
               Tiempo (en horas hombre):
                 </p>
           </td>
-          <td
+          <td>
               <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
           
           </td>
@@ -69,19 +69,16 @@
                <p class="meta">
             Productos Necesarios
             </p>
-            <asp:Button ID="Button4" runat="server" Text="*" PostBackUrl="~/abmproductos_listados.aspx" />  
+            <asp:Button ID="pn" runat="server" Text="*" PostBackUrl="~/abmservicios_ver_productos_necesarios.aspx" />  
         </td>
 
 
          </tr>
          
          <tr>
-         <td>
-            <asp:Button ID="Button1" runat="server" Text="Eliminar" />     
-         </td>
          
          <td>
-         <asp:Button ID="Button2" runat="server" Text="Modificar" />
+         <asp:Button ID="modi" runat="server" Text="Modificar" />
          </td>
          
          </tr>
@@ -90,7 +87,7 @@
          </table>   
 
 
-    <asp:Button ID="Button3" runat="server" Text="Cancelar" />
+    <asp:Button ID="Button3" runat="server" Text="Cancelar"  PostBackUrl="~/abmservicios_listado_detalle.aspx"/>
 
 
     </form>

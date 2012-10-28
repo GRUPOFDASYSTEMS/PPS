@@ -40,7 +40,7 @@
               Tiempo (en horas):
                 </p>
           </td>
-          <td
+          <td>
               <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
           
           </td>
@@ -80,7 +80,7 @@
 
 
     
-
+    <asp:Button ID="back" runat="server" Text="Cancelar" onclick="history.back()"   />
 
     </form>
 </asp:Content>

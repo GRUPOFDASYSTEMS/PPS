@@ -328,7 +328,7 @@
          
          
          
-<asp:Button ID="Button2" runat="server" Text="Volver" />    
+<asp:Button ID="backtoindexoperario" runat="server" Text="Volver"  PostBackUrl="~/servicios_operarios_general.aspx"   />    
     </form>
 </asp:Content>
 

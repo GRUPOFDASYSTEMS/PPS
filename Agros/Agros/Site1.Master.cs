@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace Agros
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class Site11 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
