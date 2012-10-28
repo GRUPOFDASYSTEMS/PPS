@@ -11,11 +11,42 @@
                 &nbsp;
                 <asp:Menu ID="Menu1" runat="server">
                     <Items>
-                        <asp:MenuItem Text="Productos" Value="Productos"></asp:MenuItem>
-                        <asp:MenuItem Text="Servicios" Value="Servicios"></asp:MenuItem>
-                        <asp:MenuItem Text="Facturacion" Value="Facturacion"></asp:MenuItem>
-                        <asp:MenuItem Text="Clientes" Value="Clientes"></asp:MenuItem>
-                        <asp:MenuItem Text="Personal Empresa" Value="Personal Empresa"></asp:MenuItem>
+                        <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
+                            Value="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`"></asp:MenuItem>
+                        <asp:MenuItem Text="&lt; Modulo De Productos &gt;" Value="Productos" 
+                            ImageUrl="~/images/img11.gif">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>
+
+<asp:MenuItem Text="&lt; Modulo De Stock &gt; " Value="Modulo De Stock" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            
+                            <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>
+
+                        <asp:MenuItem Text="&lt; Modulo De Servicios &gt;" Value="Servicios" 
+                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            
+                            <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>
+                            
+                        <asp:MenuItem Text="&lt; Modulo De Personal Empresa &gt;" 
+                            Value="Personal Empresa" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            
+                 <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>           
+                        <asp:MenuItem Text="&lt; Modulo De Clientes &gt;" Value="Clientes" 
+                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            
+                          <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>
+                              
+                        <asp:MenuItem Text="&lt; Modulo De Facturacion &gt;" Value="Facturacion" 
+                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                        
+                        <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
+                            Value="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`"></asp:MenuItem>                            
+                            
                     </Items>
                 </asp:Menu> 
             </td>
