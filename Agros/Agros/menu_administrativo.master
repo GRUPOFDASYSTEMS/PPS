@@ -14,35 +14,37 @@
                         <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
                             Value="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`"></asp:MenuItem>
                         <asp:MenuItem Text="&lt; Modulo De Productos &gt;" Value="Productos" 
-                            ImageUrl="~/images/img11.gif">
+                            ImageUrl="~/images/img11.gif" NavigateUrl="~/abmproductos.aspx">
                             </asp:MenuItem>
                             <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>
 
-<asp:MenuItem Text="&lt; Modulo De Stock &gt; " Value="Modulo De Stock" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+<asp:MenuItem Text="&lt; Modulo De Stock &gt; " Value="Modulo De Stock" ImageUrl="~/images/img11.gif" 
+                            NavigateUrl="~/Stock_listados.aspx"></asp:MenuItem>
                             
                             <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>
 
                         <asp:MenuItem Text="&lt; Modulo De Servicios &gt;" Value="Servicios" 
-                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            ImageUrl="~/images/img11.gif" NavigateUrl="~/abmservicios.aspx"></asp:MenuItem>
                             
                             <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>
                             
                         <asp:MenuItem Text="&lt; Modulo De Personal Empresa &gt;" 
-                            Value="Personal Empresa" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            Value="Personal Empresa" ImageUrl="~/images/img11.gif" 
+                            NavigateUrl="~/abmrestriccion_licencias.aspx"></asp:MenuItem>
                             
                  <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>           
                         <asp:MenuItem Text="&lt; Modulo De Clientes &gt;" Value="Clientes" 
-                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            ImageUrl="~/images/img11.gif" NavigateUrl="~/listar_clientes.aspx"></asp:MenuItem>
                             
                           <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>
                               
                         <asp:MenuItem Text="&lt; Modulo De Facturacion &gt;" Value="Facturacion" 
-                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            ImageUrl="~/images/img11.gif" NavigateUrl="~/facturacion.aspx"></asp:MenuItem>
                         
                         <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
                             Value="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`"></asp:MenuItem>                            

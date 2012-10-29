@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_listado_detalle.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmservicios_listado_detalle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_listado_detalle.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmservicios_listado_detalle" %>
 
 
 
@@ -7,7 +7,7 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Composicion Servicio - Detalle de servicios </a></h2>
 
           <p class="meta">
@@ -78,5 +78,5 @@
     
             <input id="back" type="button" value="Volver Atras" onclick="history.back();"/>
 
-    </form>
+    
 </asp:Content>

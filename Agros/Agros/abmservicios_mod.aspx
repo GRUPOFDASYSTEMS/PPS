@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_mod.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmservicios_mod" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_mod.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmservicios_mod" %>
 
 
 
@@ -12,7 +12,7 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Modificacion de servicios </a></h2>
 
 
@@ -57,5 +57,5 @@
     <asp:Button ID="Button3" runat="server" Text="Cancelar"  PostBackUrl="~/abmservicios.aspx" />
 
 
-    </form>
+    
 </asp:Content>

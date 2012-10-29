@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registro_usuarios.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.registro_usuarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registro_usuarios.aspx.cs" MasterPageFile="~/menu_administrador.master" Inherits="Agros.registro_usuarios" %>
 
 
 
@@ -6,7 +6,7 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Registro De Usuarios:</a></h2>
 
 
@@ -69,6 +69,6 @@
           </td>
          </tr>
          </table>   
-<asp:Button ID="Button2" runat="server" Text="Cancelar" />    
-    </form>
+
+
 </asp:Content>

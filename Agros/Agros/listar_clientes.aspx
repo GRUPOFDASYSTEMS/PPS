@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="listar_clientes.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.listar_clientes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="listar_clientes.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.listar_clientes" %>
 
 
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Listar Clientes:</a></h2>
 
 
@@ -111,6 +111,6 @@
 <asp:Button ID="btnMostrar" runat="server" Text="mostrar" />  
          
 <asp:Button ID="Button2" runat="server" Text="Volver" />    
-    </form>
+
 </asp:Content>
 

@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="configurar_cliente.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.configurar_cliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="configurar_cliente.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.configurar_cliente" %>
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     
-    <form id="form1" runat="server">
+    
     
     <h2 class="title"><a href="#">Configurar Cliente</a></h2>
 
@@ -35,6 +35,6 @@
           </td>
          </tr>
          </table>   
-    </form>
+    
     
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_ver_productos_necesarios.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmservicios_ver_productos_necesarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_ver_productos_necesarios.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmservicios_ver_productos_necesarios" %>
 
 
 
@@ -8,7 +8,7 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#" />Listado de productos necesarios para el servicio especifico 
     <asp:Label ID="labelProductoEspecifico" runat="server" Text="Ejemplo"></asp:Label>  </h2> 
 
@@ -90,6 +90,6 @@
 <input id="back" type="button" value="Volver Atras" onclick="history.back();"/>
 <asp:Button ID="toaddnewp" runat="server" Text="Agregar Nuevo Producto Necesario A Este Servicio"  PostBackUrl="~/abmservicios_agregar_producto_necesario.aspx" />
 
-    </form>
+
 </asp:Content>
 

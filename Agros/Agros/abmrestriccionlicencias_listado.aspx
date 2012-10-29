@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmrestriccionlicencias_listado.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmrestriccionlicencias_listado" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmrestriccionlicencias_listado.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmrestriccionlicencias_listado" %>
 
 
 
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+
     <h2 class="title"><a href="#">Listado de licencias de personal </a></h2>
 
 
@@ -94,5 +94,5 @@
     <asp:Button ID="Button3" runat="server" Text="Volver" PostBackUrl="~/abmrestriccion_licencias.aspx" />
 
 
-    </form>
+    
 </asp:Content>

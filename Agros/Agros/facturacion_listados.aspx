@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_listados.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.facturacion_listados" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_listados.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.facturacion_listados" %>
 
 
 
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Facturaci&oacute;n - Listados</a></h2>
 
 
@@ -98,5 +98,5 @@
     <asp:Button ID="backtoindexcliente" runat="server" Text="Volver Al Indice Clientes"  PostBackUrl="~/indice_cliente.aspx" />
     <asp:Button ID="backtoindexusuario" runat="server" Text="Volver Al Indice Usuarios"  PostBackUrl="~/indice_administrativo.aspx" />
     
-    </form>
+
 </asp:Content>

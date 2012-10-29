@@ -80,7 +80,9 @@
 
 
     
-    <asp:Button ID="back" runat="server" Text="Cancelar" onclick="history.back()"   />
-
+    <%--<asp:Button < input type=button  ID="back" runat="server"     Text="Cancelar" onclick="history.back()"   />   --%>
+    
+    <input id="Button3" type="button" value="Cancelar" onclick="history.back()" />
     </form>
+    
 </asp:Content>

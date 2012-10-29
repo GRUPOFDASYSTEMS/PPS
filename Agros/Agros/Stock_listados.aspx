@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Stock_listados.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.Stock_listados" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Stock_listados.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.Stock_listados" %>
 
 
 
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Listado y consulta de stock:</a></h2>
 
 
@@ -119,6 +119,6 @@
          </table>   
          
 <asp:Button ID="backtoindiceadministrativo" runat="server" Text="Volver" PostBackUrl="~/indice_administrativo.aspx" />    
-    </form>
+
 </asp:Content>
 

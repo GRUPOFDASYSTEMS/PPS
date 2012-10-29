@@ -1,8 +1,57 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="menu_administrador.master.cs" Inherits="Agros.menu_administrador" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Estructura.Master" AutoEventWireup="true" CodeBehind="menu_administrador.master.cs" Inherits="Agros.menu_administrador" %>
 
 
 <asp:Content ID="ContentG" runat="server" ContentPlaceHolderID="General">
 
+<form id="form1" runat="server">
 
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                &nbsp;
+                <asp:Menu ID="Menu1" runat="server">
+                    <Items>
+                        <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
+                            Value="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`"></asp:MenuItem>
+                        <asp:MenuItem Text="&lt; Modulo De Usuarios &gt;" Value="Productos" 
+                            ImageUrl="~/images/img11.gif">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>
+
+<asp:MenuItem Text="&lt; Modulos Administrativos &gt; " Value="Modulo De Stock" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            
+                            <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>
+
+                        <asp:MenuItem Text="&lt; Modulos De Clientes &gt;" Value="Servicios" 
+                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            
+                            <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
+                            </asp:MenuItem>
+                            
+                        <asp:MenuItem Text="&lt; Modulos De Personal Empresa &gt;" 
+                            Value="Personal Empresa" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            
+                        
+                        <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
+                            Value="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`"></asp:MenuItem>                            
+                            
+                    </Items>
+                </asp:Menu> 
+            </td>
+            <td>
+                &nbsp;	
+	                
+	                <asp:ContentPlaceHolder ID="Editable" runat="server">                	    
+	                </asp:ContentPlaceHolder>
+                    
+    
+
+            </td>
+        </tr>
+    </table>
+	
+	</form>
 
 </asp:Content>   

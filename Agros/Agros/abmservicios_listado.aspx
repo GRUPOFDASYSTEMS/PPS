@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_listado.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmservicios_listado" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_listado.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmservicios_listado" %>
 
 
 
@@ -12,7 +12,7 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Listado De Servicios </a></h2>
 
 
@@ -82,5 +82,5 @@
     
 
 
-    </form>
+    
 </asp:Content>

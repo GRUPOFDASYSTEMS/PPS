@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_detalle_facturas.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.facturacion_detalle_facturas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_detalle_facturas.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.facturacion_detalle_facturas" %>
 
 
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Detalle de factura</a></h2>
 
 
@@ -128,5 +128,5 @@
 
     <asp:Button ID="Button1" runat="server" Text="Volver" PostBackUrl="~/facturacion_listados.aspx" />
 
-    </form>
+
 </asp:Content>

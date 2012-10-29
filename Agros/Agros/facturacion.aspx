@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.facturacion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.facturacion" %>
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Facturaci&oacute;n - Listados</a></h2>
 
 
@@ -114,5 +114,5 @@
 
 
 
-    </form>
+
 </asp:Content>

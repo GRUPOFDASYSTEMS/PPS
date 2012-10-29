@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmproductos_listados.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmproductos_listados" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmproductos_listados.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmproductos_listados" %>
 
 
 
@@ -7,7 +7,7 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#" />Listado de productos:</h2> 
 
 
@@ -85,6 +85,6 @@
          </table>   
          
 <asp:Button ID="backtoabmproductos" runat="server" Text="Volver"  PostBackUrl="~/abmproductos.aspx" />   
-    </form>
+
 </asp:Content>
 

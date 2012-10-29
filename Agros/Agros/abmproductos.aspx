@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmproductos.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmproductos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmproductos.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmproductos" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Productos (ABM)</a></h2>
 
 
@@ -37,5 +37,5 @@
          </tr>
          </table>   
 
-    </form>
+
 </asp:Content>

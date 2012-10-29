@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="listar_usuarios.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.listar_usuarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="listar_usuarios.aspx.cs" MasterPageFile="~/menu_administrador.master" Inherits="Agros.listar_usuarios" %>
 
 
 
@@ -8,7 +8,7 @@
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
-    <form id="form1" runat="server">
+    
     <h2 class="title"><a href="#">Listado De Usuarios:</a></h2>
 
 
@@ -128,5 +128,5 @@
          
          </table>   
 <asp:Button ID="backtoabmusuarios" runat="server" Text="Volver" PostBackUrl="~/abmusuarios.aspx" />    
-    </form>
+
 </asp:Content>
