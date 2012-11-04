@@ -74,9 +74,10 @@ namespace Agros
 
             linkeo enlace = new linkeo();
 
-            linkeo.Conectar();
+            
 //            enlace.Seleccionar("id_estado, descripcion", "estados", "id_estado");
             enlace.Seleccion_simple("select id_estado, descripcion from estados");
+
             //while (enlace.BindingSource.read())
             //{
 

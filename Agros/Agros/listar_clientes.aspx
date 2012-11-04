@@ -24,8 +24,7 @@
         </table>
         
 
-    (ejemplo)
-        <table>
+                        (ejemplo)         <table>
          <tr>
           <td>
             
@@ -105,7 +104,7 @@
     </asp:GridView>        
           
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-        SelectMethod="Seleccion_estados" TypeName="Agros.linkeo">
+        SelectMethod="Seleccion_estados_ms" TypeName="Agros.linkeo">
     </asp:ObjectDataSource>
 
 <asp:Button ID="btnMostrar" runat="server" Text="mostrar" />  
