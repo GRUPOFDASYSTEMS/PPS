@@ -17,36 +17,53 @@ namespace Agros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargardd();
+         
         }
 
-        public void cargardd()
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            /*
-             * 
-             * * 
-             * 
-             * 
-             * 
-             * 
-             * 
-            SqlCommand OrdenSqlSelect = new SqlCommand("SELECT * FROM Zonas", ConexionBd);
-            SqlDataAdapter da = new SqlDataAdapter(OrdenSqlSelect.CommandText, ConexionBd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            this.ddZona.DataSource = ds;
-            this.ddZona.DataSource = ds;
-            this.ddZona.DataValueField = "CodZona";
-            this.ddZona.DataTextField = "Zona";
-            this.ddZona.DataBind();
-             */
+            linkeo linker = new linkeo();
+            ArrayList campos = new ArrayList();
+            ArrayList datos = new ArrayList();
+            string resultado;
 
-            this.DropDownList1.Items.Insert(0, new ListItem("Monotributo", "1"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Responsable Inscripto", "2"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Responsable No Inscripto", "3"));
-            this.DropDownList1.Items.Insert(0, new ListItem("Exento", "4"));
+            //especifico campos
+            campos.Add("cuit, ");
+            campos.Add("password, ");
+            campos.Add("razon_social, ");
+            campos.Add("direccion, ");
+            campos.Add("condicion_iva, ");
+            campos.Add("email, ");
+            campos.Add("id_estado, ");
+            campos.Add("operario_favorito");
+
+            //recolecto datos 
+            
+            datos.Add(this.TextBox1.Text);//cuit int
+            datos.Add(" , ");
+            datos.Add(this.TextBox2.Text);//cla  int
+            datos.Add(" , ");
+            datos.Add(" ' ");
+            datos.Add(this.TextBox3.Text);//raz varchar
+            datos.Add(" ' ");
+            datos.Add(" , ");
+            datos.Add(" ' ");
+            datos.Add(this.TextBox4.Text);//dir varchar
+            datos.Add(" ' ");
+            datos.Add(" , ");
+            datos.Add(this.DropDownList1.SelectedIndex);//cf int
+            datos.Add(" , ");
+            datos.Add(" ' ");
+            datos.Add(this.TextBox5.Text);//email varchar
+            datos.Add(" ' ");
+            datos.Add(" , ");
+            datos.Add("1");
+            datos.Add(" , ");
+            datos.Add("1");
 
 
+            resultado =linker.insercion_de_dataset("cliente", campos, datos);
+            Label1.Text = resultado;
         }
 
 

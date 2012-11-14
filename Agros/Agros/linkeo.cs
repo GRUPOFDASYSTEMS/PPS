@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.Configuration;
 using System.Linq;
@@ -17,6 +18,9 @@ using System.Windows.Forms;
 
 
 using System.Data.SqlClient;
+
+
+
 
 namespace Agros
 {
@@ -130,12 +134,9 @@ namespace Agros
     public class linkeo //link_mssql
     {
 
-      String sqlServerLogin = "user_id";
-      String password = "pwd";
-      String instanceName = "instance_name";
-      String remoteSvrName = "remote_server_name";
-      SqlConnection conexion = new SqlConnection("Data Source=.\\localhost;Database=Agros;Integrated Security=SSPI");
-
+      static SqlConnection conexion = new SqlConnection("Data Source=ALEX\\FDA;MultipleActiveResultSets=True;Initial Catalog=master;Integrated Security=True");
+        //Data Source=ALEX\FDA;Initial Catalog=master;Integrated Security=True
+        //Data Source=\\ALEX\\FDA;Database=master;Integrated Security=SSPI
 
       //public static void conectar_ms()
       //{
@@ -158,26 +159,28 @@ namespace Agros
 
 
 
-
-        public DataSet Seleccion_estados_ms()
+      //select c.id_cliente as id, c.razon_social as 'Razon Social', c.direccion as 'Direccion', c.cuit as 'Cuit', c.confianza as 'Confianza', u.nombre as 'Operario Favorito', i.descripcion as 'Condicion Fiscal', email as 'E-Mail' from cliente c, usuario u, condicion_iva i  where c.operario_favorito=u.id_usuario and c.condicion_iva=i.id_condicion
+        public DataSet Seleccion_en_dataset (string consulta)
         {
 
             //aca podria agregar para que se conecte automaticamente
             //this.Conectar();
-
-            
-            SqlCommand Comando = new SqlCommand (" select * from estados  ", conexion);
-            conexion.Open();
-            SqlDataReader select = Comando.ExecuteReader();
-            SqlDataAdapter Adaptador = new SqlDataAdapter(Comando);
-            SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
-            
-
-            //Adaptador = new MySqlDataAdapter(Comando, CadenaDeConexion);
-            //MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(Adaptador);
+            //SqlConnection conexion = new SqlConnection("Data Source=ALEX\\FDA;MultipleActiveResultSets=True;Initial Catalog=master;Integrated Security=True");
             DataSet table = new DataSet();
-            Adaptador.Fill(table);
+            SqlCommand Comando = new SqlCommand (consulta, conexion);
+            conexion.Open();
 
+            //using (SqlDataReader select = Comando.ExecuteReader())
+            //{
+                SqlDataAdapter Adaptador = new SqlDataAdapter(Comando);
+                SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
+
+
+                //Adaptador = new MySqlDataAdapter(Comando, CadenaDeConexion);
+                //MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(Adaptador);
+                
+                Adaptador.Fill(table);
+            //}
             conexion.Close();
             return table;
             
@@ -185,55 +188,182 @@ namespace Agros
 
 
 
-
-
-        public DataSet Seleccion_estados_ms_puro()
+        public DataSet Seleccion_por_id_estado(string id)
         {
 
             //aca podria agregar para que se conecte automaticamente
-            //this.Conectar();
+            string consulta;
+            //SqlConnection conexion = new SqlConnection("Data Source=ALEX\\FDA;MultipleActiveResultSets=True;Initial Catalog=master;Integrated Security=True");
+            DataSet table = new DataSet();
+            consulta = "select c.id_cliente as id, c.razon_social as 'Razon Social', c.direccion as 'Direccion', c.cuit as 'Cuit', c.confianza as 'Confianza', u.nombre as 'Operario Favorito', i.descripcion as 'Condicion Fiscal', email as 'E-Mail' from cliente c, usuario u, condicion_iva i  where c.operario_favorito=u.id_usuario and c.condicion_iva=i.id_condicion and c.id_estado=" + id;
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+            conexion.Open();
 
-
-            //SqlCommand Comando = new SqlCommand(" select * from estados  ");
-            string Comando = " select id_estado, descripcion from estados  ";
-
-            SqlDataAdapter Adaptador = new SqlDataAdapter(Comando, conexion);
+            //using (SqlDataReader select = Comando.ExecuteReader())
+            //{
+            SqlDataAdapter Adaptador = new SqlDataAdapter(Comando);
             SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
 
 
-            DataSet table = new DataSet();
+            //Adaptador = new MySqlDataAdapter(Comando, CadenaDeConexion);
+            //MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(Adaptador);
+
             Adaptador.Fill(table);
+            //}
+            conexion.Close();
+            return table;
+
+        }
+
+        public static string PrintValues(IEnumerable myList)
+        {
+            string res="";
+            foreach (Object obj in myList)
+                //  Console.Write("   {0}", obj);
+                //Console.WriteLine();
+                res = res +  obj;
+            
+            
+            return res;
+
+        }
+
+
+        public DataSet Seleccion_por_id_y_consulta(string consulta, string id)
+        {
+
+            //aca podria agregar para que se conecte automaticamente
+            
+            //SqlConnection conexion = new SqlConnection("Data Source=ALEX\\FDA;MultipleActiveResultSets=True;Initial Catalog=master;Integrated Security=True");
+            DataSet table = new DataSet();
+            consulta = consulta + id;
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+            conexion.Open();
+
+            SqlDataAdapter Adaptador = new SqlDataAdapter(Comando);
+            SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
+
+            Adaptador.Fill(table);
+
+            conexion.Close();
+            return table;
+
+        }
+
+
+
+        public string insercion_de_dataset(string tabla, ArrayList campos, ArrayList valores)
+        {
+
+            string insercion;
+            DataSet table = new DataSet();
+            SqlCommand Comando = conexion.CreateCommand();
 
             
-            return table;
 
+            //Comando.CommandText = "INSERT  INTO Employees (FirstName, LastName) VALUES (@FirstName, @LastName)";
+            insercion = "INSERT  INTO " + tabla + " (" + PrintValues(campos) + ") VALUES (" + PrintValues(valores) + ")";
+            //Create Command object
+
+            //SqlCommand nonqueryCommand = thisConnection.CreateCommand();
+
+
+            
+
+            try
+            {
+
+              
+                conexion.Open();
+                
+                // Create INSERT statement with named parameters          
+                
+                Comando.CommandText = insercion;
+                
+                // Add Parameters to Command Parameters collection
+                //nonqueryCommand.Parameters.Add("@FirstName", SqlDbType.VarChar, 10);
+                //nonqueryCommand.Parameters.Add("@LastName", SqlDbType.VarChar, 20);
+                //nonqueryCommand.Parameters["@FirstName"].Value = txtFirstName.Text;
+                //nonqueryCommand.Parameters["@LastName"].Value = txtLastName.Text;
+
+                Comando.ExecuteNonQuery();
+
+            }
+
+
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error= insercion;
+                error = error + ex.ToString();
+                return  error;
+
+                
+
+            }
+
+
+
+            finally
+            {
+
+                // Close Connection
+
+                conexion.Close();
+
+
+
+            }
+
+            //return "proceso exitoso";
+            return insercion;
         }
 
+    //public DataSet Seleccion_estados_ms_puro()
+    //{
+
+    //    //SqlCommand Comando = new SqlCommand(" select * from estados  ");
+    //    string Comando = " select id_estado, descripcion from estados  ";
+
+    //    SqlDataAdapter Adaptador = new SqlDataAdapter(Comando, conexion);
+    //    SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
+
+
+    //    DataSet table = new DataSet();
+    //    Adaptador.Fill(table);
+
+        
+    //    return table;
+
+    //}
 
 
 
 
-        public DataSet Seleccion_simple(string c)
-        {
 
-            //aca podria agregar para que se conecte automaticamente
-            //this.Conectar();
+        //public DataSet Seleccion_simple(string c)
+        //{
 
-
-            //SqlCommand Comando = new SqlCommand(" select * from estados  ");
-            string Comando = c;
-
-            SqlDataAdapter Adaptador = new SqlDataAdapter(Comando, conexion);
-            SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
+        //    //aca podria agregar para que se conecte automaticamente
+        //    //this.Conectar();
 
 
-            DataSet table = new DataSet();
-            Adaptador.Fill(table);
+        //    //SqlCommand Comando = new SqlCommand(" select * from estados  ");
+        //    string Comando = c;
+
+        //    SqlDataAdapter Adaptador = new SqlDataAdapter(Comando, conexion);
+        //    SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
 
 
-            return table;
+        //    DataSet table = new DataSet();
+        //    Adaptador.Fill(table);
 
-        }
+
+        //    return table;
+
+        //}
 
 
 

@@ -16,7 +16,10 @@
 	      </td>
 	      <td>  
               <asp:DropDownList ID="DropDownList1" runat="server" 
-                  DataSourceID="ObjectDataSource1">
+                  DataSourceID="ObjectDataSource1" DataTextField="descripcion" 
+                  DataValueField="id_estado" 
+                  onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
+                  AutoPostBack="True">
               </asp:DropDownList>
           </td>
         </tr>  
@@ -24,87 +27,35 @@
         </table>
         
 
-                        (ejemplo)         <table>
-         <tr>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Razón Social</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Cuit</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Estado</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Confianza</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Favorito</p>
-          </td>
-          <td>
-              Set
-          </td>
-         </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-         <tr>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Agromendoza SRL</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; 307891234568</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Activo</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; 150000</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Gabriel Bielsa</p>
-          </td>
-          <td>
-              <asp:Button ID="Button1" runat="server" Text="Configurar" PostBackUrl="~/configurar_cliente.aspx" />       
-          </td>
-         </tr>
-         </table>  
+              <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    
          
-    <asp:GridView ID="dgvDatos" runat="server" DataSourceID="ObjectDataSource1" >
+    <asp:GridView ID="dgvDatos" runat="server" DataSourceID="ObjectDataSource2" 
+        AllowPaging="True" AllowSorting="True" >
+        <Columns>
+            <asp:HyperLinkField HeaderImageUrl="~/images/img10.gif" HeaderText="Configurar" 
+                NavigateUrl="~/configurar_cliente.aspx" Text="~" />
+        </Columns>
     
     </asp:GridView>        
           
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-        SelectMethod="Seleccion_estados_ms" TypeName="Agros.linkeo">
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from estados" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+<%-- DefaultValue="select c.id_cliente as id, c.razon_social as 'Razon Social', c.direccion as 'Direccion', c.cuit as 'Cuit', c.confianza as 'Confianza', u.nombre as 'Operario Favorito', i.descripcion as 'Condicion Fiscal', email as 'E-Mail' from cliente c, usuario u, condicion_iva i  where c.operario_favorito=u.id_usuario and c.condicion_iva=i.id_condicion" --%>
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+    SelectMethod="Seleccion_por_id_y_consulta" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select c.id_cliente as id, c.razon_social as 'Razon Social', c.direccion as 'Direccion', c.cuit as 'Cuit', c.confianza as 'Confianza', u.nombre as 'Operario Favorito', i.descripcion as 'Condicion Fiscal', email as 'E-Mail' from cliente c, usuario u, condicion_iva i  where c.operario_favorito=u.id_usuario and c.condicion_iva=i.id_condicion and c.id_estado=" 
+                Name="consulta" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList1" 
+                
+                Name="id" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
     </asp:ObjectDataSource>
 
 <asp:Button ID="btnMostrar" runat="server" Text="mostrar" />  
