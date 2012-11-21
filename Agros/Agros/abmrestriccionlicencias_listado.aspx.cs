@@ -19,5 +19,17 @@ namespace Agros
         {
 
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            puente puente = new puente();
+
+            string id = this.dgvDatos.Rows[this.dgvDatos.SelectedIndex].Cells[3].Text;
+            //this.Label1.Text = id;
+            puente.elimina(id, "restriccion_disponibilidad_usuario");
+            Response.Redirect("abmrestriccionlicencias_listado.aspx");        
+
+
+        }
     }
 }

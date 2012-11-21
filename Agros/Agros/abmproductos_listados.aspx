@@ -13,77 +13,27 @@
 
         
 
-(ejemplo)
-        <table>
-         <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Producto</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Unidad Medida</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Raci&oacute;n Unidad De Medida</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Comentario Adicional</p>
-          </td>
-
-          <td>
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Edicion</p>
-          </td>
+     
+    <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource1" 
+        onselectedindexchanged="GridView1_SelectedIndexChanged">
+        <Columns>
+            <asp:CommandField SelectText="X" ShowSelectButton="True" />
+        </Columns>
+    </asp:GridView>
+    
 
 
-         </tr>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from productos" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 
 
-
-
-
-
-
-
-
-
-         <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Acido Sulfurico</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Litros</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; 4</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Evitar mojar los recipientes (Balde de 5 lts)</p>
-          </td>
-          <td>
-              <asp:Button ID="Button1" runat="server" Text=".." PostBackUrl="~/abmproductos_mod.aspx"/>
-          </td>
-          
-          
-         </tr>
-         </table>   
-         
 <asp:Button ID="backtoabmproductos" runat="server" Text="Volver"  PostBackUrl="~/abmproductos.aspx" />   
 
 </asp:Content>

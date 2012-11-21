@@ -9,74 +9,30 @@
     <h2 class="title"><a href="#">Listado de licencias de personal </a></h2>
 
 
+    <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource1" 
+        onselectedindexchanged="GridView1_SelectedIndexChanged">
+        <Columns>
+            <asp:CommandField SelectText="X" ShowSelectButton="True" />
+        </Columns>
+    </asp:GridView>
+    
+
+
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from restriccion_diponibilidad_usuario" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
+
+<%--
+
         <table>
          <tr>
-          <td>
-              <p class="meta">
-              Fecha:
-                 </p>
-	      </td>
-	      <td>
-            
-              <p class="meta">
-              Usuario:
-                </p>
-          </td>
-          <td>
-              <p class="meta">
-              Tiempo (en horas):
-                </p>
-          </td>
-         <td>
-              <p class="meta">
-              Descripcion:
-                </p>
-         
-         
-         </td>
-     
-     
-     
-        <td>
-        Modificar
-        
-        </td>     
-     
-        <td>
-        Eliminar
-        
-        </td>     
-     
-     
-        </tr>
-        
-        <tr>
-          <td>
-              <p class="meta">
-              08/10/2012
-                 </p>
-	      </td>
-	      <td>
-            
-              <p class="meta">
-              Favio Andrada
-                </p>
-          </td>
-          <td>
-              <p class="meta">
-              24
-                </p>
-          </td>
-         <td>
-              <p class="meta">
-              Feriado Nacional
-                </p>
-         
-         
-         </td>
-     
-             
-     
+
          <td>
             <asp:Button ID="Button1" runat="server" Text=".." PostBackUrl="~/abmrestriccion_licencias_mod.aspx"/>     
          </td>
@@ -90,7 +46,7 @@
          
          </table>   
 
-
+--%>
     <asp:Button ID="Button3" runat="server" Text="Volver" PostBackUrl="~/abmrestriccion_licencias.aspx" />
 
 

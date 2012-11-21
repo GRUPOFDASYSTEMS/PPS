@@ -12,70 +12,22 @@
     <h2 class="title"><a href="#">Listado De Usuarios:</a></h2>
 
 
-        <table>
-         <tr>
-          <td>
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Nombre Completo:</p>
-	      </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Perfil:</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Estado:</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Clave:</p>
-          </td>
-          <td> 
-              Editar:   
-          </td>
-          
-          <td> 
-              Eliminar:   
-          </td>
-          
-          
-          
-         </tr>         
-         
+    <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource1">
+        <Columns>
+            <asp:CommandField SelectText="X" ShowSelectButton="True" />
+        </Columns>
+    </asp:GridView>
+    
 
-         <tr>
-          <td>
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Favio Andrada</p>
-	      </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Administrador</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Activo</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; **#%?la_54</p>
-          </td>
-          <td> 
-              <asp:Button ID="Button3" runat="server" Text=".." PostBackUrl="~/registro_usuarios.aspx" />              
-          </td>
-          
-          
-          <td> 
-              <asp:Button ID="Button4" runat="server" Text="X" />              
-          </td>
-          
-         </tr>         
+
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from usuario" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 
 
@@ -91,42 +43,9 @@
 
 
 
-         <tr>
-          <td>
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Gabriel Bielsa</p>
-	      </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Administrativo</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Activo</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; 123456</p>
-          </td>
-          <td> 
-              <asp:Button ID="Button1" runat="server" Text=".." PostBackUrl="~/registro_usuarios.aspx"/>              
-          </td>
-          
-          <td> 
-              <asp:Button ID="Button5" runat="server" Text="X" />              
-          </td>
-          
-          
-         </tr>         
-         
 
-         
-         
-         
-         </table>   
+
+
 <asp:Button ID="backtoabmusuarios" runat="server" Text="Volver" PostBackUrl="~/abmusuarios.aspx" />    
 
 </asp:Content>

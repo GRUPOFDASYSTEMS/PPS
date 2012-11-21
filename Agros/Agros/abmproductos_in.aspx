@@ -10,7 +10,7 @@
          <tr>
           <td>
               <p class="meta">
-              Descripcion:
+                  Descripcion:
                  </p>
 	      </td>
 	      <td>  
@@ -22,18 +22,20 @@
           <td>
             
               <p class="meta">
-              Unidad Medida:
+                  Unidad Medida:
                 </p>
           </td>
           <td> 
-              <asp:DropDownList ID="DropDownList2" runat="server">
+              <asp:DropDownList ID="DropDownList1" runat="server" 
+                  DataSourceID="ObjectDataSource1" DataTextField="descripcion" 
+                  DataValueField="id" >
               </asp:DropDownList>
           </td>
          </tr>
          <tr> 
           <td>
               <p class="meta">
-              Racion Unidad Medida:
+                  Racion Unidad Medida:
                 </p>
           </td>
           <td>
@@ -47,7 +49,7 @@
          <tr>
          <td>
               <p class="meta">
-              Stock inicial:
+                  Stock inicial:
                 </p>
          
          
@@ -61,7 +63,7 @@
          <tr>
          <td>
               <p class="meta">
-              Indice reposicion:
+                  Indice reposicion:
                 </p>
          
          
@@ -75,7 +77,7 @@
          <tr>
          <td>
               <p class="meta">
-              Comentarios:
+                  Comentarios:
                 </p>
          
          
@@ -94,9 +96,19 @@
          <td>
               
          </td>
-             <input id="Reset1" type="reset" value="Limpiar" /> 
+             
          <td>
-         <asp:Button ID="Button1" runat="server" Text="Agregar" />
+         <asp:Button ID="Button1" runat="server" Text="Agregar" onclick="Button1_Click" />
+         <input id="Reset1" type="reset" value="Limpiar" /> 
+             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                 SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+                 <SelectParameters>
+                     <asp:Parameter DefaultValue="select * from unidad_medida" Name="consulta" 
+                         Type="String" />
+                 </SelectParameters>
+             </asp:ObjectDataSource>
+            l1 <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            l2 <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
          </td>
          
          </tr>

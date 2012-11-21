@@ -9,82 +9,26 @@
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     
-    <h2 class="title"><a href="#" />Listado de productos necesarios para el servicio especifico 
+    <h2 class="title"><a href="#" />Listado de productos necesarios para el servicio 
+        especifico 
     <asp:Label ID="labelProductoEspecifico" runat="server" Text="Ejemplo"></asp:Label>  </h2> 
 
-
-        
-
-(ejemplo)
-        <table>
-         <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Producto</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Cantidad De Unidades Necesarias</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Raci&oacute;n Unidad De Medida</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Unidad De Medida</p>
-          </td>
-
-          <td>
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Comentario Adicional</p>
-          </td>
-
-
-         </tr>
+    <asp:GridView ID="dgvDatos" runat="server" DataSourceID="ObjectDataSource1" 
+        onselectedindexchanged="dgvdatos_SelectedIndexChanged">
+        <Columns>
+            <asp:CommandField SelectText="X" ShowSelectButton="True" />
+        </Columns>
+    </asp:GridView>
 
 
 
-
-
-
-
-
-
-
-
-         <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Acido Sulfurico</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; 2</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; 5</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Litros</p>
-          </td>
-          <td>
-              Evitar mojar los recipientes (Balde de 5 lts)
-          </td>
-          
-          
-         </tr>
-         </table>   
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from producto_necesario" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>      
          
 <asp:Button ID="backtoabmservicios" runat="server" Text="Volver A Servicios"  PostBackUrl="~/abmservicios.aspx" />
 <input id="back" type="button" value="Volver Atras" onclick="history.back();"/>

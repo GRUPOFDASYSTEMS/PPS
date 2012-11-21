@@ -363,6 +363,7 @@
       <DependentUpon>modulo_servicios_listado_detalle_orden.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="puente.cs" />
     <Compile Include="registro_clientes.aspx.cs">
       <DependentUpon>registro_clientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

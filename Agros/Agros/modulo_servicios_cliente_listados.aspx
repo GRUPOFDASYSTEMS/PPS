@@ -17,19 +17,66 @@
               &nbsp;&nbsp;&nbsp;  Filtrar Ordenes:</p>
 	      </td>
 	      <td>  
-              <asp:DropDownList ID="DropDownList1" runat="server">
-              
-           
-                
+            <asp:DropDownList ID="DropDownList1" runat="server" 
+                  DataSourceID="ObjectDataSource1" DataTextField="descripcion" 
+                  DataValueField="id" 
+                  onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
+                  AutoPostBack="True">
               </asp:DropDownList>
               
-              
-              
-              
-              
+           
           </td>
         </tr>  
          </table>
+         
+         
+         
+    <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource2">
+    </asp:GridView>
+         
+         
+         
+
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from estados where tema='ordenes_servicio' " Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
+
+
+
+<%--doble parametro de entrada, para el select--%>
+
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+    SelectMethod="Seleccion_por_id_y_consulta" TypeName="Agros.linkeo" 
+        InsertMethod="insercion_de_dataset" 
+        onselecting="ObjectDataSource2_Selecting" 
+        UpdateMethod="actualizacion_de_dataset">
+        <UpdateParameters>
+            <asp:Parameter Name="tabla" Type="String" />
+            <asp:Parameter Name="id" Type="String" />
+            <asp:Parameter Name="campos_y_valores" Type="Object" />
+        </UpdateParameters>
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from orden_de_servicio where id_cliente=@param1 and id_estado=" 
+                Name="consulta" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList1" 
+                
+                Name="id" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+        <InsertParameters>
+            <asp:Parameter Name="tabla" Type="String" />
+            <asp:Parameter Name="campos" Type="Object" />
+            <asp:Parameter Name="valores" Type="Object" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
+
+         
+         
          
          (ejemplo)
          <table>   

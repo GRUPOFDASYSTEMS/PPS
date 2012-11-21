@@ -13,118 +13,38 @@
           <td>
               <p class="meta">
 
-              &nbsp;&nbsp;&nbsp; Numero factura</p>
+                  &nbsp;&nbsp;&nbsp; Numero factura</p>
 	      </td>
           <td>
-          001-0000106
+              001-0000106<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
           </td>  
 
           <td>
               <p class="meta">
 
-              &nbsp;&nbsp;&nbsp; Cliente</p>
+                  &nbsp;&nbsp;&nbsp; Cliente</p>
 	      </td>
           
           <td>
-          Agromendoza SRL
+              Agromendoza SRL<asp:Label ID="Label2" runat="server" Text=""></asp:Label>
           </td>
         </tr>  
 
     
          </table>   
 
-(ejemplo)
-   <table>   
-         <tr>
-          <td>
-            
-              <p class="meta">
-               Detalle Item&nbsp;&nbsp;&nbsp;</p>
-          </td>
-          
-           <td>
-            
-              <p class="meta">
-               Monto Unitario&nbsp;&nbsp;&nbsp;</p>
-          </td>         
-          
-           <td>
-            
-              <p class="meta">
-               Cantidad &nbsp;&nbsp;&nbsp;</p>
-          </td>
-          
-           <td>
-            
-              <p class="meta">
-               Total Item&nbsp;&nbsp;&nbsp;</p>
-          </td>         
-                    
-          
-         </tr>
-         
-         <tr>
-          <td>
-            
-              <p class="meta">
-               Desratizacion&nbsp;&nbsp;&nbsp;</p>
-          </td>
-          
-           <td>
-            
-              <p class="meta">
-               500&nbsp;&nbsp;&nbsp;</p>
-          </td>         
-          
-           <td>
-            
-              <p class="meta">
-               100 &nbsp;&nbsp;&nbsp;</p>
-          </td>
-          
-           <td>
-            
-              <p class="meta">
-               50000&nbsp;&nbsp;&nbsp;</p>
-          </td>         
-                 
-                 
-         <tr>
-          <td>
-            
-              <p class="meta">
-               Riego&nbsp;&nbsp;&nbsp;</p>
-          </td>
-          
-           <td>
-            
-              <p class="meta">
-               2000&nbsp;&nbsp;&nbsp;</p>
-          </td>         
-          
-           <td>
-            
-              <p class="meta">
-               10&nbsp;&nbsp;&nbsp;</p>
-          </td>
-          
-           <td>
-            
-              <p class="meta">
-               20000&nbsp;&nbsp;&nbsp;</p>
-          </td>         
-                    
-          
-         </tr>
-                    
-          
-         </tr>
-   
-         
-         
-         
+    <asp:GridView ID="dgvDatos" runat="server" DataSourceID="ObjectDataSource1">
+    </asp:GridView>
 
-         </table>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_por_id_y_consulta" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from detalle_de_facturas where 1=1 and id_factura=" 
+                Name="consulta" Type="String" />
+            <asp:SessionParameter DefaultValue="0" Name="id" SessionField="id_factura" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
     <asp:Button ID="Button1" runat="server" Text="Volver" PostBackUrl="~/facturacion_listados.aspx" />
 

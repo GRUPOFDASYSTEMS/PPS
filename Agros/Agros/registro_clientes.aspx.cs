@@ -37,8 +37,7 @@ namespace Agros
             campos.Add("id_estado, ");
             campos.Add("operario_favorito");
 
-            //recolecto datos 
-            
+            //recolecto datos             
             datos.Add(this.TextBox1.Text);//cuit int
             datos.Add(" , ");
             datos.Add(this.TextBox2.Text);//cla  int
@@ -51,7 +50,7 @@ namespace Agros
             datos.Add(this.TextBox4.Text);//dir varchar
             datos.Add(" ' ");
             datos.Add(" , ");
-            datos.Add(this.DropDownList1.SelectedIndex);//cf int
+            datos.Add(this.DropDownList1.SelectedValue);//cf int
             datos.Add(" , ");
             datos.Add(" ' ");
             datos.Add(this.TextBox5.Text);//email varchar

@@ -19,5 +19,16 @@ namespace Agros
         {
 
         }
+
+        protected void dgvdatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            puente puente = new puente();
+
+            string id = this.dgvDatos.Rows[this.dgvDatos.SelectedIndex].Cells[1].Text;
+            //this.Label1.Text = id;
+            puente.elimina(id, "producto_necesario");
+            Response.Redirect("abmservicios_ver_productos_necesarios.aspx");        
+
+        }
     }
 }

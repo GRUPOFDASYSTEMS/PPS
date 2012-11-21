@@ -12,60 +12,36 @@
 
           <p class="meta">
               Asociado al(los) servicio(s):
+                    
+        <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource1" 
+                  onselectedindexchanged="dgvDatos_SelectedIndexChanged">
+            <Columns>
+                <asp:CommandField SelectText="X" ShowSelectButton="True" />
+            </Columns>
+    </asp:GridView>
+    
+
+
                 </p>
                 
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     
-        <table>
-         <tr>
-          <td>
-              <p class="meta">
-              Descripcion:
-                 </p>
-	      </td>
-	      <td>
-              <p class="meta">
-              Tiempo (en horas hombre):
-                </p>
-          </td>
-          
-          
-         <td>
-              <p class="meta">
-              Precio:
-                </p>
-         
-         
-         </td>
-    
-        <td>
-            <p class="meta">
-            Productos Necesarios
-            </p>
-        </td>
 
-        </tr>
-         <tr>
-          <td>
-              <p class="meta">
-              Desratizacion
-                 </p>
-	      </td>
-	      <td>
-              <p class="meta">
-              10
-                </p>
-          </td>
-          
-          
-         <td>
-              <p class="meta">
-             500
-                </p>
-         
-         
-         </td>
+
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from detalle_servicio" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
     
+    
+    
+<%--        <table>
+         <tr>
         <td>
             <asp:Button ID="Button2" runat="server" Text="*" PostBackUrl="~/abmservicios_ver_productos_necesarios.aspx" />
         </td>
@@ -73,7 +49,7 @@
          
          </tr>
          </table>   
-
+--%>
 
     
             <input id="back" type="button" value="Volver Atras" onclick="history.back();"/>

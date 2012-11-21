@@ -16,49 +16,29 @@
     <h2 class="title"><a href="#">Listado De Servicios </a></h2>
 
 
+
+    <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource1" 
+        onselectedindexchanged="dvgDatos_SelectedIndexChanged">
+        <Columns>
+            <asp:CommandField SelectText="X" ShowSelectButton="True" />
+        </Columns>
+    </asp:GridView>
+    
+
+
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from servicio" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
+
+
         <table>
          <tr>
-          <td>
-              <p class="meta">
-              Nombre Servicio:
-                 </p>
-	      </td>
-          <td>
-            
-              <p class="meta">
-              Descripcion:
-                </p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              Edicion:
-                </p>
-          </td>
-
-          <td>
-            
-              <p class="meta">
-              Composicion:
-                </p>
-          </td>
-
-         
-         </tr>
-
-
-         <tr>
-          <td>
-              <p class="meta">
-              Pack Limpieza
-                 </p>
-	      </td>
-          <td>
-            
-              <p class="meta">
-              Paquete de servicio especialmente armado.
-                </p>
-          </td>
           <td>
               <asp:Button ID="Button1" runat="server" Text=".." PostBackUrl="~/abmservicios_mod.aspx" />      
           </td>

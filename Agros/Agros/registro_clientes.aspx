@@ -27,7 +27,7 @@
               ControlToValidate="TextBox1" 
               Display="Dynamic" SetFocusOnError="True" 
               ErrorMessage="Solo se permiten numeros sin espacios ni guiones." 
-                  MaximumValue="9999999999" MinimumValue="0000000001" 
+                  MaximumValue="9999999999" MinimumValue="1111111111" 
               
               ></asp:RangeValidator>
               
