@@ -183,7 +183,7 @@ namespace Agros
         {
 
             int id = 0;
-            string maxid = "";
+            string maxid = "-1";
             string consulta = "";
 
             
@@ -209,7 +209,7 @@ namespace Agros
 
 
                 id = Int32.Parse(maxid);
-                //id = (int)Comando.ExecuteNonQuery();
+                
             }
 
             catch (SqlException ex)
@@ -234,9 +234,115 @@ namespace Agros
         }
 
 
+        public int ver_si_existe(string tabla_y_condicion)
+        {
+
+            int id = 0;
+            string maxid = "-1";
+            string consulta = "";
+
+
+            consulta = "select max(id)  from " + tabla_y_condicion;
+
+
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
 
 
 
+            try
+            {
+                conexion.Open();
+                Comando.CommandText = consulta;
+                Comando.CommandType = CommandType.Text;
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    maxid = reader[0].ToString();
+                }
+                reader.Close();
+
+
+                id = Int32.Parse(maxid);
+
+            }
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error = ex.ToString();
+
+
+            }
+
+            finally
+            {
+                // Close Connection
+                conexion.Close();
+            }
+
+
+
+            return id;
+
+        }
+
+
+
+        public int ver_perfil(string condiciones)
+        {
+
+            int id = 0;
+            string perfil = "0";
+            string consulta = "";
+
+
+            consulta = "select perfil  from usuario where id=" + condiciones;
+
+
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+
+
+
+            try
+            {
+                conexion.Open();
+                Comando.CommandText = consulta;
+                Comando.CommandType = CommandType.Text;
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    perfil = reader[0].ToString();
+                }
+                reader.Close();
+
+
+                id = Int32.Parse(perfil);
+
+            }
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error = ex.ToString();
+
+
+            }
+
+            finally
+            {
+                // Close Connection
+                conexion.Close();
+            }
+
+
+
+            return id;
+
+        }
 
 
 

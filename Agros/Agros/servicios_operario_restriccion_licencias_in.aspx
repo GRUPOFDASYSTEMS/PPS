@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmrestriccion_licencias_in.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.abmrestriccion_licencias_in" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicios_operario_restriccion_licencias_in.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.servicios_operario_restriccion_licencias_in" %>
+
 
 
 
@@ -14,7 +15,7 @@
          <tr>
           <td>
               <p class="meta">
-              Fecha:
+                  Fecha:
                  </p>
 	      </td>
 	      <td>  
@@ -28,12 +29,12 @@
           <td>
             
               <p class="meta">
-                  Usuario:      </p>
+                  Usuario: <asp:Label ID="lusuario" runat="server" Text="."></asp:Label>   </p>
           </td>
           <td> 
                   <asp:DropDownList ID="DropDownList1" runat="server" 
                   DataSourceID="ObjectDataSource1" DataTextField="nombre" 
-                  DataValueField="id" 
+                  DataValueField="id" enabled="false"
                   >
               </asp:DropDownList>
 
@@ -42,7 +43,7 @@
          <tr> 
           <td>
               <p class="meta">
-              Tiempo (inicial):
+                  Tiempo (inicial):
                 </p>
           </td>
           <td>
@@ -56,7 +57,7 @@
          <tr>
          <td>
               <p class="meta">
-              Tiempo (final):
+                  Tiempo (final):
                 </p>
          
          
@@ -72,7 +73,7 @@
         <tr>
          <td>
               <p class="meta">
-              Descripcion:
+                  Descripcion:
                 </p>
          
          
@@ -88,11 +89,11 @@
          
          <tr>
          <td>
-            <asp:Button ID="Button1" runat="server" Text="Limpiar" />     
+            <asp:Button ID="limpiar" runat="server" Text="Limpiar" />     
          </td>
          
          <td>
-         <asp:Button ID="Button2" runat="server" Text="Agregar" onclick="Button2_Click" />
+         <asp:Button ID="agregar" runat="server" Text="Agregar" onclick="Button2_Click" />
          </td>
          
          </tr>
@@ -104,15 +105,17 @@
     
     <%--<asp:Button < input type=button  ID="back" runat="server"     Text="Cancelar" onclick="history.back()"   />   --%>
     
-    <input id="Button3" type="button" value="Cancelar" onclick="history.back()" />
+    <input id="Volver" type="button" value="Volver" onclick="history.back()" />
     <asp:Label ID="Label1" runat="server" Text="L1"></asp:Label>
  
  <asp:Label ID="Label3" runat="server" Text="L3"></asp:Label>
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        SelectMethod="Seleccion_por_id_y_consulta" TypeName="Agros.linkeo">
         <SelectParameters>
-            <asp:Parameter DefaultValue="select * from usuario" Name="consulta" 
+            <asp:Parameter DefaultValue="select * from usuario where 1=1 and id=" Name="consulta" 
+                Type="String" />
+            <asp:SessionParameter DefaultValue="-1" Name="id" SessionField="usuario" 
                 Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>   

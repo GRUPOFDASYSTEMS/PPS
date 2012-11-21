@@ -11,7 +11,7 @@
 namespace Agros {
     
     
-    public partial class abmrestriccion_licencias_in {
+    public partial class servicios_operario_restriccion_licencias_in {
         
         /// <summary>
         /// Control form1.
@@ -39,6 +39,15 @@ namespace Agros {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Control lusuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lusuario;
         
         /// <summary>
         /// Control DropDownList1.

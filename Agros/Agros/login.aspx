@@ -15,7 +15,7 @@
          <tr>
           <td>
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Nombre de usuario:</p>
+                  &nbsp;&nbsp;&nbsp; Nombre de usuario:</p>
 	      </td>
 	      <td>  
               <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -26,16 +26,28 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Clave:</p>
+                  &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>   
+              <asp:TextBox ID="TextBox2" runat="server"  t ></asp:TextBox>   
           </td>
          </tr>
          <tr> 
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Ingresar" PostBackUrl="~/indice_admin.aspx" />
+              <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
           </td>
+         </tr>
+         <tr>
+         <td>
+              <asp:Button ID="Button1" runat="server" Text="Ingresar" 
+         onclick="Button1_Click" />
+         
+              <asp:Login ID="Login1" runat="server" DisplayRememberMe="False" 
+                  LoginButtonText="Ingresar" onauthenticate="Login1_Authenticate" 
+                  TitleText="Ingreso de usuarios" UserNameLabelText="Id Usuario:">
+              </asp:Login>
+         
+         </td>
          </tr>
          </table>   
 

@@ -13,10 +13,11 @@ using System.Xml.Linq;
 
 namespace Agros
 {
-    public partial class abmrestriccion_licencias_in : System.Web.UI.Page
+    public partial class servicios_operario_restriccion_licencias_in : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lusuario.Text = Session["usuario"].ToString();
             
         }
 
@@ -31,7 +32,7 @@ namespace Agros
 
 
 
-             string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
+            string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
             //especifico campos
             campos.Add("fecha, ");
             campos.Add("tiempo_inicial, ");
@@ -64,7 +65,6 @@ namespace Agros
 
             resultado = linker.insercion_de_dataset("restriccion_disponibilidad_usuario", campos, datos);
             Label1.Text = resultado;
-
 
 
         }

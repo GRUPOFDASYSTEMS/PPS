@@ -25,7 +25,7 @@
           <td>
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton6" runat="server" 
-                  ImageUrl="images/img11.gif" AlternateText="Stock" PostBackUrl="~/abmrestriccion_licencias_in.aspx"/>
+                  ImageUrl="images/img11.gif" AlternateText="Stock" PostBackUrl="~/servicios_operario_restriccion_licencias_in.aspx"/>
               &nbsp;&nbsp;&nbsp; Nueva Peticion Licencia </p>
           </td>         
          

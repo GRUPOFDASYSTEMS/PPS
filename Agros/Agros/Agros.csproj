@@ -249,6 +249,9 @@
     <Compile Include="Formulario web1.aspx.designer.cs">
       <DependentUpon>Formulario web1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="indice_admin.aspx.cs">
       <DependentUpon>indice_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +402,13 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="servicios_operario_restriccion_licencias_in.aspx.cs">
+      <DependentUpon>servicios_operario_restriccion_licencias_in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servicios_operario_restriccion_licencias_in.aspx.designer.cs">
+      <DependentUpon>servicios_operario_restriccion_licencias_in.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -495,6 +505,8 @@
     <None Include="Agros.dbml.layout">
       <DependentUpon>Agros.dbml</DependentUpon>
     </None>
+    <Content Include="Global.asax" />
+    <Content Include="servicios_operario_restriccion_licencias_in.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Estructura.Master" />
     <Content Include="menu_administrador.master" />
