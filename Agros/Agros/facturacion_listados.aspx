@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_listados.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.facturacion_listados" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_listados.aspx.cs" MasterPageFile="~/Site1.master" Inherits="Agros.facturacion_listados" %>
 
 
 
@@ -9,6 +9,7 @@
     <h2 class="title"><a href="#">Facturación - Listados</a></h2>
 
 
+	<form id="form1" runat="server">
         <table>
          <tr>
           <td>
@@ -33,8 +34,13 @@
          </table>   
 
 
-    <asp:GridView ID="dgvdatos" runat="server" 
-        DataSourceID="ObjectDataSource2">
+    <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource2" AllowPaging="True" 
+        onselectedindexchanged="dgvdatos_SelectedIndexChanged">
+        <Columns>
+            <asp:CommandField HeaderText="Marcar" SelectText="-&gt;" ShowHeader="True" 
+                ShowSelectButton="True" />
+        </Columns>
     </asp:GridView>
     
 
@@ -47,6 +53,27 @@
                 Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
+
+    <asp:Label ID="Label1" runat="server" Text="Ha Seleccionado La Factura: "></asp:Label>
+
+
+
+    
+
+    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+    <br />
+    <br />
+
+
+
+    
+
+    <asp:Button ID="informar" runat="server" Text="Informar" 
+        onclick="informar_Click" />
+    <asp:Button ID="desinformar" runat="server" Text="Desinformar" 
+        onclick="desinformar_Click" />
+    <asp:Button ID="Detalles" runat="server" Text="Ver Detalles" onclick="Detalles_Click" 
+         />
 
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
         SelectMethod="Seleccion_por_id_y_consulta" TypeName="Agros.linkeo">
@@ -61,8 +88,7 @@
     </asp:ObjectDataSource>
 
 
-    <asp:Button ID="backtoindexcliente" runat="server" Text="Volver Al Indice Clientes"  PostBackUrl="~/indice_cliente.aspx" />
-    <asp:Button ID="backtoindexusuario" runat="server" Text="Volver Al Indice Usuarios"  PostBackUrl="~/indice_administrativo.aspx" />
-    
 
-</asp:Content>
+    
+</form>
+    </asp:Content>

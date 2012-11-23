@@ -8,7 +8,7 @@
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     
-    <h2 class="title"><a href="#" />Listado de productos:</h2> 
+    <h2 class="title">Listado de productos:</h2> 
 
 
         

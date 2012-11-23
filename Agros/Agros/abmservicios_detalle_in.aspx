@@ -13,7 +13,7 @@
          <tr>
           <td>
               <p class="meta">
-              Descripcion:
+                  Descripcion:
                  </p>
 	      </td>
 	      <td>  
@@ -25,18 +25,20 @@
           <td>
             
               <p class="meta">
-              Asociado al servicio:
+                  Asociado al servicio:
                 </p>
           </td>
           <td> 
-              <asp:DropDownList ID="DropDownList2" runat="server">
-              </asp:DropDownList>
-          </td>
+              <asp:DropDownList ID="DropDownList1" runat="server" 
+                  DataSourceID="ObjectDataSource1" DataTextField="nombre_servicio" 
+                  DataValueField="id" 
+                  >
+              </asp:DropDownList>          </td>
          </tr>
          <tr> 
           <td>
               <p class="meta">
-              Tiempo (en horas hombre):
+                  Tiempo (en horas hombre):
                 </p>
           </td>
           <td>
@@ -50,7 +52,7 @@
          <tr>
          <td>
               <p class="meta">
-              Precio:
+                  Precio:
                 </p>
          
          
@@ -78,8 +80,18 @@
          </table>   
 
     <asp:Button ID="backtoabmservicios" runat="server" Text="Volver"  PostBackUrl="~/abmservicios.aspx"/>
-    <asp:Button ID="Button2" runat="server" Text="Salvar" />
+    <asp:Button ID="Button2" runat="server" Text="Salvar" onclick="Button2_Click" />
 
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from servicio" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
+    
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
     
 </asp:Content>

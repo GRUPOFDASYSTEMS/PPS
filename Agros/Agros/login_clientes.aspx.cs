@@ -19,5 +19,26 @@ namespace Agros
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            linkeo linker = new linkeo();
+            string condiciones, id;
+           
+
+            condiciones = " cliente where cuit="+TextBox1.Text + " and password=" + TextBox2.Text;
+
+            id = linker.obtener_dato(condiciones, 0);
+
+            if (id.Equals("-1"))
+                Label1.Text = "Error de ingreso, compruebe su nombre de usuario y clave e intente nuevamente";
+            else
+            {             //existe el usuario, con lo cual lo guardo y sigo
+
+                Session["cliente"] = id;
+                Response.Redirect("indice_cliente.aspx");
+            }
+
+        }
     }
 }

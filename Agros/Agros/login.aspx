@@ -18,7 +18,7 @@
                   &nbsp;&nbsp;&nbsp; Nombre de usuario:</p>
 	      </td>
 	      <td>  
-              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+              <asp:TextBox ID="TextBoxLogin" runat="server"></asp:TextBox>
           </td>
         </tr>  
             
@@ -29,12 +29,12 @@
                   &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox2" runat="server"  t ></asp:TextBox>   
+              <asp:TextBox ID="TextBox2" runat="server"   ></asp:TextBox>   
           </td>
          </tr>
          <tr> 
           <td>
-              <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+              <asp:Label ID="Label1" runat="server" Text="~"></asp:Label>
           </td>
          </tr>
          <tr>

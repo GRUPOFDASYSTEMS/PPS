@@ -22,7 +22,8 @@
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
         <SelectParameters>
-            <asp:Parameter DefaultValue="select * from restriccion_diponibilidad_usuario" Name="consulta" 
+            <asp:Parameter DefaultValue="SELECT     restriccion_disponibilidad_usuario.*
+FROM         restriccion_disponibilidad_usuario" Name="consulta" 
                 Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>

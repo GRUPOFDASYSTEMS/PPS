@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_detalle_facturas.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.facturacion_detalle_facturas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="facturacion_detalle_facturas.aspx.cs" MasterPageFile="~/Site1.master" Inherits="Agros.facturacion_detalle_facturas" %>
 
 
 
@@ -6,6 +6,15 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     
     <h2 class="title"><a href="#">Detalle de factura</a></h2>
+
+
+<form id="form1" runat="server">
+
+
+<table>
+    <tr>
+    <td>
+
 
 
         <table>
@@ -16,7 +25,7 @@
                   &nbsp;&nbsp;&nbsp; Numero factura</p>
 	      </td>
           <td>
-              001-0000106<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+              <asp:Label ID="id_factura" runat="server" Text=""></asp:Label>
           </td>  
 
           <td>
@@ -26,15 +35,22 @@
 	      </td>
           
           <td>
-              Agromendoza SRL<asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+              <asp:Label ID="cliente" runat="server" Text=""></asp:Label>
           </td>
         </tr>  
 
     
          </table>   
 
+    </td>
+    </tr>
+    <tr>
+    <td>
+
     <asp:GridView ID="dgvDatos" runat="server" DataSourceID="ObjectDataSource1">
     </asp:GridView>
+    </td>
+    </tr>
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         SelectMethod="Seleccion_por_id_y_consulta" TypeName="Agros.linkeo">
@@ -46,7 +62,13 @@
         </SelectParameters>
     </asp:ObjectDataSource>
 
-    <asp:Button ID="Button1" runat="server" Text="Volver" PostBackUrl="~/facturacion_listados.aspx" />
-
+    <tr>
+    <td>
+    <asp:Button ID="VolverC" runat="server" Text="Volver" PostBackUrl="~/facturacion_listados.aspx" />
+    <asp:Button ID="VolverU" runat="server" Text="Volver" Visible="false" PostBackUrl="~/facturacion.aspx" />
+    </td>
+    </tr>
+</table>
+</form>
 
 </asp:Content>

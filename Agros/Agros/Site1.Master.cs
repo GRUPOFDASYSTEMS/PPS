@@ -17,7 +17,112 @@ namespace Agros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //pagina p = new pagina();
+            
+            //verifica_login(); 
+            //nueva_pagina np = new nueva_pagina();
+            //np.verifica_login();
+        }
+
+
+
+
+        //protected override void OnPreInit(EventArgs e)
+        //{
+        //    base.OnPreInit(e);
+        //    // the following line is important
+        //    MasterPage master = this.Master;
+        //    // unfortunately, compiler warns us that master is not used
+        //    ContentPageLabel.Text = "Hello, World!";
+        //}
+
+
+
+
+    }
+
+
+    
+
+    //interface  pagina
+    //{
+
+    //    void verifica_login();
+        
+
+
+    //}
+
+
+
+    //public class paginas : pagina
+    //{
+    //    public void verifica_login()
+    //    {
+    //        if (Session["usuario"].Equals("0"))
+    //            Response.Redirect("login.aspx");
+    //    }
+    //}
+
+
+
+
+
+
+
+    public class nueva_pagina : Site11
+    {
+
+
+        public virtual void verifica_login()
+        {
+
+            // if (!this.Label1.Text.Equals("~"))
+
+            ContentPlaceHolder mpContentPlaceHolder;
+            TextBox mpTextBox;
+            mpContentPlaceHolder =
+              (ContentPlaceHolder)Master.FindControl("Content1");
+            if (mpContentPlaceHolder != null)
+            {
+                mpTextBox =
+                    (TextBox)mpContentPlaceHolder.FindControl("TextBoxLogin");
+                if (mpTextBox != null)
+                {
+                    // mpTextBox.Text = "TextBox found!";
+                }
+                else
+                {
+
+                    if (Session["usuario"].Equals("0"))
+                        Response.Redirect("login.aspx");
+
+                }
+
+
+
+            }
+
+
+
+
+
 
         }
+
+
+
     }
+
+
+
+
+
+
+
+
 }
+
+
+ 
+

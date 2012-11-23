@@ -18,7 +18,7 @@
          <tr>
           <td>
               <p class="meta">
-              Nombre Servicio:
+                  Nombre Servicio:
                  </p>
 	      </td>
 	      <td>  
@@ -30,20 +30,37 @@
           <td>
             
               <p class="meta">
-              Descripcion:
+                  Descripcion:
                 </p>
           </td>
           <td> 
               <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
           </td>
          </tr>
+
+         <tr>
+          <td>
+            
+              <p class="meta">
+                  Descuento:
+                </p>
+          </td>
+          <td> 
+              <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox> %
+          </td>
+         </tr>
+
+
+
+
          <tr>
          <td>
           <input id="Reset1" type="reset" value="Limpiar" />
          </td>
            
          <td>
-         <asp:Button ID="Button1" runat="server" Text="Agregar" />
+         <asp:Button ID="Button1" runat="server" Text="Agregar" onclick="Button1_Click" />
+             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
          </td>
          
          </tr>

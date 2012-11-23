@@ -18,7 +18,39 @@ namespace Agros
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
+
+        protected override void OnPreInit(EventArgs e)
+        {
+            base.OnPreInit(e);
+            // the following line is important
+            MasterPage master = this.Master;
+            // unfortunately, compiler warns us that master is not used
+            //ContentPageLabel.Text = "Hello, World!";
+        }
+
+
+
+        
+
+        //public void verifica_login()
+        //{
+        //    //int a=this.Master.FindControl(verifica_login);
+        //    //Console.WriteLine("Incrementada edad de trabajador");
+        //}
+
+
+        //public  void quita_verifica_login()
+        //{
+        //    //Master m = new MasterPage();
+            
+        //    //Console.WriteLine("Incrementada edad de trabajador");
+        //}
+
+
+
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -26,7 +58,7 @@ namespace Agros
             string condiciones;
             int existe = 0;
 
-            condiciones = TextBox1.Text + " and password=" + TextBox2.Text;
+            condiciones = TextBoxLogin.Text + " and password=" + TextBox2.Text;
 
             existe = linker.ver_perfil(condiciones);
 
@@ -35,7 +67,7 @@ namespace Agros
             else
             {             //existe el usuario, con lo cual lo guardo y sigo
                 Label1.Text = existe.ToString();
-                Session["usuario"] = TextBox1.Text;
+                Session["usuario"] = TextBoxLogin.Text;
                 switch (existe)
                 {
                     case 1:
@@ -64,5 +96,28 @@ namespace Agros
         {
 
         }
+
+        
+        
     }
+
+
+
+
+    //public class nueva_pagina : Site11
+    //{
+
+
+        
+
+
+
+
+    //}
+
+
+
+
+
+
 }

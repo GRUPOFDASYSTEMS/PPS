@@ -17,7 +17,7 @@
          <tr>
           <td>
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Legajo (Id):</p>
+                  &nbsp;&nbsp;&nbsp; Legajo (Id):</p>
 	      </td>
 	      <td>  
               <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -28,7 +28,7 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Clave:</p>
+                  &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
               <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>   
@@ -36,10 +36,17 @@
          </tr>
          <tr> 
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Ingresar" PostBackUrl="~/indice_cliente.aspx" />       
+              
           </td>
          </tr>
          </table>   
+         
+         <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+              <br />
+              <asp:Button ID="Button1" runat="server" Text="Ingresar" 
+                  onclick="Button1_Click" />       
+         
+         
 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/registro_clientes.aspx" >Registro</asp:HyperLink>
     </form>
 </asp:Content>

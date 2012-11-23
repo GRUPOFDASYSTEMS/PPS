@@ -15,12 +15,15 @@ namespace Agros
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            Application["pagina"] = "0";
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["usuario"] = "0";
+            Session["cliente"] = "0";
+            Session["perfil"] = "0";
+            Session["id_factura"] = "0";
 
         }
 

@@ -120,6 +120,87 @@ namespace Agros
         }
 
 
+
+
+        public DataSet Seleccion_por_doble_id(string consulta, string id, string id2)
+        {
+
+            DataSet table = new DataSet();
+            consulta = consulta + id + id2;
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+
+            try
+            {
+                conexion.Open();
+
+                SqlDataAdapter Adaptador = new SqlDataAdapter(Comando);
+                SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
+
+                Adaptador.Fill(table);
+            }
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error = ex.ToString();
+                table = null;
+
+            }
+
+            finally
+            {
+                // Close Connection
+                conexion.Close();
+            }
+
+            return table;
+
+        }
+
+
+
+        public DataSet Seleccion_por_multiple_condicion(string consulta, string cond1, string cond2, string cond3)
+        {
+
+            DataSet table = new DataSet();
+            consulta = consulta + cond1 + cond2 + cond3; 
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+
+            try
+            {
+                conexion.Open();
+
+                SqlDataAdapter Adaptador = new SqlDataAdapter(Comando);
+                SqlCommandBuilder cm = new SqlCommandBuilder(Adaptador);
+
+                Adaptador.Fill(table);
+            }
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error = ex.ToString();
+                table = null;
+
+            }
+
+            finally
+            {
+                // Close Connection
+                conexion.Close();
+            }
+
+            return table;
+
+        }
+
+
+
+
+
+
         public DataSet Seleccion_segun_id_para_consultar(string consulta1, string consulta2, string consulta3, string id)
         {
 
@@ -242,7 +323,7 @@ namespace Agros
             string consulta = "";
 
 
-            consulta = "select max(id)  from " + tabla_y_condicion;
+            consulta = "select *  from " + tabla_y_condicion;
 
 
             SqlCommand Comando = new SqlCommand(consulta, conexion);
@@ -287,6 +368,67 @@ namespace Agros
             return id;
 
         }
+
+
+
+        public string obtener_dato(string tabla_y_condicion, int columna)
+        {
+
+            
+            string valor_buscado = "-1";
+            string consulta = "";
+
+
+            consulta = "select *  from " + tabla_y_condicion;
+
+
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+
+
+
+            try
+            {
+                conexion.Open();
+                Comando.CommandText = consulta;
+                Comando.CommandType = CommandType.Text;
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    valor_buscado = reader[columna].ToString();
+                }
+                reader.Close();
+
+
+            
+
+            }
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error = ex.ToString();
+                valor_buscado = error; 
+
+            }
+
+            finally
+            {
+                // Close Connection
+                conexion.Close();
+            }
+
+
+
+            return valor_buscado;
+
+        }
+
+
+
+
+
 
 
 
