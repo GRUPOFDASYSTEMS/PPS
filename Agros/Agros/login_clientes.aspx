@@ -17,7 +17,7 @@
          <tr>
           <td>
               <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Legajo (Id):</p>
+                  &nbsp;&nbsp;&nbsp; Legajo (CUIT):</p>
 	      </td>
 	      <td>  
               <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -31,7 +31,7 @@
                   &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>   
+              <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>   
           </td>
          </tr>
          <tr> 

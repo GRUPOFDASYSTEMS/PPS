@@ -358,6 +358,13 @@
     <Compile Include="modulo_servicios_cliente_listados.aspx.designer.cs">
       <DependentUpon>modulo_servicios_cliente_listados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="modulo_servicios_creando_detalle_orden.aspx.cs">
+      <DependentUpon>modulo_servicios_creando_detalle_orden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modulo_servicios_creando_detalle_orden.aspx.designer.cs">
+      <DependentUpon>modulo_servicios_creando_detalle_orden.aspx</DependentUpon>
+    </Compile>
     <Compile Include="modulo_servicios_listado_detalle_orden.aspx.cs">
       <DependentUpon>modulo_servicios_listado_detalle_orden.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -506,6 +513,7 @@
       <DependentUpon>Agros.dbml</DependentUpon>
     </None>
     <Content Include="Global.asax" />
+    <Content Include="modulo_servicios_creando_detalle_orden.aspx" />
     <Content Include="servicios_operario_restriccion_licencias_in.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Estructura.Master" />

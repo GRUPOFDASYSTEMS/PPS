@@ -427,6 +427,59 @@ namespace Agros
 
 
 
+        public string obtener_dato_especificado(string consulta_y_condicion, int columna)
+        {
+
+
+            string valor_buscado = "-1";
+            string consulta = "";
+
+
+            consulta = consulta_y_condicion;
+
+
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+
+
+
+            try
+            {
+                conexion.Open();
+                Comando.CommandText = consulta;
+                Comando.CommandType = CommandType.Text;
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    valor_buscado = reader[columna].ToString();
+                }
+                reader.Close();
+
+
+
+
+            }
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error = ex.ToString();
+                valor_buscado = error;
+
+            }
+
+            finally
+            {
+                // Close Connection
+                conexion.Close();
+            }
+
+
+
+            return valor_buscado;
+
+        }
 
 
 

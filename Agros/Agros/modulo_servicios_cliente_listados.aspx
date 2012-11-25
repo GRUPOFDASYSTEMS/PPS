@@ -14,7 +14,7 @@
          <tr>
           <td>
               <p class="meta">
-              &nbs&amp;nbs&nbsp;&nbsp;&nbsp; Filtrar Ordenes:</p>
+                  &amp;nbs&amp;nbs&nbsp;&nbsp;&nbsp; Filtrar Ordenes:</p>
 	      </td>
 	      <td>  
             <asp:DropDownList ID="DropDownList1" runat="server" 
@@ -88,6 +88,8 @@
          
             <asp:Label ID="Label1" runat="server" Text="Usted Selecciono La Orden N: "></asp:Label>
        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+       <br />
+    <asp:Label ID="lerror" runat="server" Text=""></asp:Label>
        <table>   
          <tr>
           <td>
@@ -95,28 +97,31 @@
               <asp:ImageButton ID="ImageButton1" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Listados" 
                       onclick="ImageButton1_Click" style="width: 13px" />
-              &nbsp;&nbsp;Aprobar &nbsp;&nbsp;&nbsp;</p>
+                  &nbsp;&nbsp;Aprobar &nbsp;&nbsp;&nbsp;</p>
 	      </td>
 	                <td>
               <p class="meta">
               <asp:ImageButton ID="ImageButton2" runat="server" 
-                  ImageUrl="images/img11.gif" AlternateText="Listados" />
-               &nbsp;&nbsp;Abortar &nbsp;&nbsp;&nbsp;</p>
+                  ImageUrl="images/img11.gif" AlternateText="Listados" 
+                      onclick="ImageButton2_Click" />
+                  &nbsp;&nbsp;Abortar &nbsp;&nbsp;&nbsp;</p>
 	      </td>
 	       
 	      
 	       <td>
               <p class="meta">
-              <asp:ImageButton ID="ImageButton4" runat="server" 
-                  ImageUrl="images/img11.gif" AlternateText="Listados" />
-               &nbsp;&nbsp;Desaprobar &nbsp;&nbsp;&nbsp;</p>
+              <asp:ImageButton ID="ImageButton3" runat="server" 
+                  ImageUrl="images/img11.gif" AlternateText="Listados" 
+                      onclick="ImageButton3_Click" style="width: 13px;" />
+                  &nbsp;&nbsp;Desaprobar &nbsp;&nbsp;&nbsp;</p>
 	      </td>
 	      
 	       <td>
               <p class="meta">
-              <asp:ImageButton ID="ImageButton5" runat="server" 
-                  ImageUrl="images/img10.gif" AlternateText="Listados" PostBackUrl="~/modulo_servicios_listado_detalle_orden.aspx" />
-               &nbsp;&nbsp;Editar &nbsp;&nbsp;&nbsp;</p>
+              <asp:ImageButton ID="ImageButton4" runat="server" 
+                  ImageUrl="images/img10.gif" AlternateText="Listados" 
+                      onclick="ImageButton4_Click"  />
+                  &nbsp;&nbsp;Editar &nbsp;&nbsp;&nbsp;</p>
 	      </td>	      
 	      
 	      
@@ -128,6 +133,7 @@
          
 
          </table>   
-  
+    <asp:Button ID="volver" runat="server" Text="Volver" PostBackUrl="~/modulo_servicios_cliente_home.aspx" />
+                                                                        
     </form>
 </asp:Content>

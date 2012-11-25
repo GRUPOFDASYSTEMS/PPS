@@ -15,43 +15,34 @@ namespace Agros
 {
     public partial class modulo_servicios_listado_detalle_orden : System.Web.UI.Page
     {
+
+        linkeo linker = new linkeo();
+ 
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargardd();
+            interpretar_instancia();
         }
 
-        public void cargardd()
+
+        public void interpretar_instancia() { 
+        
+        string id = Session["id_os"].ToString();
+        string creando = linker.obtener_dato_especificado("select id from estados where descripcion='En Proceso de creacion' and tema='orden_servicio' ",0);
+        string estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where id="+id, 0);
+
+
+        if (creando.Equals(estado))
+            Response.Redirect("modulo_servicios_creando_detalle_orden.aspx");
+
+
+
+        }
+
+        protected void dgvDatos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-             * 
-             * * 
-             * 
-             * 
-             * 
-             * 
-             * 
-            SqlCommand OrdenSqlSelect = new SqlCommand("SELECT * FROM Zonas", ConexionBd);
-            SqlDataAdapter da = new SqlDataAdapter(OrdenSqlSelect.CommandText, ConexionBd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            this.ddZona.DataSource = ds;
-            this.ddZona.DataSource = ds;
-            this.ddZona.DataValueField = "CodZona";
-            this.ddZona.DataTextField = "Zona";
-            this.ddZona.DataBind();
-             */
-
-            this.DropDownList1.Items.Insert(0, new ListItem("Riego", "1"));
-            this.DropDownList3.Items.Insert(0, new ListItem("Desratizacion", "2"));
-            this.DropDownList5.Items.Insert(0, new ListItem("Control de plagas", "3"));
-
-
-            this.DropDownList2.Items.Insert(0, new ListItem("Pendiente", "1"));
-            this.DropDownList4.Items.Insert(0, new ListItem("Abortada", "2"));
-            this.DropDownList6.Items.Insert(0, new ListItem("Completada", "3"));
 
         }
-
 
     }
 }

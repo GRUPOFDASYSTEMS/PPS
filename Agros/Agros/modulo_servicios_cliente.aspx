@@ -14,10 +14,10 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; A Realizarse En Fecha (Propuesta):</p>
+              &nbsp;&nbsp;&nbsp; Nombre Corto:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>   
+              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
           </td>
          </tr>
          
@@ -37,17 +37,18 @@
          
 
          
-         
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>         
 
          
          
          
          <tr> 
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Registrar" />       
+              <asp:Button ID="Button1" runat="server" Text="Registrar" 
+                  onclick="Button1_Click" />       
           </td>
          </tr>
          </table>   
-<asp:Button ID="Button2" runat="server" Text="Cancelar" PostBackUrl="~/modulo_servicios_cliente_home.aspx"/>    
+<asp:Button ID="Button2" runat="server" Text="Volver" PostBackUrl="~/modulo_servicios_cliente_home.aspx"/>    
     </form>
 </asp:Content>

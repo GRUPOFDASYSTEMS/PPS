@@ -81,7 +81,7 @@
           <td> 
               <asp:DropDownList ID="DropDownList1" runat="server" 
                   DataSourceID="ObjectDataSource1" DataTextField="descripcion" 
-                  DataValueField="id_condicion">
+                  DataValueField="id">
               </asp:DropDownList>     
           </td>
          </tr>         
@@ -122,6 +122,7 @@
           </td>
          </tr>
          </table>   
+         
  <asp:Button ID="backtoindexcliente" runat="server" Text="Volver Al Indice Clientes"  PostBackUrl="~/indice_cliente.aspx" />  
 
     </form>

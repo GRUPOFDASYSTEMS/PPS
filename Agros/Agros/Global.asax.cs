@@ -24,6 +24,7 @@ namespace Agros
             Session["cliente"] = "0";
             Session["perfil"] = "0";
             Session["id_factura"] = "0";
+            Session["id_os"] = "0";
 
         }
 

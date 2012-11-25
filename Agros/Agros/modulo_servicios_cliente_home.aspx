@@ -39,6 +39,6 @@
           </td>
          </tr>
          </table>   
-
+    <asp:Button ID="volver" runat="server" Text="Volver" PostBackUrl="~/indice_cliente.aspx" />
     </form>
 </asp:Content>
