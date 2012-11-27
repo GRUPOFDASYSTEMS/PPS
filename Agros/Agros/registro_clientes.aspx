@@ -22,9 +22,9 @@
                   &nbsp;&nbsp;&nbsp; CUIT:</p>
 	      </td>
 	      <td>  
-              <asp:TextBox ID="TextBox1" runat="server" ValidationGroup="req"></asp:TextBox>
+              <asp:TextBox ID="cuit" runat="server" ValidationGroup="req"></asp:TextBox>
               <asp:RangeValidator ID="RangeValidator1" runat="server" 
-              ControlToValidate="TextBox1" 
+              ControlToValidate="cuit" 
               Display="Dynamic" SetFocusOnError="True" 
               ErrorMessage="Solo se permiten numeros sin espacios ni guiones." 
                   MaximumValue="9999999999" MinimumValue="1111111111" 
@@ -42,7 +42,8 @@
                   &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="req"></asp:TextBox>   
+              <asp:TextBox ID="clave" runat="server" ValidationGroup="req" 
+                  ontextchanged="clave_TextChanged"></asp:TextBox>   
           </td>
          </tr>
          
@@ -54,7 +55,7 @@
                   &nbsp;&nbsp;&nbsp; Razón social:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox3" runat="server" ValidationGroup="req"></asp:TextBox>   
+              <asp:TextBox ID="rs" runat="server" ValidationGroup="req"></asp:TextBox>   
           </td>
          </tr>         
          
@@ -67,7 +68,7 @@
                   &nbsp;&nbsp;&nbsp; Dirección:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox4" runat="server" ValidationGroup="req"></asp:TextBox>   
+              <asp:TextBox ID="dir" runat="server" ValidationGroup="req"></asp:TextBox>   
           </td>
          </tr>         
          
@@ -93,25 +94,28 @@
                   &nbsp;&nbsp;&nbsp; E-mail:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox5" runat="server"   ValidationGroup="req"></asp:TextBox>
+              <asp:TextBox ID="email" runat="server"   ValidationGroup="req"></asp:TextBox>
+<%--              
               <asp:RegularExpressionValidator 
-              ControlToValidate="TextBox5" 
+              ControlToValidate="email" 
               ID="validamail" runat="server"
               
               Display="Dynamic" SetFocusOnError="True" 
                   ErrorMessage="Debe Especificar una dirección de correo válida." 
-                  ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                  
-              <asp:RequiredFieldValidator  ValidationGroup="req" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo Requerido"
- controltovalidate="Textbox5" ></asp:RequiredFieldValidator>     
+                  ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
+              </asp:RegularExpressionValidator>
+--%>                  
+<%--              <asp:RequiredFieldValidator  ValidationGroup="req" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo Requerido"
+ controltovalidate="email" ></asp:RequiredFieldValidator>  --%>   
           </td>
          </tr>              
          
          <tr> 
           <td>
+ 
+              <br />
               <asp:Button ID="Button1" runat="server" Text="Registrar" 
                   onclick="Button1_Click" />       
-              <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
               <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
                   SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
                   <SelectParameters>
@@ -120,10 +124,24 @@
                   </SelectParameters>
               </asp:ObjectDataSource>
           </td>
+          
+          <td>
+              <asp:Button ID="update" runat="server" Text="Actualizar datos" visible="false" 
+                  onclick="update_Click"     />       
+              <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+          
+          </td>
+          
+          
+          
+          
          </tr>
          </table>   
-         
+              
  <asp:Button ID="backtoindexcliente" runat="server" Text="Volver Al Indice Clientes"  PostBackUrl="~/indice_cliente.aspx" />  
-
+ <br />
+ 
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     </form>
+
 </asp:Content>

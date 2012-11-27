@@ -272,7 +272,7 @@ namespace Agros
         {
             ArrayList campos = new ArrayList();
             ArrayList datos = new ArrayList();
-            string resultado, id, estado, estado_buscado, detalle, precio, cantidad, select;
+            string resultado, id, estado, estado_buscado;
             int id_f;
 
 
@@ -283,13 +283,13 @@ namespace Agros
             estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where" + id, 0);
             // .obtener_dato("orden_de_servicio where "+id, 4);
 
-            // solo la puedo aprobar si:
-            //las Pre-Aprobada
-            estado_buscado = linker.obtener_dato_especificado("select id_estado from estado where descripcion='Pre-Aprobada' and tema='orden_servicio'" + id, 0);
+            // solo la puedo abortar si:
+            //las Pendiente
+            estado_buscado = linker.obtener_dato_especificado("select id_estado from estado where descripcion='Pendiente' and tema='orden_servicio'" + id, 0);
 
             if (!estado.Equals(estado_buscado))
             {
-                lerror.Text = "Error: solo puede Desaprobar una orden Pre-Aprobada";
+                lerror.Text = "Error: solo puede Abortar una orden Pendiente";
 
             }
             else
@@ -299,7 +299,7 @@ namespace Agros
                 //aborto
                 //primero las hijas
                 id = " id_os=" + Label2.Text;
-
+                //las pongo como no aprobada
                 estado = linker.obtener_dato(" estados where descripcion='No Aprobada' and tema='detalle_orden' ", 0);
 
                 //especifico campos

@@ -19,5 +19,18 @@ namespace Agros
         {
 
         }
+
+        protected void Salir_Click(object sender, EventArgs e)
+        {
+            /* Limpio todas las variables de sesion... */
+            Session["cliente"] = "0";
+            Session["mensaje_exito"] = "";
+            Session["mensaje_error"] = "";
+
+            /*Y vuelvo al login*/
+            Response.Redirect("login_clientes.aspx");
+
+
+        }
     }
 }

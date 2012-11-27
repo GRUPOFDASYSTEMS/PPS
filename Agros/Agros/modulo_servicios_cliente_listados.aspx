@@ -103,7 +103,7 @@
               <p class="meta">
               <asp:ImageButton ID="ImageButton2" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Listados" 
-                      onclick="ImageButton2_Click" />
+                      onclick="ImageButton2_Click" style="height: 12px" />
                   &nbsp;&nbsp;Abortar &nbsp;&nbsp;&nbsp;</p>
 	      </td>
 	       
