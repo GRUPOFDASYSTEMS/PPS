@@ -71,7 +71,9 @@
          </td>
          
          <td>
-         <asp:Button ID="Button3" runat="server" Text="Agregar Productos Necesarios" PostBackUrl="~/abmservicios_agregar_producto_necesario.aspx" />     
+         <asp:Button ID="Button3" runat="server" Text="Agregar Productos Necesarios" 
+                 
+                 onclick="Button3_Click" />     
          </td>
          
          </tr>
@@ -80,7 +82,7 @@
          </table>   
 
     <asp:Button ID="backtoabmservicios" runat="server" Text="Volver"  PostBackUrl="~/abmservicios.aspx"/>
-    <asp:Button ID="Button2" runat="server" Text="Salvar" onclick="Button2_Click" />
+    <asp:Button ID="salvar" runat="server" Text="Salvar" onclick="Button2_Click" />
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">

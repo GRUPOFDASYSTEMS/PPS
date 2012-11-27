@@ -18,6 +18,9 @@
           </td>
           <td> 
               <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+              
+                  ErrorMessage="Campo Obligatorio" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
           </td>
          </tr>
          
@@ -30,6 +33,9 @@
           </td>
           <td> 
               <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>   
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+              
+                  ErrorMessage="Campo Obligatorio" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
           </td>
          </tr>         
          
@@ -49,6 +55,6 @@
           </td>
          </tr>
          </table>   
-<asp:Button ID="Button2" runat="server" Text="Volver" PostBackUrl="~/modulo_servicios_cliente_home.aspx"/>    
+<asp:Button ID="Button2" runat="server" Text="Finalizar" PostBackUrl="~/modulo_servicios_cliente_home.aspx"/>    
     </form>
 </asp:Content>

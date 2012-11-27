@@ -20,13 +20,21 @@ namespace Agros
 
         protected void Session_Start(object sender, EventArgs e)
         {
+            //de sesion
             Session["usuario"] = "0";
             Session["cliente"] = "0";
             Session["perfil"] = "0";
-            Session["id_factura"] = "0";
-            Session["id_os"] = "0";
+
+            //genericos
             Session["mensaje_exito"] = "";
             Session["mensaje_error"] = "";
+
+
+            //de id
+            Session["id_factura"] = "0";
+            Session["id_os"] = "0";
+            Session["id_servicio"] = "0";
+            Session["id_detalle_servicio"] = "0";
 
         }
 

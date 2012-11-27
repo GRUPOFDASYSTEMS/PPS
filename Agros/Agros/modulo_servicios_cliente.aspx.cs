@@ -28,6 +28,8 @@ namespace Agros
             string resultado, estado;
             int id;
 
+
+
             campos.Add("nombre_corto, ");
             campos.Add("comentario,");
             campos.Add("fecha_solicitud, ");
@@ -62,9 +64,25 @@ namespace Agros
             estado = linker.obtener_dato_especificado("select * from estados where descripcion='En Proceso de creacion' and tema='orden_servicio'",0);
             datos.Add(estado);
 
+
+            
+
+
             resultado = linker.insercion_de_dataset("orden_de_servicio", campos, datos);
 
             Label1.Text = resultado;
+
+            string[] devolucion = new string[3];
+            devolucion = linker.revisar_error(resultado, "INS", "Orden Agregada Correctamente. Puede Continuar Generando Ordenes Si Lo Desea, O Terminar La Carga Con El Boton Finalizar.", "Atencion Ocurrio Un Error Al Intentar Ejecutar La Transaccion", "modulo_servicios_cliente.aspx", "modulo_servicios_cliente.aspx");
+
+
+            if (devolucion[0].Equals("0"))
+                Session["mensaje_error"] = devolucion[1];
+            else
+                Session["mensaje_exito"] = devolucion[1];
+
+            Response.Redirect(devolucion[2]);
+
 
 
         }

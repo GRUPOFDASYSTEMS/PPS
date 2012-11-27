@@ -17,6 +17,29 @@ namespace Agros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /* SETEOS GENERALES*/ 
+           // Label1.ForeColor = System.Drawing.Color.Red; //ver: no funciona para todas las paginas o hay que llamarlo distinto desde aca
+
+            string mensaje_error = Session["mensaje_error"].ToString();
+            if (mensaje_error.Length > 0)
+            {
+                //muestro alerta
+                Response.Write(mensaje_error);
+                Session["mensaje_error"] = "";
+            }
+
+
+            string mensaje_exito = Session["mensaje_exito"].ToString();
+            if (mensaje_exito.Length > 0)
+            {
+                //muestro alerta
+                Response.Write(mensaje_exito);
+                Session["mensaje_exito"] = "";
+            }
+            
+            
+            
+            
             //pagina p = new pagina();
             
             //verifica_login(); 

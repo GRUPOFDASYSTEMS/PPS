@@ -50,8 +50,24 @@ namespace Agros
 
             resultado = linker.insercion_de_dataset("detalle_servicio", campos, datos);
             Label1.Text = resultado;
+            //if ok salvar.enabled=false
 
 
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
+            string i = "<script>window.alert('";
+            string f = "');</script>";
+            string mensaje_error = i + "Primero Debe Salvar El Servicio Especifico Actual, Presionando El Boton Salvar" + f;
+            string idds = Session["id_detalle_servicio"].ToString();
+
+            if (idds.Equals("0"))
+                Response.Write(mensaje_error);
+            else
+                Response.Redirect("abmservicios_agregar_producto_necesario.aspx");
 
 
         }
