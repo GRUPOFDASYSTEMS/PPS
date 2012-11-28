@@ -31,7 +31,6 @@ namespace Agros
         linkeo linker = new linkeo();
 
 
-
         
 
 
@@ -40,6 +39,13 @@ namespace Agros
             if (id.Equals(""))
             {
                 System.Windows.Forms.MessageBox.Show("Debe Marcar Un Item Antes de Continuar");
+                //si hay tiempo luego implementar esto
+                //string i = "<script>window.alert('";
+                //string f = "');</script>";
+                //string 
+                //mensaje_error = i + mensaje_error + f;
+
+
             }
 
             else
