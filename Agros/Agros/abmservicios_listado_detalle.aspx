@@ -15,9 +15,10 @@
                     
         <asp:GridView ID="dgvDatos" runat="server" 
         DataSourceID="ObjectDataSource1" 
-                  onselectedindexchanged="dgvDatos_SelectedIndexChanged">
+                  onselectedindexchanged="dgvDatos_SelectedIndexChanged" AllowPaging="True">
             <Columns>
-                <asp:CommandField SelectText="X" ShowSelectButton="True" />
+                <asp:CommandField SelectText="-&gt;" ShowSelectButton="True" 
+                    HeaderText="Marcar" />
             </Columns>
     </asp:GridView>
     
@@ -25,8 +26,14 @@
 
                 </p>
                 
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    
+    <asp:Label ID="Label1" runat="server" Text="Usted Ha Seleccionado El Servicio Especifico: "></asp:Label>
+      <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+
+
+    <br />
+         <asp:Button ID="add" runat="server" Text="Agregar Productos Necesarios" onclick="add_Click"  />     
+            <asp:Button ID="ver" runat="server" Text="Ver Productos Necesarios"  onclick="ver_Click" />     
+         <asp:Button ID="x" runat="server" Text="Eliminar" onclick="x_Click" />
 
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
@@ -51,8 +58,7 @@
          </table>   
 --%>
 
-    
-            <input id="back" type="button" value="Volver Atras" onclick="history.back();"/>
+    <asp:Button ID="Button1" runat="server" Text="Finalizar Edicion"    PostBackUrl="~/abmservicios.aspx"/>
 
     
 </asp:Content>

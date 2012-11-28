@@ -11,7 +11,7 @@
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     
-    <h2 class="title"><a href="#">Alta de nuevos servicios </a></h2>
+    <h2 class="title"><a href="#">Alta de nuevos servicios </a>(PACKS)</h2>
 
 
         <table>
@@ -59,8 +59,10 @@
          </td>
            
          <td>
+         
+      
          <asp:Button ID="Button1" runat="server" Text="Agregar" onclick="Button1_Click" />
-             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+             
          </td>
          
          </tr>
@@ -68,9 +70,11 @@
          
          </table>   
 
-
+   <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     
-<asp:Button ID="backtoabmservicios" runat="server" Text="Volver"  PostBackUrl="~/abmservicios.aspx"  />   
+    <br />
+    
+<asp:Button ID="backtoabmservicios" runat="server" Text="Finalizar"  PostBackUrl="~/abmservicios.aspx"  />   
 
     
 </asp:Content>

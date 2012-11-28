@@ -42,11 +42,6 @@
               <asp:Button ID="Button1" runat="server" Text="Ingresar" 
          onclick="Button1_Click" />
          
-              <asp:Login ID="Login1" runat="server" DisplayRememberMe="False" 
-                  LoginButtonText="Ingresar" onauthenticate="Login1_Authenticate" 
-                  TitleText="Ingreso de usuarios" UserNameLabelText="Id Usuario:">
-              </asp:Login>
-         
          </td>
          </tr>
          </table>   

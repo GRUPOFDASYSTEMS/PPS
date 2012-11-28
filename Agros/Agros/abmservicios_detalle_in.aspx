@@ -67,14 +67,10 @@
          
          <tr>
          <td>
-            <asp:Button ID="Button1" runat="server" Text="Ver Productos Necesarios"  PostBackUrl="~/abmservicios_ver_productos_necesarios.aspx" />     
-         </td>
+             &nbsp;</td>
          
          <td>
-         <asp:Button ID="Button3" runat="server" Text="Agregar Productos Necesarios" 
-                 
-                 onclick="Button3_Click" />     
-         </td>
+             &nbsp;</td>
          
          </tr>
          
@@ -93,7 +89,7 @@
     </asp:ObjectDataSource>
 
     
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
     
 </asp:Content>

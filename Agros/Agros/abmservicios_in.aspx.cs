@@ -26,7 +26,7 @@ namespace Agros
             ArrayList campos = new ArrayList();
             ArrayList datos = new ArrayList();
             string resultado;
-            int id;
+
 
             //especifico campos
             campos.Add("nombre_servicio, ");
@@ -49,7 +49,16 @@ namespace Agros
 
             resultado = linker.insercion_de_dataset("servicio", campos, datos);
             Label1.Text = resultado;
+            string[] devolucion = new string[3];
+            devolucion = linker.revisar_error(resultado, "INS", "Se Ha Guardado El Servicio Correctamente. Puede Continuar Agregando Servicios, O Finalizar y Editar Sus Detalles En La Pagina De Edicion Servicios", "Atencion Ocurrio Un Error Al Intentar Ejecutar La Transaccion", "abmservicios_in.aspx", "abmservicios_in.aspx");
 
+
+            if (devolucion[0].Equals("0"))
+                Session["mensaje_error"] = devolucion[1];
+            else
+                Session["mensaje_exito"] = devolucion[1];
+
+            Response.Redirect(devolucion[2]);
 
 
         }

@@ -15,6 +15,10 @@ namespace Agros
 {
     public partial class modulo_servicios_creando_detalle_orden : System.Web.UI.Page
     {
+        linkeo linker = new linkeo();
+        string resultado, servicio, detalle_servicio, hs_necesarias, productos_necesarios;
+        int id;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,22 +32,43 @@ namespace Agros
 
         protected void agregar_Click(object sender, EventArgs e)
         {
-            linkeo linker = new linkeo();
+            
             ArrayList campos = new ArrayList();
             ArrayList datos = new ArrayList();
-            string resultado, servicio, detalle_servicio, hs_necesarias, productos_necesarios;
-            int id;
+
             //DateTime fecha = Convert.ToDatetime(this.Calendar1.SelectedDate.ToShortDateString());
+            
 
 
-            //que es lo que debo validar?
-            //primero obtengo lo que me solicitan (en tiempo y cantidad de productos)
+            /**** primero obtengo lo que me solicitan (en tiempo y cantidad de productos) ****/
+            string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
             servicio = this.DD_Servicio.SelectedValue;
             detalle_servicio = this.DDD_Servicio.SelectedValue;
+            //solo vale uno de los dos...
+            if (RS.Checked)
+                detalle_servicio = "";
+            else
+                servicio = "";
+            string cant = cantidad.Text;
+            string cm = comentario.Text;
+            string ope = DD_Operario.SelectedValue;
 
-            //cuanto tiempo? cantidad * hs del servicio
-            hs_necesarias = linker.obtener_dato_especificado("select tiempo_horas_hombre from detalle_servicio where id="+detalle_servicio, 0);
-            double hs = double.Parse(hs_necesarias) * Double.Parse (cantidad.Text) ;
+
+
+            /*** Que es lo que debo validar?  ****/
+            /*si tengo suficientes recursos*/
+            /*1) tiempo     - relacionado con los operarios favoritos (restriccion_disponibilidad_usuario)*/
+            /*2) productos  - relacionado con el stock disponible (stock real-reservado) */
+                //cuanto tiempo? cantidad * hs del servicio... pero...
+                /*tenemos 2 instancias*/
+                /* primero la mas simple, si elige un detalle servicio */
+                hs_necesarias = linker.obtener_dato_especificado("select tiempo_horas_hombre from detalle_servicio where id=" + detalle_servicio, 0);
+                //ahora debo ver como multiplicar...
+            double hs_totales = double.Parse(hs_necesarias) * double.Parse (cantidad.Text) ;
+             //finalmente si hs_totales > 8 entonces corresponden x dias   --ejemplo 16, seran 2 dias---
+ 
+            //ahora tengo la cantidad de tiempo que me va a llevar a partir de fecha 
+            //entonces tengo que ver si esos dias el operacio ope esta disponible
             
             //productos_necesarios "select id_producto from productos necesarios where id_servicio="id
 
@@ -57,7 +82,7 @@ namespace Agros
             //... y agregar la restriccion correspondiente al operario...
 
 
-            string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
+            
             //especifico campos
             campos.Add("fecha, ");
             campos.Add("id_os, ");
@@ -103,33 +128,40 @@ namespace Agros
         {
 
 
-            radios();
+            //radios();
+                    this.DDD_Servicio.Enabled = false;
+                    this.DD_Servicio.Enabled = true;
+
 
         }
 
 
         protected void RDS_CheckedChanged(object sender, EventArgs e)
         {
-            radios();
-        }
+            //radios();
 
-
-
-        protected void radios()
-        {
-            if (RS.Checked)
-            {
-                this.DDD_Servicio.Enabled = false;
-                this.DD_Servicio.Enabled = true;
-            }
-            else
-            {
-                RDS.Checked = true;
-                this.DDD_Servicio.Enabled = true;
-                this.DD_Servicio.Enabled = false;
-            }
+                    this.DDD_Servicio.Enabled = true;
+                    this.DD_Servicio.Enabled = false;
 
         }
+
+
+
+        //protected void radios()
+        //{
+        //    if (RS.Checked)
+        //    {
+        //        this.DDD_Servicio.Enabled = false;
+        //        this.DD_Servicio.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        RDS.Checked = true;
+        //        this.DDD_Servicio.Enabled = true;
+        //        this.DD_Servicio.Enabled = false;
+        //    }
+
+        //}
 
     }
 }

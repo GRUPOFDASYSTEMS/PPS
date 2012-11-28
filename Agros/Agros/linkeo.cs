@@ -734,6 +734,54 @@ namespace Agros
         }
 
 
+
+        public string borrado_personalizado_con_id(string consulta_y_condicion, string id)
+        {
+
+            string borrado;
+
+            SqlCommand Comando = conexion.CreateCommand();
+            // tomo para todos las tablas el atributo id siempre 
+            borrado = consulta_y_condicion + id;
+
+            try
+            {
+                conexion.Open();
+                Comando.CommandText = borrado;
+                Comando.ExecuteNonQuery();
+            }
+
+
+
+            catch (SqlException ex)
+            {
+
+                // mostrar error
+                string error = "1 " + borrado;  //genero el valor 1 al inicio de la cadena, para reconocer el error afuera
+                error = error + ex.ToString();
+                borrado = tratar_error(error);
+
+
+            }
+
+            finally
+            {
+                // Close Connection
+                conexion.Close();
+            }
+
+            //return "proceso exitoso";
+            return borrado;
+        }
+
+
+
+
+
+
+
+
+
         public string tratar_error(string resultado)
         {
             //string error = resultado.Substring(0, 1);

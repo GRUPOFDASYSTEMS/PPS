@@ -15,6 +15,7 @@ namespace Agros
 {
     public partial class Site11 : System.Web.UI.MasterPage
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             /* SETEOS GENERALES*/ 
@@ -36,8 +37,7 @@ namespace Agros
                 Response.Write(mensaje_exito);
                 Session["mensaje_exito"] = "";
             }
-            
-            
+
             
             
             //pagina p = new pagina();
@@ -46,7 +46,6 @@ namespace Agros
             //nueva_pagina np = new nueva_pagina();
             //np.verifica_login();
         }
-
 
 
 
@@ -95,6 +94,29 @@ namespace Agros
 
     public class nueva_pagina : Site11
     {
+
+
+
+        public string  mensaje_marca(string parametro)
+        {
+            string i = "<script>window.alert('";
+            string f = "');</script>";
+            string mensaje_error = "";
+            bool res = true;
+
+            if (parametro.Length < 1)
+            {
+                mensaje_error = "Debe Marcar Un Item Antes De Continuar";
+                mensaje_error = i + mensaje_error + f;
+                //Response.Write(mensaje_error);
+                //res = false;
+            }
+
+            return mensaje_error;
+
+        }
+
+
 
 
         public virtual void verifica_login()
