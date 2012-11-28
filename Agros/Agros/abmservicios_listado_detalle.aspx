@@ -58,8 +58,7 @@
          </table>   
 --%>
 
-    
-            <input id="back" type="button" value="Volver Atras" onclick="history.back();"/>
+    <asp:Button ID="Button1" runat="server" Text="Finalizar Edicion"    PostBackUrl="~/abmservicios.aspx"/>
 
     
 </asp:Content>

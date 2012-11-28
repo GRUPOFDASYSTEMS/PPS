@@ -91,6 +91,43 @@ namespace Agros
 
 
 
+        public string elimina_hijo_y_padre(string id, string borradocondicional, string tabla_padre)
+        {
+            System.Windows.Forms.DialogResult a;
+            string res, respuesta;
+            
+
+            a = System.Windows.Forms.MessageBox.Show("¿Seguro Desea Eliminar Este Registro?", "Confirme Su Accion", System.Windows.Forms.MessageBoxButtons.YesNo);
+            res = a.ToString();
+
+            if (res.Equals("Yes"))
+            {
+                
+                //ligado
+                respuesta = borrar_id_ligado(id, borradocondicional);
+
+                //si todo esta bien, prosigo sino corto aca..
+                string[] check = linker.revisar_error(respuesta, "DEL", "", "", "", "");
+
+                if (check[0].Equals("1"))
+                //borro padre
+                respuesta = borrar_id(id, tabla_padre);
+
+            
+            }
+            else
+                respuesta = "No Acepto";
+
+            return respuesta;
+        }
+
+
+
+
+
+
+
+
 
         protected string borrar_id(string id, string tabla)
         {
@@ -101,7 +138,14 @@ namespace Agros
             return respuesta;
         }
 
+        protected string borrar_id_ligado(string id, string borradocondicional)
+        {
+            string respuesta;
 
+            respuesta = linker.borrado_personalizado_con_id(borradocondicional, id);
+
+            return respuesta;
+        }
 
 
     }

@@ -15,8 +15,10 @@ namespace Agros
 {
     public partial class abmservicios_listado_detalle : System.Web.UI.Page
     {
+        linkeo linker = new linkeo();
         puente puente = new puente();
-        string id;
+        nueva_pagina np = new nueva_pagina(); 
+        string id, rm, resultado;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,25 +26,6 @@ namespace Agros
         }
 
 
-
-
-        public bool mensaje(string parametro)
-        {
-            string i = "<script>window.alert('";
-            string f = "');</script>";
-            string mensaje_error = "Debe Marcar Un Item Antes De Continuar";
-            bool res = true;
-
-            if (parametro.Length < 1)
-            {
-                mensaje_error = i + mensaje_error + f;
-                Response.Write(mensaje_error);
-                res = false;
-            }
-
-            return res;
-
-        }
 
 
         protected void dgvDatos_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,23 +41,44 @@ namespace Agros
         {
             id = this.Label2.Text;
 
-            if (mensaje(id)){
+            if ((rm = np.mensaje_marca(id)).Length < 1)
+            {
+                //primero elimino las dependencias (en producto_necesario)luego el valor padre
+                resultado = puente.elimina_hijo_y_padre(id, "DELETE FROM producto_necesario WHERE id_detalle_servicio=", "detalle_servicio");
 
-                puente.elimina(id, "detalle_servicio");
-                Response.Redirect("abmservicios_listado_detalle.aspx");
+                string[] devolucion = new string[3];
+                devolucion = linker.revisar_error(resultado, "DEL", "Datos Eliminados Correctamente", "Atencion Ocurrio Un Error Al Intentar Ejecutar La Transaccion", "abmservicios_listado_detalle.aspx", "abmservicios_listado_detalle.aspx");
+
+
+                if (devolucion[0].Equals("0"))
+                    Session["mensaje_error"] = devolucion[1];
+                else
+                    Session["mensaje_exito"] = devolucion[1];
+
+                //Valido en el caso que no acepte...
+                if (resultado.Equals("No Acepto"))
+                    Session["mensaje_error"] = "";
+
+                Response.Redirect(devolucion[2]);
+
             }
+            else
+                Response.Write(rm);
 
         }
 
         protected void ver_Click(object sender, EventArgs e)
         {
-            //PostBackUrl="~/abmservicios_ver_productos_necesarios.aspx" 
+
             id = this.Label2.Text;
 
-            if (mensaje(id)){
-                Session["id_detalle_servicio"] =id;
+            if ((rm = np.mensaje_marca(id)).Length < 1)
+            {
+                Session["id_detalle_servicio"] = id;
                 Response.Redirect("abmservicios_ver_productos_necesarios.aspx");
             }
+            else
+                Response.Write(rm);
 
         }
 
@@ -82,11 +86,14 @@ namespace Agros
         {
             id = this.Label2.Text;
 
-            if (mensaje(id)){
+            if ((rm = np.mensaje_marca(id)).Length < 1)
+            {
 
                 Session["id_detalle_servicio"] = id;
                 Response.Redirect("abmservicios_agregar_producto_necesario.aspx");
             }
+            else
+                Response.Write(rm);
 
         }
     }

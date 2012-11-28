@@ -34,15 +34,18 @@
           <td>
               <p class="meta">
                   <asp:RadioButton ID="RS" runat="server"  GroupName="r1"  Checked="true" 
-                      oncheckedchanged="RS_CheckedChanged" /> &nbsp;&nbsp;&nbsp; Elegir 
-                  Pack Servicio:<asp:DropDownList ID="DD_Servicio" runat="server"  >
+                      oncheckedchanged="RS_CheckedChanged" /> &nbsp;&nbsp;&nbsp; Elegir Pack Servicio:<asp:DropDownList 
+                      ID="DD_Servicio" runat="server" DataSourceID="ObjectDataSource1" 
+                      DataTextField="nombre_servicio" DataValueField="id"  >
               </asp:DropDownList>
               </p>
 	      </td>
           <td>
                   <asp:RadioButton ID="RDS" runat="server" GroupName="r1" 
-                      oncheckedchanged="RDS_CheckedChanged"  /> Elegir Servicio 
-              Especifico:<asp:DropDownList ID="DDD_Servicio" runat="server" Enabled="false">
+                      oncheckedchanged="RDS_CheckedChanged"  /> Elegir Servicio Especifico:<asp:DropDownList 
+                      ID="DDD_Servicio" runat="server" Enabled="False" 
+                      DataSourceID="ObjectDataSource2" DataTextField="descripcion" 
+                      DataValueField="id">
               </asp:DropDownList>
 	      </td>
 	      <td>  
@@ -69,7 +72,7 @@
           <td>
             
               <p class="meta">
-                  &nbsp;&nbsp;&nbsp; Detalle Cantidad Hectareas():  </p> 
+                  &nbsp;&nbsp;&nbsp; Para Cantidad Hectareas():  </p> 
           </td>
           <td>
             
@@ -82,7 +85,7 @@
           <td style="height: 16px">
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Comentarios Adicionales:</p>
+                  &nbsp;&nbsp;&nbsp; Comentarios Adicionales:</p>
           </td>
           <td style="height: 16px">
             
@@ -97,11 +100,12 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Seleccionar Operario:</p>
+                  &nbsp;&nbsp;&nbsp; Seleccionar Operario:</p>
           </td>
           <td>
             
-              <asp:DropDownList ID="DD_Operario" runat="server"  >
+              <asp:DropDownList ID="DD_Operario" runat="server" 
+                  DataSourceID="ObjectDataSource3" DataTextField="nombre" DataValueField="id"  >
               </asp:DropDownList>
 
           </td>
@@ -120,8 +124,29 @@
          </table>   
          
 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>         
-              <asp:Button ID="fin" runat="server" Text="Finalizar Edicion" />       
-<asp:Button ID="Button2" runat="server" Text="Volver" PostBackUrl="~/modulo_servicios_cliente_listados.aspx" />    
+              
+<asp:Button ID="Button2" runat="server" Text="Finalizar Edicion" PostBackUrl="~/modulo_servicios_cliente_listados.aspx" />    
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from servicio" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from detalle_servicio" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from usuario where perfil=3" 
+                Name="consulta" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
     </form>
 </asp:Content>
 

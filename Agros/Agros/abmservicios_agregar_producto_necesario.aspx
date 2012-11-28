@@ -1,109 +1,70 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_agregar_producto_necesario.aspx.cs" Inherits="Agros.abmservicios_agregar_producto_necesario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmservicios_agregar_producto_necesario.aspx.cs" MasterPageFile="~/menu_administrativo.master" Inherits="Agros.abmservicios_agregar_producto_necesario" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>Agregando Productos Necesarios</title>
-    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-</head>
-<body>
+
+
+
+
+
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
     
-    <form id="form1" runat="server">
+    <h2 class="title"><a href="#">Composicion Servicio - Detalle de servicios - Adicion De Productos Necesarios</a></h2>
+
+          <p class="meta">
+              Asociado al servicio:<asp:Label ID="Lidds" runat="server" Text=""></asp:Label>
+                    
+        <asp:GridView ID="dgvDatos" runat="server" 
+        DataSourceID="ObjectDataSource1" 
+                  onselectedindexchanged="dgvDatos_SelectedIndexChanged" AllowPaging="True">
+            <Columns>
+                <asp:CommandField SelectText="-&gt;" ShowSelectButton="True" 
+                    HeaderText="Marcar" />
+            </Columns>
+    </asp:GridView>
     
-    ...quiza esta pantalla sea un popup x eso no tiene disenio...
-    <h2 class="title"><a href="#" />Seleccione un producto:</h2> 
 
-        <asp:DropDownList ID="DropDownList1" runat="server">
-        </asp:DropDownList>
-        
 
-(producto seleccionado)
-        <table>
+                </p>
+                
+
+
+    <asp:Label ID="Labeltext" runat="server" Text="Producto Seleccionado"></asp:Label>
+    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+    <br />
+    <asp:Label ID="Labelcant" runat="server" Text="Racion del producto necesaria (para 1 hectarea):    ."></asp:Label>
+    <asp:TextBox ID="cantidad" runat="server"></asp:TextBox>
+                
+
+
+
+    <br />
+         <asp:Button ID="add" runat="server" Text="Agregar Producto" onclick="add_Click"  />     
+
+
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select p.id, p.descripcion, u.descripcion, p.racion_unidad_medida as Racion, p.comentario from productos p, unidad_medida u where p.unidad_medida=u.id" Name="consulta" 
+                Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
+    
+    
+    
+<%--        <table>
          <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Producto</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Unidad Medida</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Raci&oacute;n Unidad De Medida</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Comentario Adicional</p>
-          </td>
+        <td>
+            <asp:Button ID="Button2" runat="server" Text="*" PostBackUrl="~/abmservicios_ver_productos_necesarios.aspx" />
+        </td>
 
-
-
-         </tr>
-
-
-
-
-
-
-
-
-
-
-
-         <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Acido Sulfurico</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Litros</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; 4</p>
-          </td>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Evitar mojar los recipientes (Balde de 5 lts)</p>
-          </td>
-          
+         
          </tr>
          </table>   
-         
-    <table>
-         <tr>
-          <td>
-              <p class="meta">
-              Cantidad De Unidades Necesaria:
-                 </p>
-	      </td>
-	      <td>  
-              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-          </td>
-        </tr>  
-    </table>         
+--%>&nbsp;
 
-
-<asp:Button ID="add" runat="server" Text="Agregar"   />   <%--OnClick="crearinsertymostrarmensajedeok_luegoresetearform..;"--%>
-<asp:Button ID="cancel" runat="server" Text="Cancelar"  OnClick="window.close();" />   
-
-    </form>
-
-
+        <asp:Button ID="Button1" runat="server" Text="Finalizar Carga"  PostBackUrl="~/abmservicios_listado_detalle.aspx"/> 
 
     
-    
-    
-</body>
-</html>
+</asp:Content>

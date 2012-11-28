@@ -27,31 +27,49 @@
         </table>
         
 
-              <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+              <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     
-                        <br />
                         <br />
     
                         
     <asp:GridView ID="dgvDatos" runat="server" DataSourceID="ObjectDataSource2" 
         AllowPaging="True" AllowSorting="True" onselectedindexchanged="dgvDatos_SelectedIndexChanged" >
         <Columns>
-            <asp:HyperLinkField HeaderImageUrl="~/images/img10.gif" HeaderText="Configurar" 
-                NavigateUrl="~/configurar_cliente.aspx" Text="~" />
-            <asp:CommandField ButtonType="Button" EditText="Configura" SelectText="X" 
-                ShowSelectButton="True" />
-            <asp:CommandField SelectText="~" ShowSelectButton="True" />
+            <asp:CommandField SelectText="-&gt;" 
+                ShowSelectButton="True" HeaderText="Marcar" />
         </Columns>
     
     </asp:GridView>        
           
+                        <br />
+    
+                        
+    <asp:Label ID="ltext" runat="server" Text="Ha Seleccionado El Cliente: "></asp:Label>
+    <asp:Label ID="idc" runat="server" Text=""></asp:Label>
+          
+    <asp:Button ID="X" runat="server" Text="Eliminar" onclick="Button3_Click" />
+          
     <br />
+    ...::::::::::::::::***************::::::::::::::::***************::::::::::::::::***************::::::::::::::::....<br />
+    CONFIGURAR CLIENTE:<br />
+    <br />
+    OPERARIO FAVORITO&nbsp; :&nbsp;  
+            <asp:DropDownList ID="operario" runat="server" 
+        DataSourceID="ObjectDataSource3" DataTextField="nombre" 
+        DataValueField="id">
+            </asp:DropDownList>
+          &nbsp;<asp:Button ID="of" runat="server" Text="Fijar" 
+        onclick="of_Click" />
+    <br />
+    VALOR DE CONFIANZA :     <asp:TextBox ID="confianza" runat="server"></asp:TextBox>
+    <asp:Button ID="vc" runat="server" Text="Establecer" onclick="vc_Click" />
+    
     <br />
           
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
         <SelectParameters>
-            <asp:Parameter DefaultValue="select * from estados" Name="consulta" 
+            <asp:Parameter DefaultValue="select * from estados where tema='cliente'" Name="consulta" 
                 Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
@@ -83,7 +101,16 @@
             <asp:Parameter Name="valores" Type="Object" />
         </InsertParameters>
     </asp:ObjectDataSource>
+    
+    
+    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" 
+        SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="select * from usuario where perfil=3" 
+                Name="consulta" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
-<asp:Button ID="Button2" runat="server" Text="Volver" onclientclick="javascript:history.back()"/>    
+<asp:Button ID="Button2" runat="server" Text="Volver"  PostBackUrl="~/indice_administrativo.aspx"/>    
 
 </asp:Content>

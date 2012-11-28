@@ -24,29 +24,6 @@ namespace Agros
             
            // Label1.ForeColor = System.Drawing.Color.Red;
 
-            //string mensaje_error = Session["mensaje_error"].ToString();
-            //if (mensaje_error.Length > 0)
-            //{
-            //    //muestro alerta
-            //    Response.Write(mensaje_error);
-            //    Session["mensaje_error"] = "";
-            //}
-
-
-            //string mensaje_exito = Session["mensaje_exito"].ToString();
-            //if (mensaje_exito.Length > 0)
-            //{
-            //    //muestro alerta
-            //    Response.Write(mensaje_exito);
-            //    Session["mensaje_exito"] = "";
-            //}
-
-
-
-
-
-
-
             if (Session["cliente"].ToString().Equals("0"))
                 backtoindexcliente.Visible = false;
             else

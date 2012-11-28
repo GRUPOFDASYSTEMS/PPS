@@ -89,7 +89,7 @@
     </asp:ObjectDataSource>
 
     
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
     
 </asp:Content>
