@@ -48,16 +48,7 @@
                       DataValueField="id">
               </asp:DropDownList>
 	      </td>
-	      <td>  
-              &nbsp;</td>
-
-
-          <td>
-              <p class="meta">
-                  &nbsp;&nbsp;&nbsp; </p>
-	      </td>
-	      <td>  
-              &nbsp;</td>
+	      
 
 
 

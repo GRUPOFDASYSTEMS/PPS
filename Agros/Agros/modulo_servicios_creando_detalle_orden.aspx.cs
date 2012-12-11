@@ -42,6 +42,8 @@ namespace Agros
 
             /**** primero obtengo lo que me solicitan (en tiempo y cantidad de productos) ****/
             string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
+            //DateTime fecha_seleccionada = DateTime(Calendar1.SelectedDate);
+            DateTime fecha_inicio = Convert.ToDateTime(this.Calendar1.SelectedDate.ToShortDateString());
             servicio = this.DD_Servicio.SelectedValue;
             detalle_servicio = this.DDD_Servicio.SelectedValue;
             //solo vale uno de los dos...
@@ -63,10 +65,22 @@ namespace Agros
                 /*tenemos 2 instancias*/
                 /* primero la mas simple, si elige un detalle servicio */
                 hs_necesarias = linker.obtener_dato_especificado("select tiempo_horas_hombre from detalle_servicio where id=" + detalle_servicio, 0);
-                //ahora debo ver como multiplicar...
-            double hs_totales = double.Parse(hs_necesarias) * double.Parse (cantidad.Text) ;
+            //primero solo tomo las horas (no los minutos.... ya fue)
+                hs_necesarias = hs_necesarias.Substring(0, 2);
+            //ahora debo ver como multiplicar...
+                int hs_totales = int.Parse(hs_necesarias) * int.Parse(cant);
+
+            //double hs_totales = double.Parse(hs_necesarias) * double.Parse (cantidad.Text) ;
              //finalmente si hs_totales > 8 entonces corresponden x dias   --ejemplo 16, seran 2 dias---
- 
+                int dias_ocupados = hs_totales / 8;
+                int diferencia = hs_totales % 8;
+                DateTime  fecha_fin =fecha_inicio.AddDays(dias_ocupados); //adiciono cantidad dias
+                DateTime hora_fin = fecha_fin.AddHours(8); //establezco las 8 am u 8 hs diarias
+                hora_fin = diferencia > 0 ? hora_fin.AddHours(diferencia) : hora_fin.AddHours(-16);//agrego la diferencia o establezco el fin del dia anterior
+
+
+                //fecha_seleccionada2 = fecha_seleccionada2.AddDays(dias_ocupados);
+                //fecha_seleccionada2= fecha_seleccionada2.AddHours(hs_totales);
             //ahora tengo la cantidad de tiempo que me va a llevar a partir de fecha 
             //entonces tengo que ver si esos dias el operacio ope esta disponible
             
@@ -124,13 +138,22 @@ namespace Agros
 
         }
 
+
+
+
+        protected void RS_IsChecked(object sender, EventArgs e) {
+            this.DDD_Servicio.Enabled = false;
+            this.DD_Servicio.Enabled = true;
+
+        }
+
         protected void RS_CheckedChanged(object sender, EventArgs e)
         {
 
 
             //radios();
-                    this.DDD_Servicio.Enabled = false;
-                    this.DD_Servicio.Enabled = true;
+//                    this.DDD_Servicio.Enabled = false;
+  //                  this.DD_Servicio.Enabled = true;
 
 
         }
