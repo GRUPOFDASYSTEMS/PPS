@@ -28,32 +28,31 @@ namespace Agros
             ArrayList datos = new ArrayList();
             string resultado;
             int id;
-            //DateTime fecha = Convert.ToDatetime(this.Calendar1.SelectedDate.ToShortDateString());
 
 
 
             string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
+            string fecha2 = Calendar2.SelectedDate.ToString("yyyyMMdd");
+
             //especifico campos
-            campos.Add("fecha, ");
-            campos.Add("tiempo_inicial, ");
-            campos.Add("tiempo_final, ");
+            campos.Add("fecha_registracion, ");
+            campos.Add("fecha_inicial, ");
+            campos.Add("fecha_final, ");
             campos.Add("descripcion, ");
             campos.Add("id_usuario ");
-
+            DateTime fecha_actual = DateTime.Now;
+            string fa = fecha_actual.ToShortDateString();
             //recolecto datos
-            //datos.Add("CONVERT(varchar, CAST(SUBSTRING(");
             datos.Add(" ' ");
-            //datos.Add(this.Calendar1.SelectedDate.ToShortDateString());//fecha   .SelectedDate.Date
-            datos.Add(fecha);
-            datos.Add(" ' ");
-            //datos.Add(" , 0, 10) AS datetime), 103) ");
-            datos.Add(" , ");
-            datos.Add(" ' ");
-            datos.Add(this.TextBox2.Text);//tiempo
+            datos.Add(fa);
             datos.Add(" ' ");
             datos.Add(" , ");
             datos.Add(" ' ");
-            datos.Add(this.TextBox3.Text);//tiempo
+            datos.Add(fecha);//tiempo inicial
+            datos.Add(" ' ");
+            datos.Add(" , ");
+            datos.Add(" ' ");
+            datos.Add(fecha2);//tiempo final
             datos.Add(" ' ");
             datos.Add(" , ");
             datos.Add(" ' ");
@@ -62,17 +61,22 @@ namespace Agros
             datos.Add(" , ");
             datos.Add(this.DropDownList1.SelectedValue);//idu
 
-
             resultado = linker.insercion_de_dataset("restriccion_disponibilidad_usuario", campos, datos);
             Label1.Text = resultado;
-
 
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-            string fecha2 = String.Format("{0:yyyyMMdd}", this.Calendar1.SelectedDate.ToShortDateString());
-            Label2.Text = "Fecha Seleccionada: " + fecha2;
+            string fecha = String.Format("{0:yyyyMMdd}", this.Calendar1.SelectedDate.ToShortDateString());
+            f_in.Text = "Fecha Seleccionada: " + fecha;
+        }
+
+        protected void Calendar2_SelectionChanged(object sender, EventArgs e)
+        {
+            string fecha2 = String.Format("{0:yyyyMMdd}", this.Calendar2.SelectedDate.ToShortDateString());
+            f_out.Text = "Fecha Seleccionada: " + fecha2;
+
         }
     }
 }

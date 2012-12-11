@@ -15,15 +15,36 @@
          <tr>
           <td>
               <p class="meta">
-                  Fecha:
+                  Fecha Inicial:
                  </p>
 	      </td>
 	      <td>  
               <asp:Calendar ID="Calendar1" runat="server" 
                   onselectionchanged="Calendar1_SelectionChanged"></asp:Calendar>
-              <asp:Label ID="Label2" runat="server" Text="Fecha Seleccionada:"></asp:Label>
+              <asp:Label ID="f_in" runat="server" Text="Fecha Seleccionada:"></asp:Label>
           </td>
         </tr>  
+            
+                <tr>
+          <td>
+              <p class="meta">
+                  Fecha Final:
+                 </p>
+	      </td>
+	      <td>  
+              <asp:Calendar ID="Calendar2" runat="server" 
+                  onselectionchanged="Calendar2_SelectionChanged"></asp:Calendar>
+              <asp:Label ID="f_out" runat="server" Text="Fecha Seleccionada:"></asp:Label>
+          </td>
+                </tr>
+            
+         <tr>
+          <td>
+            
+              &nbsp;</td>
+          <td> 
+                  &nbsp;</td>
+         </tr>
             
          <tr>
           <td>
@@ -39,35 +60,6 @@
               </asp:DropDownList>
 
           </td>
-         </tr>
-         <tr> 
-          <td>
-              <p class="meta">
-                  Tiempo (inicial):
-                </p>
-          </td>
-          <td>
-              <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-          
-          </td>
-          
-          
-         </tr>
-         
-         <tr>
-         <td>
-              <p class="meta">
-                  Tiempo (final):
-                </p>
-         
-         
-         </td>
-         <td>
-         
-             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-         </td>
-
-
          </tr>
          
         <tr>
