@@ -80,7 +80,7 @@
          
          <tr>
          <td>
-            <asp:Button ID="Button1" runat="server" Text="Limpiar" />     
+         
          </td>
          
          <td>
@@ -96,10 +96,14 @@
     
     <%--<asp:Button < input type=button  ID="back" runat="server"     Text="Cancelar" onclick="history.back()"   />   --%>
     
-    <input id="Button3" type="button" value="Cancelar" onclick="history.back()" />
     <asp:Label ID="Label1" runat="server" Text="L1"></asp:Label>
  
  <asp:Label ID="Label3" runat="server" Text="L3"></asp:Label>
+
+
+
+    <input id="Button3" type="button" value="Finalizar Edicion" onclick="history.back()" />
+
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">

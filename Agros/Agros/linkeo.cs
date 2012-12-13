@@ -29,7 +29,7 @@ namespace Agros
     public class linkeo //link_mssql
     {
 /********DATOS DE CONEXION EN NOTEBOOK*******/
-      static SqlConnection conexion = new SqlConnection("Data Source=ALEX\\FDA;MultipleActiveResultSets=True;Initial Catalog=master;Integrated Security=True");
+    //static SqlConnection conexion = new SqlConnection("Data Source=ALEX\\FDA;MultipleActiveResultSets=True;Initial Catalog=master;Integrated Security=True");
 
 
 
@@ -38,11 +38,19 @@ namespace Agros
      // la que tiene datos pero no podemos acceder... 
        // static SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename='D:\master.mdf';Integrated Security=True;Connect Timeout=30;User Instance=True");
 
+
+/*********DATOS DE CONEXION DE LA SOLUCION****************/
+        /*..CON ESTO SE EVITA ANDAR CAMBIANDO DE BASE..*/
+        static SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\agros.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+        
+        
+        
+        
         //Data Source=.\SQLEXPRESS;AttachDbFilename="D:\FDA\BASES DE DATOS 2011\master.mdf";Integrated Security=True;Connect Timeout=30;User Instance=True
-//la que si nos deja... (Pero faltan algunas tablas .. llenar a medida que se necesite)
-       // static SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename='D:\FDA\BASE DE DATOS 2011\master.mdf';Integrated Security=True;Connect Timeout=30;User Instance=True");
-//ultima prueba  evito la master y no dejo el ldf en el mismo dir luegop queda ver si el directorio esta permintido
-   /* dont work... */    // static SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\FDA\BASES DE DATOS 2011\agrocomp.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+        //la que si nos deja... (Pero faltan algunas tablas .. llenar a medida que se necesite)
+        //static SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\agros.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+
+        
 
         public static void SetInitValues(string[] myList, int limite)
         {

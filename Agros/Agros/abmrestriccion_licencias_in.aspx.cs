@@ -63,7 +63,26 @@ namespace Agros
 
 
             resultado = linker.insercion_de_dataset("restriccion_disponibilidad_usuario", campos, datos);
-            Label1.Text = resultado;
+            
+
+
+            //verifico respuesta
+            
+            string[] devolucion = new string[3];
+            devolucion = linker.revisar_error(resultado, "INS", "Datos Cargados Correctamente", "Atencion Ocurrio Un Error Al Intentar Ejecutar La Transaccion", "abmservicios_agregar_producto_necesario.aspx", "abmservicios_agregar_producto_necesario.aspx");
+
+
+            Label1.Text = devolucion[1];
+
+            //if (devolucion[0].Equals("0"))
+            //    Session["mensaje_error"] = devolucion[1];
+            //else
+            //    Session["mensaje_exito"] = devolucion[1];
+
+            //Response.Redirect(devolucion[2]);
+
+
+
 
 
 
