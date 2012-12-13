@@ -114,7 +114,8 @@
          </tr>
          </table>   
          
-<asp:Label ID="Label1" runat="server" Text=""></asp:Label>         
+<asp:Label ID="LabelInfo" runat="server" Text="" ForeColor="Red" ></asp:Label>         
+<br />
               
 <asp:Button ID="Button2" runat="server" Text="Finalizar Edicion" PostBackUrl="~/modulo_servicios_cliente_listados.aspx" />    
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 

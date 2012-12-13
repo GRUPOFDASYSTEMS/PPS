@@ -36,7 +36,8 @@ namespace Agros
             ArrayList campos = new ArrayList();
             ArrayList datos = new ArrayList();
 
-            //DateTime fecha = Convert.ToDatetime(this.Calendar1.SelectedDate.ToShortDateString());
+            /*Primero hay que asegurarse que todos los valores esten elegidos...
+             se puede hacer con validators o desde el codigo...*/
             
 
 
@@ -49,9 +50,12 @@ namespace Agros
             detalle_servicio = this.DDD_Servicio.SelectedValue;
             //solo vale uno de los dos...
             if (RS.Checked)
-                detalle_servicio = "";
+                detalle_servicio = "";  //OJO QUE SI LIMPIAMOS ACA, LUEGO TENEMOS QUE DARLE UN VALOR PARA EJECUTAR LA CONSULTA...
             else
                 servicio = "";
+            
+            
+            
             string cant = cantidad.Text;
             string cm = comentario.Text;
             string ope = DD_Operario.SelectedValue;
@@ -71,7 +75,7 @@ namespace Agros
             //ahora debo ver como multiplicar...
                 int hs_totales = int.Parse(hs_necesarias) * int.Parse(cant);
 
-            //double hs_totales = double.Parse(hs_necesarias) * double.Parse (cantidad.Text) ;
+            
              //finalmente si hs_totales > 8 entonces corresponden x dias   --ejemplo 16, seran 2 dias---
                 int dias_ocupados = hs_totales / 8;
                 int diferencia = hs_totales % 8;
@@ -79,6 +83,11 @@ namespace Agros
                 DateTime hora_fin = fecha_fin.AddHours(8); //establezco las 8 am u 8 hs diarias
                 hora_fin = diferencia > 0 ? hora_fin.AddHours(diferencia) : hora_fin.AddHours(-16);//agrego la diferencia o establezco el fin del dia anterior
 
+                //formateo las fechas para consultar
+                //string fecha1 = String.Format("{0:yyyyMMdd}", hora_inicio.ToShortDateString());
+                //string fecha2 = String.Format("{0:yyyyMMdd}", hora_fin.ToShortDateString());
+                string fecha1 = hora_inicio.ToString("yyyyMMdd");
+                string fecha2 = hora_fin.ToString("yyyyMMdd");
             /**** ahora ya tengo la cantidad de tiempo que me va a llevar a partir de fecha (hora_inicio) hasta (hora_fin) ***/
                         //entonces tengo que ver si esos dias el operacio ope esta disponible
             /* EJEMPLO...
@@ -86,15 +95,38 @@ namespace Agros
                FROM            restriccion_disponibilidad_usuario
                 WHERE        (id_usuario = 5) and ((fecha_inicial BETWEEN '02/11/2012' AND '03/11/2012') OR
                 (fecha_final BETWEEN '04/11/2012' AND '04/11/2012'))
-             */ 
-                consulta_especificada = "select id from restriccion_disponibilidad_usuario where  ((fecha_inicio between "+ fecha_inicio.ToString()+" and "+ fecha_fin.ToString()+") or (fecha_fin between  "+fecha_inicio.ToString()+" and "+ fecha_fin.ToString()+")) and (id_usuario=" + ope + ")";
+             */
+                consulta_especificada = "select id from restriccion_disponibilidad_usuario "+
+                                        " where  ( "+   
+                                                    " (id_usuario=" + ope + ")"+
+                                                    " and "+
+                                                    " (  "+
+                                                            "( '" + fecha1 + "' between fecha_inicio and fecha_fin )" +
+                                                            " or "+
+                                                            "( '" + fecha2 + "' between fecha_inicio and fecha_fin )" +
+                                                            " or " +
+                                                            "( fecha_inicio > '" + fecha1 + "' and fecha_fin <= '" + fecha2 + "')" +
+
+                                                    " )  "+
+                                                " )  ";
+
+
+                                                //    "   (fecha_inicio between '" + fecha1 + "' and '" + fecha2 + "') or (fecha_fin between  '" + fecha1 + "' and '" + fecha2 + "')) and ;
                 operario_disponible = linker.obtener_dato_especificado(consulta_especificada, 0);
             /* Si existe algun registro entonces debo informar y brindar una opcion o que el mismo elija otro..*/
                 if (!operario_disponible.Equals("-1")) //ojo con los errores...
-                {
+                { /*ojo con los errores... si existe un error por ejemplo servidor caido nos devuelve el error
+                   * entonces entra aca, para salvar esa situacion preguntamos por el length. en general si nos 
+                   * devuelve un id no seran mas de 9 caracteres ###,###,###... un error tiene mas de 10*/
+                    LabelInfo.ForeColor = System.Drawing.Color.Red;
+                    if (operario_disponible.Length > 9)
+                        LabelInfo.Text = "Ha Ocurrido un error al intentar ejecutar la consulta.";
+                    else
+                        LabelInfo.Text = "No existen horarios disponibles para el operario elegido. Puede optar por cambiar de fecha, de operario, o disminuir la cantidad de hectareas, y reintente nuevamente.";
                     //si brindamos una opcion
                     //deberia hacer un while con el id de todos los usuarios y al encontrar uno informarlo...
-                    //si hay tiempo lo hago, por ahora solo informo que no hay
+                    //si hay tiempo lo hago, por ahora solo informo que no hay tiempo con ese operario, y que debe cambiar de operario o de dia.
+                    //quiza la recomendacion mejor seria brindarle la primer fecha disponible con el operario elegido... haciendo fecha +1 fecha +2..no se un lio igual
 
                 }
                 else   //OK, CONTINUAR..            
@@ -129,8 +161,8 @@ namespace Agros
                     // finalmente deberia reservar stock
                     //... y agregar la restriccion correspondiente al operario...
 
-
-
+                    LabelInfo.ForeColor = System.Drawing.Color.Green;
+                    LabelInfo.Text = "Orden de servicio generada correctamente. Puede continuar generando ordenes o finalizar desde el boton FINALIZAR EDICION.";
                     //especifico campos
                     campos.Add("fecha, ");
                     campos.Add("id_os, ");

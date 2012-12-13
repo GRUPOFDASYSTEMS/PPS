@@ -27,20 +27,21 @@ namespace Agros
             ArrayList datos = new ArrayList();
             string resultado;
             int id;
-            //DateTime fecha = Convert.ToDatetime(this.Calendar1.SelectedDate.ToShortDateString());
 
 
 
+            //obtengo fechas formateadas
              string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
              string fecha2 = Calendar2.SelectedDate.ToString("yyyyMMdd");
+             DateTime fecha_actual = DateTime.Now;
+             string fa = fecha_actual.ToString("yyyyMMdd");
+
             //especifico campos
             campos.Add("fecha_registracion, ");//despues probar si ingresa ok, sino... sacar
-            campos.Add("fecha_inicial, ");
-            campos.Add("fecha_final, ");
+            campos.Add("fecha_inicio, ");
+            campos.Add("fecha_fin, ");
             campos.Add("descripcion, ");
             campos.Add("id_usuario ");
-            DateTime fecha_actual = DateTime.Now;
-            string fa = fecha_actual.ToShortDateString();
             //recolecto datos
             datos.Add(" ' ");
             datos.Add(fa);
