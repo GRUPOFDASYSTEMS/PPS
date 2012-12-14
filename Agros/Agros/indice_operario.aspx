@@ -17,7 +17,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton2" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Productos" PostBackUrl="~/servicios_operarios_general.aspx" />
-              &nbsp;&nbsp;&nbsp; Modulo De Servicios</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Servicios</p>
           </td>
         </tr>  
             
@@ -26,7 +26,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton6" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Stock" PostBackUrl="~/servicios_operario_restriccion_licencias_in.aspx"/>
-              &nbsp;&nbsp;&nbsp; Nueva Peticion Licencia </p>
+                       &nbsp;&nbsp;&nbsp; Nueva Peticion Licencia </p>
           </td>         
          
          
@@ -40,7 +40,7 @@
          </table>   
 
 
-    <asp:Button ID="Button3" runat="server" Text="Salir" />
+    <asp:Button ID="Salir" runat="server" Text="Salir" onclick="Salir_Click"   />
 
 
     </form>

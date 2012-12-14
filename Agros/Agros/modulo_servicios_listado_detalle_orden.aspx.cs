@@ -28,13 +28,13 @@ namespace Agros
         public void interpretar_instancia() { 
         
         string id = Session["id_os"].ToString();
-        string creando = linker.obtener_dato_especificado("select id from estados where descripcion='En Proceso de creacion' and tema='orden_servicio' ",0);
-        string estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where id="+id, 0);
+        string creando = linker.obtener_dato_especificado("select id from estados where descripcion='En Proceso de creacion' and tema='orden_servicio' ", 0);
+        string estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where id=" + id, 0);
 
 
         if (creando.Equals(estado))
             Response.Redirect("modulo_servicios_creando_detalle_orden.aspx");
-
+            //caso contrario debo editar cada uno de los items (aprobarlos/desaprobarlos/oquiza abortarlos)
 
 
         }

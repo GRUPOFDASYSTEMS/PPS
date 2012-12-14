@@ -18,7 +18,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton2" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Productos" PostBackUrl="~/abmproductos.aspx" />
-              &nbsp;&nbsp;&nbsp; Modulo De Productos</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Productos</p>
           </td>
         </tr>  
             
@@ -27,7 +27,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton6" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Stock" PostBackUrl="~/Stock_listados.aspx"/>
-              &nbsp;&nbsp;&nbsp; Modulo De Stock</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Stock</p>
           </td>         
          
          
@@ -43,7 +43,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton1" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Servicios" PostBackUrl="~/abmservicios.aspx"/>
-              &nbsp;&nbsp;&nbsp; Modulo De Servicios</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Servicios</p>
           </td>
          </tr>
          <tr> 
@@ -51,7 +51,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton3" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Personal" PostBackUrl="~/abmrestriccion_licencias.aspx"/>
-              &nbsp;&nbsp;&nbsp; Modulo De Personal</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Personal</p>
           </td>
           
           
@@ -62,7 +62,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton4" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Clientes" PostBackUrl="~/listar_clientes.aspx"/>
-              &nbsp;&nbsp;&nbsp; Modulo De Clientes</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Clientes</p>
           </td>
 
          </tr>
@@ -72,7 +72,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton5" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Facturacion" PostBackUrl="~/facturacion.aspx"/>
-              &nbsp;&nbsp;&nbsp; Modulo De Facturacion</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Facturacion</p>
           </td>         
          </tr>
          
@@ -80,7 +80,7 @@
          </table>   
 
 
-    <asp:Button ID="Button3" runat="server" Text="Salir" />
+    <asp:Button ID="Salir" runat="server" Text="Salir" onclick="Salir_Click" />
 
 
     <%--</form>--%>

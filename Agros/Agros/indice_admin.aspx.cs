@@ -19,5 +19,44 @@ namespace Agros
         {
 
         }
+
+
+
+        protected void limpio_variables_de_sesion()
+        {
+
+            //de sesion
+            Session["usuario"] = "0";
+            Session["cliente"] = "0";
+            Session["perfil"] = "0";
+
+            //genericos
+            Session["mensaje_exito"] = "";
+            Session["mensaje_error"] = "";
+
+
+            //de id
+            Session["id_factura"] = "0";
+            Session["id_os"] = "0";
+            Session["id_servicio"] = "0";
+            Session["id_detalle_servicio"] = "0";
+
+        }
+
+        protected void salir()
+        {
+            //codigo de salida
+            limpio_variables_de_sesion();
+
+            Response.Redirect("inicio.aspx");
+
+
+        }
+
+
+        protected void Salir_Click(object sender, EventArgs e)
+        {
+            salir();
+        }
     }
 }

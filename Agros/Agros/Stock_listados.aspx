@@ -70,13 +70,12 @@
             <asp:Parameter Name="campos_y_valores" Type="Object" />
         </UpdateParameters>
         <SelectParameters>
-            <asp:Parameter DefaultValue="SELECT     p.id, p.descripcion AS 'Producto', u.descripcion AS 'Unidad De  Medida', p.comentario AS 'Comentario', s.indice_repo AS 'Indice de  reposición', 
-                      s.cantidad - SUM(r.racion_unidad_medida) AS 'Stock Disponible', s.comentario AS 'Detalle  Stock'
-FROM         unidad_medida AS u INNER JOIN
-                      productos AS p ON u.id = p.unidad_medida INNER JOIN
-                      stock AS s ON p.id = s.id_producto INNER JOIN
-                      reservas_stock AS r ON p.id = r.id_producto
-GROUP BY p.id, p.descripcion, u.descripcion, p.comentario, s.indice_repo, s.cantidad, s.comentario " 
+            <asp:Parameter DefaultValue="SELECT        p.id, p.descripcion AS 'Producto', u.descripcion AS 'Unidad De  Medida', p.comentario AS 'Comentario', s.indice_repo AS 'Indice de  reposición', 
+                         s.cantidad - r.en_cantidad_unidades AS 'Stock Disponible', s.comentario AS 'Detalle  Stock'
+FROM            unidad_medida AS u INNER JOIN
+                         productos AS p ON u.id = p.unidad_medida INNER JOIN
+                         stock AS s ON p.id = s.id_producto INNER JOIN
+                         reservas_stock AS r ON p.id = r.id_producto " 
                 Name="consulta1" Type="String" />
             <asp:Parameter DefaultValue="SELECT     p.id, p.descripcion AS 'Producto', u.descripcion AS 'Unidad De  Medida', p.comentario AS 'Comentario', s.indice_repo AS 'Indice de  reposición', 
                       SUM(r.racion_unidad_medida) AS 'Stock Reservado', s.comentario AS 'Detalle  Stock'

@@ -13,7 +13,8 @@
 
 
     <asp:GridView ID="dgvDatos" runat="server" 
-        DataSourceID="ObjectDataSource1">
+        DataSourceID="ObjectDataSource1" 
+        onselectedindexchanged="dgvDatos_SelectedIndexChanged">
         <Columns>
             <asp:CommandField SelectText="X" ShowSelectButton="True" />
         </Columns>

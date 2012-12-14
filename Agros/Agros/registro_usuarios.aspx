@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registro_usuarios.aspx.cs" MasterPageFile="~/menu_administrador.master" Inherits="Agros.registro_usuarios" %>
-
+<%@ Register Src="Controles/ControlNum.ascx" TagName="ControlN" TagPrefix="CN"%>
 
 
 
@@ -14,10 +14,10 @@
          <tr>
           <td>
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Nombre Completo:</p>
+                  &nbsp;&nbsp;&nbsp; Nombre Completo:</p>
 	      </td>
 	      <td>  
-              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+              <asp:TextBox ID="nom" runat="server"></asp:TextBox>
           </td>
         </tr>  
             
@@ -25,25 +25,18 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Perfil:</p>
+                  &nbsp;&nbsp;&nbsp; Perfil:</p>
           </td>
           <td> 
-              <asp:DropDownList ID="DropDownList1" runat="server">
+              <asp:DropDownList ID="DropDownList1" runat="server" 
+                  DataSourceID="ObjectDataSource1" DataTextField="descripcion" 
+                  DataValueField="id">
               </asp:DropDownList> 
           </td>
          </tr>
          
          
-         <tr>
-          <td>
-            
-              <p class="meta">
-              &nbsp;&nbsp;&nbsp; Estado:</p>
-          </td>
-          <td> 
-              <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>   
-          </td>
-         </tr>         
+       
          
          
          
@@ -51,10 +44,11 @@
           <td>
             
               <p class="meta">
-              &nbsp;&nbsp;&nbsp; Clave:</p>
+                  &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
-              <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>   
+            <CN:ControlN runat="server" ID="clave" />
+              
           </td>
          </tr>         
          
@@ -65,7 +59,15 @@
          
          <tr> 
           <td>
-              <asp:Button ID="Button1" runat="server" Text="Registrar" />       
+              <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                  SelectMethod="Seleccion_en_dataset" TypeName="Agros.linkeo">
+                  <SelectParameters>
+                      <asp:Parameter DefaultValue="select * from perfiles where id<>3" Name="consulta" 
+                          Type="String" />
+                  </SelectParameters>
+              </asp:ObjectDataSource>
+              <asp:Button ID="Button1" runat="server" Text="Registrar" 
+                  onclick="Button1_Click" />       
           </td>
          </tr>
          </table>   

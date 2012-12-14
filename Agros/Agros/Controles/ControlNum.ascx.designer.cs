@@ -8,54 +8,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Agros {
+namespace IU.Controles {
     
     
-    public partial class indice_admin {
+    public partial class ControlNum {
         
         /// <summary>
-        /// Control ImageButton2.
+        /// Control txtIn.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
+        protected global::System.Web.UI.WebControls.TextBox txtIn;
         
         /// <summary>
-        /// Control ImageButton6.
+        /// Control rfvError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton6;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvError;
         
         /// <summary>
-        /// Control ImageButton1.
+        /// Control rvError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.RangeValidator rvError;
         
         /// <summary>
-        /// Control ImageButton3.
+        /// Control REVError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton3;
-        
-        /// <summary>
-        /// Control Salir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Salir;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REVError;
     }
 }

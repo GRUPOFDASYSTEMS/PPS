@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registro_clientes.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.registro_clientes" %>
-
+<%@ Register Src="Controles/ControlNum.ascx" TagName="ControlN" TagPrefix="CN"%>
 
 
 
@@ -22,14 +22,20 @@
                   &nbsp;&nbsp;&nbsp; CUIT:</p>
 	      </td>
 	      <td>  
-              <asp:TextBox ID="cuit" runat="server" ValidationGroup="req"></asp:TextBox>
+ 
+ 
+              <CN:ControlN runat="server" ID="cuit" />
+              
+<%--              <asp:TextBox ID="cuit2" runat="server" ValidationGroup="req"></asp:TextBox>
+             
+            
               <asp:RangeValidator ID="RangeValidator1" runat="server" 
               ControlToValidate="cuit" 
               Display="Dynamic" SetFocusOnError="True" 
               ErrorMessage="Solo se permiten numeros sin espacios ni guiones." 
                   MaximumValue="9999999999" MinimumValue="1111111111" 
               
-              ></asp:RangeValidator>
+              ></asp:RangeValidator>--%>
               
               
           </td>
@@ -42,8 +48,10 @@
                   &nbsp;&nbsp;&nbsp; Clave:</p>
           </td>
           <td> 
-              <asp:TextBox ID="clave" runat="server" ValidationGroup="req" 
-                  ontextchanged="clave_TextChanged"></asp:TextBox>   
+                 <CN:ControlN runat="server" ID="clave" />
+          
+<%--              <asp:TextBox ID="clave" runat="server" ValidationGroup="req" 
+                  ontextchanged="clave_TextChanged"></asp:TextBox> --%>  
           </td>
          </tr>
          

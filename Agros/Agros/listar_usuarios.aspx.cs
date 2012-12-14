@@ -20,6 +20,22 @@ namespace Agros
 
         }
 
+        //protected void dgvDatos_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+       
+
+        //}
+
+        protected void dgvDatos_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            puente puente = new puente();
+
+            string id = this.dgvDatos.Rows[this.dgvDatos.SelectedIndex].Cells[1].Text;
+            //this.Label1.Text = id;
+            puente.elimina(id, "usuario");
+            Response.Redirect("listar_usuarios.aspx"); 
+        }
+
         protected void dgvDatos_SelectedIndexChanged(object sender, EventArgs e)
         {
             puente puente = new puente();
@@ -27,7 +43,7 @@ namespace Agros
             string id = this.dgvDatos.Rows[this.dgvDatos.SelectedIndex].Cells[1].Text;
             //this.Label1.Text = id;
             puente.elimina(id, "usuario");
-            Response.Redirect("listar_usuarios.aspx");        
+            Response.Redirect("listar_usuarios.aspx"); 
 
         }
     }

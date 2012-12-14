@@ -106,7 +106,8 @@
                   
          <tr> 
           <td>
-              &nbsp;</td>
+                <asp:Button ID="new" runat="server" Text="Nuevo" onclick="new_Click"  />       
+             </td>
           <td>
               <asp:Button ID="agregar" runat="server" Text="Agregar" 
                   onclick="agregar_Click" />       
@@ -114,6 +115,13 @@
          </tr>
          </table>   
          
+<asp:Label ID="Label3" runat="server" Text="Detalle De Operacion De Insercion:" ForeColor="DarkKhaki" ></asp:Label>   
+<br />   
+<asp:Label ID="LabelGeneral" runat="server" Text="" ForeColor="Red" ></asp:Label>         
+    <br />
+<br />
+<asp:Label ID="Label1" runat="server" Text="Otros Comentarios De La Operacion De Insercion:" ForeColor="DarkKhaki" ></asp:Label>         
+<br />
 <asp:Label ID="LabelInfo" runat="server" Text="" ForeColor="Red" ></asp:Label>         
 <br />
               

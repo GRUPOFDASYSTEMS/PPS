@@ -214,6 +214,13 @@
     <Compile Include="configurar_cliente.aspx.designer.cs">
       <DependentUpon>configurar_cliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ControlNum.ascx.cs">
+      <DependentUpon>ControlNum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ControlNum.ascx.designer.cs">
+      <DependentUpon>ControlNum.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Estructura.Master.cs">
       <DependentUpon>Estructura.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -512,6 +519,7 @@
     <None Include="Agros.dbml.layout">
       <DependentUpon>Agros.dbml</DependentUpon>
     </None>
+    <Content Include="Controles\ControlNum.ascx" />
     <Content Include="Global.asax" />
     <Content Include="modulo_servicios_creando_detalle_orden.aspx" />
     <Content Include="servicios_operario_restriccion_licencias_in.aspx" />

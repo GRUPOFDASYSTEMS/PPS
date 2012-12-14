@@ -40,10 +40,10 @@ namespace Agros
 
             for (int i=0; i < c.Tables[0].Rows.Count; i++)
             {
-                cuit.Text=c.Tables[0].Rows[i][1].ToString();
+                cuit.Valor=c.Tables[0].Rows[i][1].ToString();
                 rs.Text = c.Tables[0].Rows[i][2].ToString();
                 dir.Text = c.Tables[0].Rows[i][3].ToString();
-                clave.Text = c.Tables[0].Rows[i][4].ToString();
+                clave.Valor = c.Tables[0].Rows[i][4].ToString();
                 DropDownList1.SelectedValue = c.Tables[0].Rows[i][5].ToString();
                 email.Text = c.Tables[0].Rows[i][6].ToString();
                 // es operario favorito quiza si lo ponemos aca debemos ver el tema de la actualizacion de la confianza in situ 
@@ -78,9 +78,9 @@ namespace Agros
             campos.Add("operario_favorito");
 
             //recolecto datos             
-            datos.Add(this.cuit.Text);//cuit int
+            datos.Add(cuit.Valor);//cuit int
             datos.Add(" , ");
-            datos.Add(this.clave.Text);//cla  int
+            datos.Add(this.clave.Valor);//cla  int
             datos.Add(" , ");
             datos.Add("'");
             datos.Add(this.rs.Text);//raz varchar
@@ -130,10 +130,10 @@ namespace Agros
 
             //especifico campos
             campos.Add("cuit= ");
-            campos.Add(cuit.Text);//cuit int
+            campos.Add(cuit.Valor);//cuit int
             campos.Add(", ");
             campos.Add("password=");
-            campos.Add(clave.Text);//cla  int
+            campos.Add(clave.Valor);//cla  int
             campos.Add(", ");
             campos.Add("razon_social=");
             campos.Add("'");
@@ -175,10 +175,10 @@ namespace Agros
 
         }
 
-        protected void clave_TextChanged(object sender, EventArgs e)
-        {
-            nuevakey = this.clave.Text;
-        }
+        //protected void clave_TextChanged(object sender, EventArgs e)
+        //{
+        //    nuevakey = this.clave.Text;
+        //}
 
 
 

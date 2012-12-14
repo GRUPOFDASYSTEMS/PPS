@@ -19,7 +19,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton2" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Productos" PostBackUrl="~/abmusuarios.aspx"/>
-              &nbsp;&nbsp;&nbsp; Modulo De Usuarios</p>
+                       &nbsp;&nbsp;&nbsp; Modulo De Usuarios</p>
           </td>
         </tr>  
             
@@ -28,7 +28,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton6" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Stock" PostBackUrl="~/indice_administrativo.aspx" />
-              &nbsp;&nbsp;&nbsp; Modulos Administrativos </p>
+                       &nbsp;&nbsp;&nbsp; Modulos Administrativos </p>
           </td>         
          
          
@@ -40,7 +40,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton1" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Stock" PostBackUrl="~/indice_cliente.aspx" />
-              &nbsp;&nbsp;&nbsp; Modulos Clientes </p>
+                       &nbsp;&nbsp;&nbsp; Modulos Clientes </p>
           </td>         
          
          
@@ -53,7 +53,7 @@
                    <p class="meta">
                 <asp:ImageButton ID="ImageButton3" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Stock" PostBackUrl="~/indice_operario.aspx" />
-              &nbsp;&nbsp;&nbsp; Modulos Operarios </p>
+                       &nbsp;&nbsp;&nbsp; Modulos Operarios </p>
           </td>         
          
          
@@ -64,7 +64,7 @@
          </table>   
 
 
-    <asp:Button ID="Button3" runat="server" Text="Salir" />
+    <asp:Button ID="Salir" runat="server" Text="Salir" onclick="Salir_Click" />
 
 
     

@@ -3,7 +3,7 @@
 
 <asp:Content ID="ContentG" runat="server" ContentPlaceHolderID="General">
 
-<form id="form1" runat="server">
+    <form id="form1" runat="server">
 
     <table style="width: 100%;">
         <tr>
@@ -13,25 +13,27 @@
                     <Items>
                         <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
                             Value="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`"></asp:MenuItem>
-                        <asp:MenuItem Text="&lt; Modulo De Usuarios &gt;" Value="Productos" 
-                            ImageUrl="~/images/img11.gif">
+                        <asp:MenuItem Text="&lt; Modulo De Usuarios &gt;" Value="Usuarios" 
+                            ImageUrl="~/images/img11.gif" NavigateUrl="~/abmusuarios.aspx">
                             </asp:MenuItem>
                             <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>
 
-<asp:MenuItem Text="&lt; Modulos Administrativos &gt; " Value="Modulo De Stock" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+<asp:MenuItem Text="&lt; Modulos Administrativos &gt; " Value="Modulos Administrativos" 
+                            ImageUrl="~/images/img11.gif" NavigateUrl="~/indice_administrativo.aspx"></asp:MenuItem>
                             
                             <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>
 
-                        <asp:MenuItem Text="&lt; Modulos De Clientes &gt;" Value="Servicios" 
-                            ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                        <asp:MenuItem Text="&lt; Modulos De Clientes &gt;" Value="Clientes" 
+                            ImageUrl="~/images/img11.gif" NavigateUrl="~/indice_cliente.aspx"></asp:MenuItem>
                             
                             <asp:MenuItem Text=". : . : . : . : . : . : ." Value=". : . : . : . : . : . : ." Selectable="False">
                             </asp:MenuItem>
                             
                         <asp:MenuItem Text="&lt; Modulos De Personal Empresa &gt;" 
-                            Value="Personal Empresa" ImageUrl="~/images/img11.gif"></asp:MenuItem>
+                            Value="Personal Empresa" ImageUrl="~/images/img11.gif" 
+                            NavigateUrl="~/indice_operario.aspx"></asp:MenuItem>
                             
                         
                         <asp:MenuItem Selectable="False" Text="`'`'`'`'`'`'`'`'`'`'`'`'`'`'`'`" 
