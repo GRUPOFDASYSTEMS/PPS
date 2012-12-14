@@ -34,6 +34,7 @@ namespace Agros
 
         if (creando.Equals(estado))
             Response.Redirect("modulo_servicios_creando_detalle_orden.aspx");
+        
             //caso contrario debo editar cada uno de los items (aprobarlos/desaprobarlos/oquiza abortarlos)
 
 

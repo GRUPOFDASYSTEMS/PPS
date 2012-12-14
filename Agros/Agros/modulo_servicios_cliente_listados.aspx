@@ -90,8 +90,18 @@
        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
        <br />
     <asp:Label ID="lerror" runat="server" Text=""></asp:Label>
+       
+       
+       
        <table>   
          <tr>
+          <td>
+              <p class="meta">
+              <asp:ImageButton ID="ImageButtonf" runat="server" 
+                  ImageUrl="images/img11.gif" AlternateText="Listados" 
+                       style="width: 13px" onclick="ImageButtonf_Click" />
+                  &nbsp;&nbsp;Finalizar Edicion &nbsp;&nbsp;&nbsp;</p>
+	      </td>
           <td>
               <p class="meta">
               <asp:ImageButton ID="ImageButton1" runat="server" 

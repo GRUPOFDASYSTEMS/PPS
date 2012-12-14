@@ -51,12 +51,12 @@ namespace Agros
             //verificacion del estado de la id seleccionada? (para evitar generar factura de algo ya aprobado... o abortada)
             id = " id=" + Label2.Text;
 
-            estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where" + id, 0);
+            estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where", 0);
             // .obtener_dato("orden_de_servicio where "+id, 4);
 
             // solo la puedo aprobar si:
             //las Pre-Aprobada
-            estado_buscado = linker.obtener_dato_especificado("select id_estado from estado where descripcion='Pre-Aprobada' and tema='orden_servicio'" + id, 0);
+            estado_buscado = linker.obtener_dato_especificado("select id from estados where descripcion='Pre-Aprobada' and tema='orden_servicio'" + id, 0);
 
             if (!estado.Equals(estado_buscado))
             {
@@ -285,7 +285,7 @@ namespace Agros
 
             // solo la puedo abortar si:
             //las Pendiente
-            estado_buscado = linker.obtener_dato_especificado("select id_estado from estado where descripcion='Pendiente' and tema='orden_servicio'" + id, 0);
+            estado_buscado = linker.obtener_dato_especificado("select id from estados where descripcion='Pendiente' and tema='orden_servicio'", 0);
 
             if (!estado.Equals(estado_buscado))
             {
@@ -310,7 +310,8 @@ namespace Agros
 
 
 
-
+                //debo limpiar la variable campos...
+                campos.RemoveRange(0, campos.Count);
 
 
 
@@ -346,7 +347,7 @@ namespace Agros
 
             // solo la puedo aprobar si:
             //las Pre-Aprobada
-            estado_buscado = linker.obtener_dato_especificado("select id_estado from estado where descripcion='Pre-Aprobada' and tema='orden_servicio'" + id, 0);
+            estado_buscado = linker.obtener_dato_especificado("select id from estados where descripcion='Pre-Aprobada' and tema='orden_servicio'", 0);
 
             if (!estado.Equals(estado_buscado))
             {
@@ -371,7 +372,8 @@ namespace Agros
 
 
 
-
+                //debo limpiar la variable campos...
+                campos.RemoveRange(0, campos.Count);
 
 
 
@@ -386,6 +388,63 @@ namespace Agros
                 campos.Add(estado);
 
                 resultado = linker.actualizacion_personalizada("orden_de_servicio", id, campos);
+            }
+        }
+
+        protected void ImageButtonf_Click(object sender, ImageClickEventArgs e)
+        {
+            ArrayList campos = new ArrayList();
+            ArrayList datos = new ArrayList();
+            string resultado, id, estado, estado_buscado, detalle, precio, cantidad, select;
+            int id_f;
+
+            //verificacion del estado de la id seleccionada? (para evitar generar factura de algo ya aprobado... o abortada)
+            id = " id=" + Label2.Text;
+
+            estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where" + id, 0);
+            // .obtener_dato("orden_de_servicio where "+id, 4);
+
+            // solo la puedo aprobar si:
+            //las Pre-Aprobada
+            estado_buscado = linker.obtener_dato_especificado("select id from estados where descripcion='En Proceso De Creacion' and tema='orden_servicio'", 0);
+
+            if (!estado.Equals(estado_buscado))
+            {
+                lerror.Text = "Error: solo puede Finalizar una orden En Proceso De Creacion";
+
+            }
+            else {
+
+                //desapruebo
+                //primero las hijas
+                id = " id_os=" + Label2.Text;
+
+                estado = linker.obtener_dato(" estados where descripcion='No Aprobada' and tema='detalle_orden' ", 0);
+
+
+
+
+                //especifico campos
+                campos.Add("id_estado=");
+                campos.Add(estado);
+
+                resultado = linker.actualizacion_personalizada("detalle_orden_de_servicio", id, campos);
+
+
+
+
+                //despues la orden
+                id = " id=" + Label2.Text;
+
+                estado = linker.obtener_dato(" estados where descripcion='Pendiente' and tema='orden_servicio' ", 0);
+
+                //especifico campos
+                datos.Add("id_estado=");
+                datos.Add(estado);
+
+                resultado = linker.actualizacion_personalizada("orden_de_servicio", id, datos);
+            
+            
             }
         }
 

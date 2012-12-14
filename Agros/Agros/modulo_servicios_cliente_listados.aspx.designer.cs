@@ -86,6 +86,15 @@ namespace Agros {
         protected global::System.Web.UI.WebControls.Label lerror;
         
         /// <summary>
+        /// Control ImageButtonf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButtonf;
+        
+        /// <summary>
         /// Control ImageButton1.
         /// </summary>
         /// <remarks>

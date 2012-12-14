@@ -220,7 +220,8 @@ namespace Agros
                             campos.Add("cantidad, ");
                             campos.Add("costo, ");
                             campos.Add("comentario, ");
-                            campos.Add("tiempo ");
+                            campos.Add("fecha_inicio, ");
+                            campos.Add("fecha_fin ");
 
                             //recolecto datos
                             datos.Add(" ' ");
@@ -250,7 +251,11 @@ namespace Agros
                             datos.Add(" ' ");
                             datos.Add(" , ");
                             datos.Add(" ' ");
-                            datos.Add(hs_totales);//tiempo
+                            datos.Add(hora_inicio.ToString("yyyyMMdd"));//tiempo
+                            datos.Add(" ' ");
+                            datos.Add(" , ");
+                            datos.Add(" ' ");
+                            datos.Add(hora_fin.ToString("yyyyMMdd"));//tiempo
                             datos.Add(" ' ");
 
 
@@ -265,13 +270,15 @@ namespace Agros
                                 /* ahora debo actualizar el costo de la orden de servicio asociada */
                                 datos.RemoveRange(0, datos.Count);
 
-                                double costo_total = double.Parse(linker.obtener_dato_especificado("select costo_total from orden_de_servicio where id=" + Session["id_os"].ToString(), 0)) + costo;
+                                string costo_actual = linker.obtener_dato_especificado("select costo_total from orden_de_servicio where id=" + Session["id_os"].ToString(), 0);
+                                costo_actual = costo_actual == "" ? "0" : costo_actual;
+                                double costo_total = double.Parse(costo_actual) + costo;
                                 datos.Add("costo_total=");
                                 datos.Add(costo_total);
 
                                 resultado = linker.actualizacion_personalizada("orden_de_servicio", " id=" + Session["id_os"].ToString(), datos);
                                 //si existe un error, en esta instancia, no paro dado que quiza este error no es critico...
-                                verificarInsercion(resultado, "Atencion Ocurrio Un Error Al Intentar Actualizar La Orden De Servicio");
+                                verificarActualizacion(resultado, "Atencion Ocurrio Un Error Al Intentar Actualizar La Orden De Servicio");
 
 
 
@@ -292,10 +299,10 @@ namespace Agros
                                      campos.RemoveRange(0, campos.Count);
                                      datos.RemoveRange(0, datos.Count);
 
-                                    campos.Add("fecha");
-                                    campos.Add("racion_unidad_medida");
-                                    campos.Add("id_estado");
-                                    campos.Add("id_producto");
+                                    campos.Add("fecha, ");
+                                    campos.Add("racion_unidad_medida, ");
+                                    campos.Add("id_estado, ");
+                                    campos.Add("id_producto, ");
                                     campos.Add("en_cantidad_unidades");
 
                                     datos.Add(" ' ");
@@ -330,11 +337,11 @@ namespace Agros
                                 campos.RemoveRange(0, campos.Count);
                                 datos.RemoveRange(0, datos.Count);
 
-                                campos.Add("fecha_registracion");
-                                campos.Add("id_usuario");
-                                campos.Add("fecha_inicio");
-                                campos.Add("fecha_fin");
-                                campos.Add("descripcion");
+                                campos.Add("fecha_registracion, ");
+                                campos.Add("id_usuario, ");
+                                campos.Add("fecha_inicio, ");
+                                campos.Add("fecha_fin, ");
+                                campos.Add("descripcion ");
 
                                 datos.Add(" ' ");
                                 datos.Add(fecha_hoy);
@@ -343,14 +350,16 @@ namespace Agros
                                 datos.Add(ope);
                                 datos.Add(" , ");
                                 datos.Add(" ' ");
-                                datos.Add(hora_inicio);
+                                datos.Add(hora_inicio.ToString("yyyyMMdd"));
                                 datos.Add(" ' ");
                                 datos.Add(" , ");
                                 datos.Add(" ' ");
-                                datos.Add(hora_fin);
+                                datos.Add(hora_fin.ToString("yyyyMMdd"));
                                 datos.Add(" ' ");
                                 datos.Add(" , ");
+                                datos.Add(" ' ");
                                 datos.Add(descripcion);//descripcion
+                                datos.Add(" ' ");
 
                                 resultado = linker.insercion_de_dataset("restriccion_disponibilidad_usuario", campos, datos);
 
@@ -362,7 +371,7 @@ namespace Agros
 
 
                                 LabelGeneral.ForeColor = System.Drawing.Color.Green;
-                                LabelGeneral.Text = "Orden de servicio generada correctamente. Puede continuar generando ordenes o finalizar desde el boton FINALIZAR EDICION.   < br />  Si existieron errores o advertencias, se muestran a continuacion.";
+                                LabelGeneral.Text = "Orden de servicio generada correctamente. Puede continuar generando ordenes o finalizar desde el boton FINALIZAR EDICION.                 Si existieron errores o advertencias, se muestran a continuacion.";
 
                             }
 
@@ -409,7 +418,29 @@ namespace Agros
         }
 
 
+        protected bool verificarActualizacion(string resultado, string mensaje)
+        {
 
+            //verifico respuesta
+            bool res = true;
+            string[] devolucion = new string[3];
+            devolucion = linker.revisar_error(resultado, "UPD", "", "", "", "");
+
+
+
+
+            if (devolucion[0].Equals("0"))
+            {
+                //Session["mensaje_error"] = devolucion[1];
+                LabelInfo.ForeColor = System.Drawing.Color.Red;
+                LabelInfo.Text = mensaje;
+                res = false;
+            }
+
+            return res;
+        
+        }
+        
 
         protected void RS_CheckedChanged(object sender, EventArgs e)
         {

@@ -26,7 +26,7 @@
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
         SelectMethod="Seleccion_por_id_y_consulta" TypeName="Agros.linkeo">
         <SelectParameters>
-            <asp:Parameter DefaultValue="select * from detalle_orden_servicio where 1=1 and id_os=" Name="consulta" 
+            <asp:Parameter DefaultValue="select * from detalle_orden_de_servicio where 1=1 and id_os=" Name="consulta" 
                 Type="String" />
             <asp:SessionParameter DefaultValue="" Name="id" SessionField="id_os" 
                 Type="String" />
