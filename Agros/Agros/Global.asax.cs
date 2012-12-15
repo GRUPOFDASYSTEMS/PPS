@@ -24,6 +24,7 @@ namespace Agros
             Session["usuario"] = "0";
             Session["cliente"] = "0";
             Session["perfil"] = "0";
+            Session["backtousuario"] = "0";
 
             //genericos
             Session["mensaje_exito"] = "";

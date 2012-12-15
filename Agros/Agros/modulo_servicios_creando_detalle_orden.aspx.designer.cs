@@ -41,24 +41,6 @@ namespace Agros {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control RS.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RS;
-        
-        /// <summary>
-        /// Control DD_Servicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DD_Servicio;
-        
-        /// <summary>
         /// Control RDS.
         /// </summary>
         /// <remarks>
@@ -83,7 +65,7 @@ namespace Agros {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cantidad;
+        protected global::IU.Controles.ControlNum cantidad;
         
         /// <summary>
         /// Control comentario.

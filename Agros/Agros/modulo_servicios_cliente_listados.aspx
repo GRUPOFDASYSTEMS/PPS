@@ -89,7 +89,7 @@
             <asp:Label ID="Label1" runat="server" Text="Usted Selecciono La Orden N: "></asp:Label>
        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
        <br />
-    <asp:Label ID="lerror" runat="server" Text=""></asp:Label>
+    <asp:Label ID="lerror" runat="server" Text="" ForeColor="Red" ></asp:Label>
        
        
        
@@ -99,7 +99,7 @@
               <p class="meta">
               <asp:ImageButton ID="ImageButtonf" runat="server" 
                   ImageUrl="images/img11.gif" AlternateText="Listados" 
-                       style="width: 13px" onclick="ImageButtonf_Click" />
+                       style="width: 13px; height: 12px;" onclick="ImageButtonf_Click" />
                   &nbsp;&nbsp;Finalizar Edicion &nbsp;&nbsp;&nbsp;</p>
 	      </td>
           <td>

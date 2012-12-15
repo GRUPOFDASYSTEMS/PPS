@@ -55,12 +55,13 @@
     </asp:ObjectDataSource>
 
     <asp:Label ID="Label1" runat="server" Text="Ha Seleccionado La Factura: "></asp:Label>
+     <asp:Label ID="Label2" runat="server" Text=" "></asp:Label>
 
 
 
     
 
-    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+    
     <br />
     <br />
 
@@ -90,10 +91,10 @@
 
 
     
-        <asp:Button ID="Button1" runat="server" Text="Volver"  OnClientClick="~/indice_cliente.aspx"  />
+        <asp:Button ID="Button1" runat="server" Text="Volver"  PostBackUrl="~/indice_cliente.aspx"  />
 
-
-
+<br />
+<asp:Label ID="LabelInfo" runat="server" Text="" ForeColor="Red" ></asp:Label>
     
 </form>
     </asp:Content>

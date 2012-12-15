@@ -221,6 +221,20 @@
     <Compile Include="Controles\ControlNum.ascx.designer.cs">
       <DependentUpon>ControlNum.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Crash.aspx.cs">
+      <DependentUpon>Crash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crash.aspx.designer.cs">
+      <DependentUpon>Crash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="facturacion_detalle_facturas_clientes.aspx.cs">
+      <DependentUpon>facturacion_detalle_facturas_clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="facturacion_detalle_facturas_clientes.aspx.designer.cs">
+      <DependentUpon>facturacion_detalle_facturas_clientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Estructura.Master.cs">
       <DependentUpon>Estructura.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -520,6 +534,8 @@
       <DependentUpon>Agros.dbml</DependentUpon>
     </None>
     <Content Include="Controles\ControlNum.ascx" />
+    <Content Include="Crash.aspx" />
+    <Content Include="facturacion_detalle_facturas_clientes.aspx" />
     <Content Include="Global.asax" />
     <Content Include="modulo_servicios_creando_detalle_orden.aspx" />
     <Content Include="servicios_operario_restriccion_licencias_in.aspx" />

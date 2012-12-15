@@ -39,75 +39,78 @@ namespace Agros
 
             /*Primero hay que asegurarse que todos los valores esten elegidos...
              se puede hacer con validators o desde el codigo...*/
-            
-
-
-            /**** primero obtengo lo que me solicitan (en tiempo y cantidad de productos) ****/
-            string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
-            //DateTime fecha_seleccionada = DateTime(Calendar1.SelectedDate);
-            DateTime fecha_inicio = Convert.ToDateTime(this.Calendar1.SelectedDate.ToShortDateString());
-            DateTime hora_inicio = fecha_inicio.AddHours(8); //establezco las 8 am
-            servicio = this.DD_Servicio.SelectedValue;
-            detalle_servicio = this.DDD_Servicio.SelectedValue;
-            //solo vale uno de los dos...
-            if (RS.Checked)
-                detalle_servicio = "";  //OJO QUE SI LIMPIAMOS ACA, LUEGO TENEMOS QUE DARLE UN VALOR PARA EJECUTAR LA CONSULTA...
-            else
-                servicio = "";
-            
-            
-            
-            string cant = cantidad.Text;
+            string cant = cantidad.Valor;
             string cm = comentario.Text;
             string ope = DD_Operario.SelectedValue;
 
+            if ((Label2.Text.Length > 0) && (cant.Length >0))
+            {
 
 
-            /*** Que es lo que debo validar?  ****/
-            /*si tengo suficientes recursos*/
-            /*1) tiempo     - relacionado con los operarios favoritos (restriccion_disponibilidad_usuario)*/
-            /*2) productos  - relacionado con el stock disponible (stock real-reservado) */
+                /**** primero obtengo lo que me solicitan (en tiempo y cantidad de productos) ****/
+                string fecha = Calendar1.SelectedDate.ToString("yyyyMMdd");
+                //DateTime fecha_seleccionada = DateTime(Calendar1.SelectedDate);
+                DateTime fecha_inicio = Convert.ToDateTime(this.Calendar1.SelectedDate.ToShortDateString());
+                DateTime hora_inicio = fecha_inicio.AddHours(8); //establezco las 8 am
+                //servicio = this.DD_Servicio.SelectedValue;
+                servicio = "";
+                detalle_servicio = this.DDD_Servicio.SelectedValue;
+                //solo vale uno de los dos...
+                //if (RS.Checked)
+                //    detalle_servicio = "";  //OJO QUE SI LIMPIAMOS ACA, LUEGO TENEMOS QUE DARLE UN VALOR PARA EJECUTAR LA CONSULTA...
+                //else
+                //    servicio = "";
+
+
+
+
+
+
+                /*** Que es lo que debo validar?  ****/
+                /*si tengo suficientes recursos*/
+                /*1) tiempo     - relacionado con los operarios favoritos (restriccion_disponibilidad_usuario)*/
+                /*2) productos  - relacionado con el stock disponible (stock real-reservado) */
                 //cuanto tiempo? cantidad * hs del servicio... pero...
                 /*tenemos 2 instancias*/
                 /* primero la mas simple, si elige un detalle servicio */
                 hs_necesarias = linker.obtener_dato_especificado("select tiempo_horas_hombre from detalle_servicio where id=" + detalle_servicio, 0);
-            //primero solo tomo las horas (no los minutos.... ya fue)
+                //primero solo tomo las horas (no los minutos.... ya fue)
                 hs_necesarias = hs_necesarias.Substring(0, 2);
-            //ahora debo ver como multiplicar...
+                //ahora debo ver como multiplicar...
                 hs_totales = int.Parse(hs_necesarias) * int.Parse(cant);
 
-            
-             //finalmente si hs_totales > 8 entonces corresponden x dias   --ejemplo 16, seran 2 dias---
+
+                //finalmente si hs_totales > 8 entonces corresponden x dias   --ejemplo 16, seran 2 dias---
                 int dias_ocupados = hs_totales / 8;
                 int diferencia = hs_totales % 8;
-                DateTime  fecha_fin =fecha_inicio.AddDays(dias_ocupados); //adiciono cantidad dias
+                DateTime fecha_fin = fecha_inicio.AddDays(dias_ocupados); //adiciono cantidad dias
                 DateTime hora_fin = fecha_fin.AddHours(8); //establezco las 8 am u 8 hs diarias
                 hora_fin = diferencia > 0 ? hora_fin.AddHours(diferencia) : hora_fin.AddHours(-16);//agrego la diferencia o establezco el fin del dia anterior
 
                 //formateo las fechas para consultar
                 string fecha1 = hora_inicio.ToString("yyyyMMdd");
                 string fecha2 = hora_fin.ToString("yyyyMMdd");
-            /**** ahora ya tengo la cantidad de tiempo que me va a llevar a partir de fecha (hora_inicio) hasta (hora_fin) ***/
-                        //entonces tengo que ver si esos dias el operacio ope esta disponible
-                consulta_especificada = "select id from restriccion_disponibilidad_usuario "+
-                                        " where  ( "+   
-                                                    " (id_usuario=" + ope + ")"+
-                                                    " and "+
-                                                    " (  "+
+                /**** ahora ya tengo la cantidad de tiempo que me va a llevar a partir de fecha (hora_inicio) hasta (hora_fin) ***/
+                //entonces tengo que ver si esos dias el operacio ope esta disponible
+                consulta_especificada = "select id from restriccion_disponibilidad_usuario " +
+                                        " where  ( " +
+                                                    " (id_usuario=" + ope + ")" +
+                                                    " and " +
+                                                    " (  " +
                                                             "( '" + fecha1 + "' between fecha_inicio and fecha_fin )" +
-                                                            " or "+
+                                                            " or " +
                                                             "( '" + fecha2 + "' between fecha_inicio and fecha_fin )" +
                                                             " or " +
                                                             "( fecha_inicio > '" + fecha1 + "' and fecha_fin <= '" + fecha2 + "')" +
 
-                                                    " )  "+
+                                                    " )  " +
                                                 " )  ";
 
 
-                                                
+
                 operario_disponible = linker.obtener_dato_especificado(consulta_especificada, 0);
 
-            /* Si existe algun registro entonces debo informar y brindar una opcion o que el mismo elija otro..*/
+                /* Si existe algun registro entonces debo informar y brindar una opcion o que el mismo elija otro..*/
                 if (!operario_disponible.Equals("-1")) //ojo con los errores...
                 { /*ojo con los errores... si existe un error por ejemplo servidor caido nos devuelve el error
                    * entonces entra aca, para salvar esa situacion preguntamos por el length. en general si nos 
@@ -138,11 +141,11 @@ namespace Agros
                      * 
                      * 
                      */
- 
 
-                     /* Primero vemos que productos hacen falta*/
+
+                    /* Primero vemos que productos hacen falta*/
                     DataSet PN = new DataSet();
-                    PN = linker.Seleccion_en_dataset("select * from producto_necesario where id_detalle_servicio="+ detalle_servicio);
+                    PN = linker.Seleccion_en_dataset("select * from producto_necesario where id_detalle_servicio=" + detalle_servicio);
 
 
                     // Luego el stock de cada uno 
@@ -150,7 +153,7 @@ namespace Agros
 
                     foreach (DataRow row in PN.Tables[0].Rows)
                     {
-                        
+
                         string prod = row["id_producto"].ToString();
                         string cant_prod = row["cantidad"].ToString();
                         int total_racion_necesaria = int.Parse(cant_prod) * int.Parse(cant);
@@ -160,9 +163,9 @@ namespace Agros
                         //si no hay reservas... se toma el stock directo
                         int lqt = int.Parse(linker.obtener_dato_especificado("SELECT r.en_cantidad_unidades AS 'StockDisponible' FROM  reservas_stock AS r where r.id_producto=" + prod, 0));
                         //Pero si existen reservas, Es el stock real (el que esta menos el reservado...)
-                        lqt = lqt == -1 ? int.Parse(linker.obtener_dato_especificado("SELECT s.cantidad AS 'StockDisponible' FROM stock AS s where s.id_producto=" + prod, 0)) : int.Parse(linker.obtener_dato_especificado("SELECT s.cantidad - r.en_cantidad_unidades AS 'StockDisponible' FROM stock AS s, reservas_stock AS r where s.id_producto = r.id_producto  and s.id_producto=" + prod, 0)); 
+                        lqt = lqt == -1 ? int.Parse(linker.obtener_dato_especificado("SELECT s.cantidad AS 'StockDisponible' FROM stock AS s where s.id_producto=" + prod, 0)) : int.Parse(linker.obtener_dato_especificado("SELECT s.cantidad - r.en_cantidad_unidades AS 'StockDisponible' FROM stock AS s, reservas_stock AS r where s.id_producto = r.id_producto  and s.id_producto=" + prod, 0));
                         //int lqt = int.Parse(linker.obtener_dato_especificado("SELECT s.cantidad - r.en_cantidad_unidades AS 'StockDisponible' FROM stock AS s, reservas_stock AS r where s.id_producto = r.id_producto  and s.id_producto=" + prod, 0));
-                        
+
                         int lqt_enracion = int.Parse(linker.obtener_dato_especificado("select racion_unidad_medida from productos where id=" + prod, 0)) * lqt;
 
                         //  si alguno falla es false para todos...
@@ -186,8 +189,8 @@ namespace Agros
 
 
                         /*HAAAAP PERO HABRIA QUE VALIDAR SI LA ID_OS ESTA EN ESTADO DE PROCESO (UNICO ESTADO POSIBLE DE ADICION DE DETALLES)*/
-                        string creando = linker.obtener_dato_especificado("select id from estados where descripcion='En Proceso de creacion' and tema='orden_servicio' ",0);
-                        string estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where id="+Session["id_os"].ToString(), 0);
+                        string creando = linker.obtener_dato_especificado("select id from estados where descripcion='En Proceso de creacion' and tema='orden_servicio' ", 0);
+                        string estado = linker.obtener_dato_especificado("select id_estado from orden_de_servicio where id=" + Session["id_os"].ToString(), 0);
 
 
                         if (creando.Equals(estado))
@@ -293,11 +296,11 @@ namespace Agros
                                     string prod = row["id_producto"].ToString();
                                     string cant_prod = row["cantidad"].ToString();
                                     int total_racion_necesaria = int.Parse(cant_prod) * int.Parse(cant);
-                                    double lqt_enracion =  total_racion_necesaria / int.Parse(linker.obtener_dato_especificado("select racion_unidad_medida from productos where id=" + prod, 0));
-                                    int en_cantidad_unidades =  (int)Math.Floor(lqt_enracion);
+                                    double lqt_enracion = total_racion_necesaria / int.Parse(linker.obtener_dato_especificado("select racion_unidad_medida from productos where id=" + prod, 0));
+                                    int en_cantidad_unidades = (int)Math.Floor(lqt_enracion);
 
-                                     campos.RemoveRange(0, campos.Count);
-                                     datos.RemoveRange(0, datos.Count);
+                                    campos.RemoveRange(0, campos.Count);
+                                    datos.RemoveRange(0, datos.Count);
 
                                     campos.Add("fecha, ");
                                     campos.Add("racion_unidad_medida, ");
@@ -329,8 +332,8 @@ namespace Agros
                                         verif_inp = false;
                                 }
 
-                                 
-                                 
+
+
                                 /* y agregar la restriccion correspondiente al operario... */
                                 string descripcion = "detalle de orden de servicio asociado N°:" + linker.obtener_id("detalle_orden_de_servicio");
 
@@ -362,10 +365,23 @@ namespace Agros
                                 datos.Add(" ' ");
 
                                 resultado = linker.insercion_de_dataset("restriccion_disponibilidad_usuario", campos, datos);
+                                if (!verificarInsercion(resultado, "Atencion! ocurrieron errores en la reserva de horas del personal")) //se podria poner en otro label...
+                                    verif_inp = false;
 
+                                /* debo asignar a su id de usuario... */
+                                campos.RemoveRange(0, campos.Count);
+                                datos.RemoveRange(0, datos.Count);
+
+                                datos.Add("id_usuario=");
+                                datos.Add(ope);
+
+                                //obtengo id de detalle servicio
+                                id = linker.obtener_id("detalle_orden_de_servicio");
+
+                                resultado = linker.actualizacion_de_dataset("detalle_orden_de_servicio", id.ToString(), datos);
 
                                 //  si alguno falla es false para todos...
-                                if (!verificarInsercion(resultado, "Atencion! ocurrieron errores en la reserva de horas del personal")) //se podria poner en otro label...
+                                if (!verificarActualizacion(resultado, "Atencion! ocurrieron errores en la reserva de horas del personal")) //se podria poner en otro label...
                                     verif_inp = false;
 
 
@@ -376,19 +392,26 @@ namespace Agros
                             }
 
                         }
-                        else {
+                        else
+                        {
 
                             LabelGeneral.ForeColor = System.Drawing.Color.Red;
                             LabelGeneral.Text = "No se permite agregar items a una Orden de servicio ya gestionada.";
-                        
+
                         }
 
 
                     }
                 }
 
-            //deshabilito para evitar errores
+                //deshabilito para evitar errores
                 agregar.Enabled = false;
+            }
+            else
+            {
+                LabelGeneral.Text = "Debe seleccionar una fecha, e indicar la cantidad de hectareas antes de continuar.";
+            }
+
         }
 
 

@@ -11,16 +11,16 @@
 namespace Agros {
     
     
-    public partial class facturacion_detalle_facturas {
+    public partial class facturacion_detalle_facturas_clientes {
         
         /// <summary>
-        /// Control form1.
+        /// Control formc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formc;
         
         /// <summary>
         /// Control id_factura.
@@ -59,12 +59,12 @@ namespace Agros {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// Control VolverU.
+        /// Control VolverC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button VolverU;
+        protected global::System.Web.UI.WebControls.Button VolverC;
     }
 }

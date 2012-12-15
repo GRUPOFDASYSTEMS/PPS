@@ -16,9 +16,12 @@ namespace Agros
     public partial class facturacion_listados : System.Web.UI.Page
     {
         puente p = new puente();
+        nueva_pagina np = new nueva_pagina();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LabelInfo.Text = "";
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,13 +29,23 @@ namespace Agros
 
         }
 
+
+
+
         protected void informar_Click(object sender, EventArgs e)
         {
 
             string id = Label2.Text;
             bool exito = false;
 
-            exito = p.cambiar_estado(id, " estados where descripcion='Informada' and tema='facturacion'", "facturas");
+
+
+            string estadoIncorrecto = np.obtenerEstados("facturas", id, "Pagada", "facturacion");
+
+            if (estadoIncorrecto == "OK")
+                LabelInfo.Text = "Recuerde que no puede cambiar el estado de una factura ya pagada.";
+            else
+                exito = p.cambiar_estado(id, " estados where descripcion='Informada' and tema='facturacion'", "facturas");
 
 
             if (exito)
@@ -55,9 +68,14 @@ namespace Agros
             string id = Label2.Text;
             bool exito = false;
 
-            exito = p.cambiar_estado(id, " estados where descripcion='Pendiente' and tema='facturacion'", "facturas");
+            string estadoIncorrecto = np.obtenerEstados("facturas", id, "Pagada", "facturacion");
 
-            Label2.Text = id; 
+            if (estadoIncorrecto == "OK")
+                LabelInfo.Text = "Recuerde que no puede cambiar el estado de una factura ya pagada.";
+            else
+                exito = p.cambiar_estado(id, " estados where descripcion='Pendiente' and tema='facturacion'", "facturas");
+
+            //Label2.Text = id; 
             if (exito)
             {
                 Response.Redirect("facturacion_listados.aspx");
@@ -71,7 +89,7 @@ namespace Agros
 
             if (!id.Equals("")) {
                 Session["id_factura"] = id;
-                Response.Redirect("facturacion_detalle_facturas.aspx");
+                Response.Redirect("facturacion_detalle_facturas_clientes.aspx");
             }
 
 

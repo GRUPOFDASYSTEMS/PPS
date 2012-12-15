@@ -13,23 +13,25 @@ using System.Xml.Linq;
 
 namespace Agros
 {
-    public partial class facturacion_detalle_facturas : System.Web.UI.Page
+    public partial class facturacion_detalle_facturas_clientes : System.Web.UI.Page
     {
-        linkeo linker = new linkeo();
+        linkeo link = new linkeo();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            obtener_datos(); 
+            obtener_datosc(); 
         }
 
 
-        protected void obtener_datos(){
+        protected void obtener_datosc(){
 
 
 
 
             id_factura.Text = Session["id_factura"].ToString() ;
-            cliente.Text = linker.obtener_dato(" cliente where id=" + linker.obtener_dato(" facturas where id=" + id_factura.Text, 9), 1);
+            cliente.Text = link.obtener_dato(" cliente where id=" + link.obtener_dato(" facturas where id=" + id_factura.Text, 9), 1);
+
+
 
 
 

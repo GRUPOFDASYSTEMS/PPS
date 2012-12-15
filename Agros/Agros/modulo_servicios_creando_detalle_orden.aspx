@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="modulo_servicios_creando_detalle_orden.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="Agros.modulo_servicios_creando_detalle_orden" %>
 
-
+<%@ Register Src="Controles/ControlNum.ascx" TagName="ControlN" TagPrefix="CN"%>
 
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Editable">
@@ -32,18 +32,18 @@
 
          <tr>
           <td>
-              <p class="meta">
-                  <asp:RadioButton ID="RS" runat="server"  GroupName="r1"  Checked="true" 
+<%--              <p class="meta">
+                  <asp:RadioButton ID="RS" runat="server"  GroupName="r1"   
                       oncheckedchanged="RS_CheckedChanged" /> &nbsp;&nbsp;&nbsp; Elegir Pack Servicio:<asp:DropDownList 
                       ID="DD_Servicio" runat="server" DataSourceID="ObjectDataSource1" 
                       DataTextField="nombre_servicio" DataValueField="id"  >
               </asp:DropDownList>
-              </p>
+              </p>--%>
 	      </td>
           <td>
-                  <asp:RadioButton ID="RDS" runat="server" GroupName="r1" 
+                  <asp:RadioButton ID="RDS" runat="server" GroupName="r1" Checked="true"
                       oncheckedchanged="RDS_CheckedChanged"  /> Elegir Servicio Especifico:<asp:DropDownList 
-                      ID="DDD_Servicio" runat="server" Enabled="False" 
+                      ID="DDD_Servicio" runat="server" Enabled="true" 
                       DataSourceID="ObjectDataSource2" DataTextField="descripcion" 
                       DataValueField="id">
               </asp:DropDownList>
@@ -67,7 +67,9 @@
           </td>
           <td>
             
-              <asp:TextBox ID="cantidad" runat="server"  Text=""></asp:TextBox>   
+              <%--<asp:TextBox ID="cantidad" runat="server"  Text=""></asp:TextBox>   --%>
+                <CN:ControlN runat="server" ID="cantidad" />
+
           </td>
          </tr>
          
